@@ -1,0 +1,73 @@
+{
+  "type": "app",
+  "name": "Onekeeper",
+  "id": "hzmc-onekeeper-app",
+
+  "info": {
+    "description": "Onekeeper plugin for Grafana",
+    "author": {
+      "name": "Alexander Zobnin",
+      "url": "https://github.com/alexanderzobnin"
+    },
+    "keywords": ["onekeeper"],
+    "logos": {
+      "small": "img/onekeeper_app_logo.svg",
+      "large": "img/onekeeper_app_logo.svg"
+    },
+    "links": [
+      {"name": "GitHub", "url": "https://github.com/onekeeper/grafana-onekeeper"},
+      {"name": "License", "url": "https://github.com/onekeeper/grafana-onekeeper/blob/master/LICENSE"}
+    ],
+    "screenshots": [
+      {"name": "Showcase", "path": "img/screenshot-showcase.png"},
+      {"name": "Dashboard", "path": "img/screenshot-dashboard01.png"},
+      {"name": "Annotations", "path": "img/screenshot-annotations.png"},
+      {"name": "Metric Editor", "path": "img/screenshot-metric_editor.png"},
+      {"name": "Triggers", "path": "img/screenshot-triggers.png"}
+    ],
+    "version": "3.6.1",
+    "updated": "2017-07-26"
+  },
+
+  "includes": [
+    {
+      "type": "datasource",
+      "name": "Onekeeper Datasource"
+    },
+    {
+      "type": "panel",
+      "name": "Triggers Panel"
+    },
+    {
+      "type": "dashboard",
+      "name": "Onekeeper 性能视图",
+      "path": "dashboards/onekeeper_perf_dashboard.json",
+      "addToNav": true,
+      "defaultNav": true
+    },
+    {
+      "type": "dashboard",
+      "name": "Onekeeper 查询视图",
+      "path": "dashboards/onekeeper_query_dashboard.json",
+      "addToNav": true
+    },
+    {
+      "type": "dashboard",
+      "name": "Oracle 数据库性能视图",
+      "path": "dashboards/oracle_perf_dashboard.json",
+      "addToNav": true
+    },
+    {
+      "type": "dashboard",
+      "name": "SQL Server  数据库性能视图",
+      "path": "dashboards/mssql_perf_dashboard.json",
+      "addToNav": true
+    }
+  ],
+
+  "dependencies": {
+    "grafanaVersion": "3.x 4.x",
+    "plugins": []
+  }
+}
+

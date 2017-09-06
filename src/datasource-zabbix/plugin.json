@@ -1,0 +1,19 @@
+{
+  "type": "datasource",
+  "name": "Onekeeper",
+  "id": "hzmc-onekeeper-datasource",
+
+  "metrics": true,
+  "annotations": true,
+
+  "info": {
+    "author": {
+      "name": "Alexander Zobnin",
+      "url": "https://github.com/onekeeper/grafana-onekeeper"
+    },
+    "logos": {
+      "small": "img/onekeeper_app_logo.svg",
+      "large": "img/onekeeper_app_logo.svg"
+    }
+  }
+}
