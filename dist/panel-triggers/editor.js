@@ -20,7 +20,7 @@ System.register(['lodash', '../datasource-zabbix/utils', '../datasource-zabbix/c
     return {
       restrict: 'E',
       scope: true,
-      templateUrl: 'public/plugins/alexanderzobnin-zabbix-app/panel-triggers/editor.html',
+      templateUrl: 'public/plugins/hzmc-onekeeper-app/panel-triggers/editor.html',
       controller: TriggerPanelEditorCtrl
     };
   }
@@ -209,7 +209,7 @@ System.register(['lodash', '../datasource-zabbix/utils', '../datasource-zabbix/c
         }, {
           key: 'getZabbixDataSources',
           value: function getZabbixDataSources() {
-            var ZABBIX_DS_ID = 'alexanderzobnin-zabbix-datasource';
+            var ZABBIX_DS_ID = 'hzmc-onekeeper-datasource';
             return _.filter(this.datasourceSrv.getMetricSources(), function (datasource) {
               return datasource.meta.id === ZABBIX_DS_ID && datasource.value;
             });

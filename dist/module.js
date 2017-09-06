@@ -13,8 +13,8 @@ System.register(['./components/config', 'app/plugins/sdk'], function (_export, _
     execute: function () {
 
       loadPluginCss({
-        dark: 'plugins/alexanderzobnin-zabbix-app/css/grafana-zabbix.dark.css',
-        light: 'plugins/alexanderzobnin-zabbix-app/css/grafana-zabbix.light.css'
+        dark: 'plugins/hzmc-onekeeper-app/css/grafana-zabbix.dark.css',
+        light: 'plugins/hzmc-onekeeper-app/css/grafana-zabbix.light.css'
       });
 
       _export('ConfigCtrl', ZabbixAppConfigCtrl);

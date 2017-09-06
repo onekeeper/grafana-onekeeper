@@ -197,7 +197,7 @@ var TriggerPanelEditorCtrl = function () {
   }, {
     key: 'getZabbixDataSources',
     value: function getZabbixDataSources() {
-      var ZABBIX_DS_ID = 'alexanderzobnin-zabbix-datasource';
+      var ZABBIX_DS_ID = 'hzmc-onekeeper-datasource';
       return _lodash2.default.filter(this.datasourceSrv.getMetricSources(), function (datasource) {
         return datasource.meta.id === ZABBIX_DS_ID && datasource.value;
       });
@@ -218,7 +218,7 @@ function triggerPanelEditor() {
   return {
     restrict: 'E',
     scope: true,
-    templateUrl: 'public/plugins/alexanderzobnin-zabbix-app/panel-triggers/editor.html',
+    templateUrl: 'public/plugins/hzmc-onekeeper-app/panel-triggers/editor.html',
     controller: TriggerPanelEditorCtrl
   };
 }

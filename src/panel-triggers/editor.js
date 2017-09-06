@@ -166,7 +166,7 @@ class TriggerPanelEditorCtrl {
   }
 
   getZabbixDataSources() {
-    let ZABBIX_DS_ID = 'alexanderzobnin-zabbix-datasource';
+    let ZABBIX_DS_ID = 'hzmc-onekeeper-datasource';
     return _.filter(this.datasourceSrv.getMetricSources(), datasource => {
       return datasource.meta.id === ZABBIX_DS_ID && datasource.value;
     });
@@ -182,7 +182,7 @@ export function triggerPanelEditor() {
   return {
     restrict: 'E',
     scope: true,
-    templateUrl: 'public/plugins/alexanderzobnin-zabbix-app/panel-triggers/editor.html',
+    templateUrl: 'public/plugins/hzmc-onekeeper-app/panel-triggers/editor.html',
     controller: TriggerPanelEditorCtrl,
   };
 }

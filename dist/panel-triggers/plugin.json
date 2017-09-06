@@ -1,12 +1,17 @@
 {
   "type": "panel",
-  "name": "Zabbix Triggers",
-  "id": "alexanderzobnin-zabbix-triggers-panel",
+  "name": "Triggers",
+  "id": "hzmc-onekeeper-triggers-panel",
 
   "info": {
     "author": {
       "name": "Alexander Zobnin",
-      "url": "https://github.com/alexanderzobnin/grafana-zabbix"
+      "url": "https://github.com/onekeeper/grafana-zabbix"
+    },
+    "logos": {
+      "small": "img/icn-table-panel.svg",
+      "large": "img/icn-table-panel.svg"
     }
   }
 }
+

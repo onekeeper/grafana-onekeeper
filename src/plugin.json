@@ -1,23 +1,22 @@
 {
   "type": "app",
-  "name": "Zabbix",
-  "id": "alexanderzobnin-zabbix-app",
+  "name": "Onekeeper",
+  "id": "hzmc-onekeeper-app",
 
   "info": {
-    "description": "Zabbix plugin for Grafana",
+    "description": "Onekeeper plugin for Grafana",
     "author": {
       "name": "Alexander Zobnin",
       "url": "https://github.com/alexanderzobnin"
     },
-    "keywords": ["zabbix"],
+    "keywords": ["onekeeper"],
     "logos": {
-      "small": "img/zabbix_app_logo.svg",
-      "large": "img/zabbix_app_logo.svg"
+      "small": "img/onekeeper_app_logo.svg",
+      "large": "img/onekeeper_app_logo.svg"
     },
     "links": [
-      {"name": "GitHub", "url": "https://github.com/alexanderzobnin/grafana-zabbix"},
-      {"name": "Docs", "url": "http://docs.grafana-zabbix.org"},
-      {"name": "License", "url": "https://github.com/alexanderzobnin/grafana-zabbix/blob/master/LICENSE"}
+      {"name": "GitHub", "url": "https://github.com/onekeeper/grafana-onekeeper"},
+      {"name": "License", "url": "https://github.com/onekeeper/grafana-onekeeper/blob/master/LICENSE"}
     ],
     "screenshots": [
       {"name": "Showcase", "path": "img/screenshot-showcase.png"},
@@ -33,7 +32,7 @@
   "includes": [
     {
       "type": "datasource",
-      "name": "Zabbix Datasource"
+      "name": "Onekeeper Datasource"
     },
     {
       "type": "panel",
@@ -41,15 +40,27 @@
     },
     {
       "type": "dashboard",
-      "name": "Zabbix Server Dashboard",
-      "path": "dashboards/zabbix_server_dashboard.json",
+      "name": "Onekeeper 性能视图",
+      "path": "dashboards/onekeeper_perf_dashboard.json",
       "addToNav": true,
       "defaultNav": true
     },
     {
       "type": "dashboard",
-      "name": "Template Linux Server",
-      "path": "dashboards/template_linux_server.json",
+      "name": "Onekeeper 查询视图",
+      "path": "dashboards/onekeeper_query_dashboard.json",
+      "addToNav": true
+    },
+    {
+      "type": "dashboard",
+      "name": "Oracle 数据库性能视图",
+      "path": "dashboards/oracle_perf_dashboard.json",
+      "addToNav": true
+    },
+    {
+      "type": "dashboard",
+      "name": "SQL Server 数据库性能视图",
+      "path": "dashboards/mssql_perf_dashboard.json",
       "addToNav": true
     }
   ],

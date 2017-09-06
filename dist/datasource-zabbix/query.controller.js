@@ -83,12 +83,11 @@ System.register(['app/plugins/sdk', 'lodash', './constants', './utils', './metri
           _this.replaceTemplateVars = _this.datasource.replaceTemplateVars;
           _this.templateSrv = templateSrv;
 
-          _this.editorModes = [{ value: 'num', text: 'Metrics', mode: c.MODE_METRICS }, { value: 'text', text: 'Text', mode: c.MODE_TEXT }, { value: 'itservice', text: 'IT Services', mode: c.MODE_ITSERVICE }, { value: 'itemid', text: 'Item ID', mode: c.MODE_ITEMID }];
+          _this.editorModes = [{ value: 'num', text: 'Metrics', mode: c.MODE_METRICS }, { value: 'text', text: 'Text', mode: c.MODE_TEXT }, { value: 'itemid', text: 'Item ID', mode: c.MODE_ITEMID }];
 
           _this.$scope.editorMode = {
             METRICS: c.MODE_METRICS,
             TEXT: c.MODE_TEXT,
-            ITSERVICE: c.MODE_ITSERVICE,
             ITEMID: c.MODE_ITEMID
           };
 

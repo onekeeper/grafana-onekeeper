@@ -1,19 +1,19 @@
 {
-  "name": "grafana-zabbix",
+  "name": "grafana-onekeeper",
   "private": false,
-  "version": "3.6.0",
-  "description": "Zabbix plugin for Grafana",
+  "version": "3.6.1",
+  "description": "Onekeeper plugin for Grafana",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/alexanderzobnin/grafana-zabbix.git"
+    "url": "git+https://github.com/onekeeper/grafana-onekeeper.git"
   },
   "author": "Alexander Zobnin",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/alexanderzobnin/grafana-zabbix/issues"
+    "url": "https://github.com/onekeeper/grafana-onekeeper/issues"
   },
   "devDependencies": {
     "babel": "~6.5.1",
@@ -46,6 +46,5 @@
   },
   "dependencies": {
     "lodash": "~4.0.0"
-  },
-  "homepage": "http://grafana-zabbix.org"
+  }
 }

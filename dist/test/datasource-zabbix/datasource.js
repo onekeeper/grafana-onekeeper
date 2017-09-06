@@ -459,7 +459,7 @@ var ZabbixAPIDatasource = function () {
         return {
           status: "success",
           title: "Success",
-          message: "Zabbix API version: " + zabbixVersion
+          message: "Onekeeper API version: " + zabbixVersion
         };
       }).catch(function (error) {
         if (error instanceof _zabbixAPICoreService.ZabbixAPIError) {

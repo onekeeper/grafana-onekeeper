@@ -21,8 +21,8 @@ import {triggerPanelEditor} from './editor';
 import './ack-tooltip.directive';
 
 loadPluginCss({
-  dark: 'plugins/alexanderzobnin-zabbix-app/css/grafana-zabbix.dark.css',
-  light: 'plugins/alexanderzobnin-zabbix-app/css/grafana-zabbix.light.css'
+  dark: 'plugins/hzmc-onekeeper-app/css/grafana-zabbix.dark.css',
+  light: 'plugins/hzmc-onekeeper-app/css/grafana-zabbix.light.css'
 });
 
 var defaultSeverity = [
@@ -47,7 +47,7 @@ var panelDefaults = {
   severityField: false,
   lastChangeField: true,
   ageField: true,
-  infoField: true,
+  infoField: false,
   limit: 10,
   showTriggers: 'all triggers',
   hideHostsInMaintenance: false,

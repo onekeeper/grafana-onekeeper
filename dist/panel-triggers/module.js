@@ -95,8 +95,8 @@ System.register(['lodash', 'jquery', 'moment', 'app/plugins/sdk', '../datasource
        */
 
       loadPluginCss({
-        dark: 'plugins/alexanderzobnin-zabbix-app/css/grafana-zabbix.dark.css',
-        light: 'plugins/alexanderzobnin-zabbix-app/css/grafana-zabbix.light.css'
+        dark: 'plugins/hzmc-onekeeper-app/css/grafana-zabbix.dark.css',
+        light: 'plugins/hzmc-onekeeper-app/css/grafana-zabbix.light.css'
       });
 
       defaultSeverity = [{ priority: 0, severity: 'Not classified', color: '#B7DBAB', show: true }, { priority: 1, severity: 'Information', color: '#82B5D8', show: true }, { priority: 2, severity: 'Warning', color: '#E5AC0E', show: true }, { priority: 3, severity: 'Average', color: '#C15C17', show: true }, { priority: 4, severity: 'High', color: '#BF1B00', show: true }, { priority: 5, severity: 'Disaster', color: '#890F02', show: true }];
@@ -113,7 +113,7 @@ System.register(['lodash', 'jquery', 'moment', 'app/plugins/sdk', '../datasource
         severityField: false,
         lastChangeField: true,
         ageField: true,
-        infoField: true,
+        infoField: false,
         limit: 10,
         showTriggers: 'all triggers',
         hideHostsInMaintenance: false,
