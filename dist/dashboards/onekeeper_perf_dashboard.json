@@ -1291,7 +1291,7 @@
           "id": 15,
           "infoField": false,
           "lastChangeField": true,
-          "limit": 10,
+          "limit": 9999,
           "links": [],
           "okEventColor": "rgba(0, 245, 153, 0.45)",
           "pageSize": 20,

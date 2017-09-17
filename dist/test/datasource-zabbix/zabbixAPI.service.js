@@ -90,7 +90,7 @@ function ZabbixAPIServiceFactory(alertSrv, zabbixAPICoreService) {
       value: function alertAPIError(message) {
         var timeout = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 5000;
 
-        this.alertSrv.set("Zabbix API Error", message, 'error', timeout);
+        this.alertSrv.set("Onekeeper API Error", message, 'error', timeout);
       }
 
       /**

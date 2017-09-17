@@ -6,7 +6,7 @@
   "info": {
     "author": {
       "name": "Alexander Zobnin",
-      "url": "https://github.com/onekeeper/grafana-zabbix"
+      "url": "https://github.com/onekeeper/grafana-onekeeper"
     },
     "logos": {
       "small": "img/icn-table-panel.svg",
@@ -14,4 +14,3 @@
     }
   }
 }
-

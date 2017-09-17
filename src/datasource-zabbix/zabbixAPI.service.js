@@ -62,7 +62,7 @@ function ZabbixAPIServiceFactory(alertSrv, zabbixAPICoreService) {
 
     alertAPIError(message, timeout = 5000) {
       this.alertSrv.set(
-        "Zabbix API Error",
+        "Onekeeper API Error",
         message,
         'error',
         timeout

@@ -42,26 +42,26 @@
       "type": "dashboard",
       "name": "Onekeeper 性能视图",
       "path": "dashboards/onekeeper_perf_dashboard.json",
-      "addToNav": true,
+      "addToNav": false,
       "defaultNav": true
     },
     {
       "type": "dashboard",
       "name": "Onekeeper 查询视图",
       "path": "dashboards/onekeeper_query_dashboard.json",
-      "addToNav": true
+      "addToNav": false
     },
     {
       "type": "dashboard",
       "name": "Oracle 数据库性能视图",
       "path": "dashboards/oracle_perf_dashboard.json",
-      "addToNav": true
+      "addToNav": false
     },
     {
       "type": "dashboard",
       "name": "SQL Server 数据库性能视图",
       "path": "dashboards/mssql_perf_dashboard.json",
-      "addToNav": true
+      "addToNav": false
     }
   ],
 

@@ -788,7 +788,7 @@
           "id": 67,
           "infoField": false,
           "lastChangeField": true,
-          "limit": 10,
+          "limit": 9999,
           "links": [],
           "okEventColor": "rgba(0, 245, 153, 0.45)",
           "pageSize": 10,
@@ -1000,6 +1000,6 @@
     ]
   },
   "timezone": "",
-  "title": "SQL Server  数据库性能视图",
+  "title": "SQL Server 数据库性能视图",
   "version": 1
 }
