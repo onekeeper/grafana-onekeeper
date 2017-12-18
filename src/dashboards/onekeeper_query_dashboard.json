@@ -29,6 +29,7 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": "$datasource",
+          "decimals": 2,
           "fill": 1,
           "id": 1,
           "legend": {
@@ -255,5 +256,5 @@
   },
   "timezone": "",
   "title": "Onekeeper 查询视图",
-  "version": 1
+  "version": 2
 }

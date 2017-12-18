@@ -158,6 +158,7 @@
             "rgba(50, 172, 45, 0.97)"
           ],
           "datasource": "$datasource",
+          "decimals": 2,
           "format": "decbytes",
           "gauge": {
             "maxValue": 100,
@@ -261,6 +262,7 @@
             "rgba(50, 172, 45, 0.97)"
           ],
           "datasource": "$datasource",
+          "decimals": 2,
           "format": "percent",
           "gauge": {
             "maxValue": 100,
@@ -360,6 +362,7 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": "$datasource",
+          "decimals": 2,
           "fill": 1,
           "id": 42,
           "legend": {
@@ -521,6 +524,7 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": "$datasource",
+          "decimals": 2,
           "fill": 1,
           "id": 1,
           "legend": {
@@ -651,6 +655,7 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": "$datasource",
+          "decimals": 2,
           "fill": 5,
           "id": 24,
           "legend": {
@@ -1001,5 +1006,5 @@
   },
   "timezone": "",
   "title": "SQL Server 数据库性能视图",
-  "version": 1
+  "version": 2
 }

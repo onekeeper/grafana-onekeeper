@@ -145,6 +145,7 @@
             "rgba(5, 145, 179, 0.97)"
           ],
           "datasource": "$datasource",
+          "decimals": 2,
           "format": "none",
           "gauge": {
             "maxValue": 100,
@@ -234,7 +235,7 @@
             "rgba(5, 145, 179, 0.97)"
           ],
           "datasource": "$datasource",
-          "decimals": null,
+          "decimals": 2,
           "format": "ops",
           "gauge": {
             "maxValue": 100,
@@ -324,6 +325,7 @@
             "rgba(5, 145, 179, 0.97)"
           ],
           "datasource": "$datasource",
+          "decimals": 2,
           "format": "ops",
           "gauge": {
             "maxValue": 100,
@@ -413,6 +415,7 @@
             "rgba(5, 145, 179, 0.97)"
           ],
           "datasource": "$datasource",
+          "decimals": 2,
           "format": "Bps",
           "gauge": {
             "maxValue": 100,
@@ -502,6 +505,7 @@
             "rgba(5, 145, 179, 0.97)"
           ],
           "datasource": "$datasource",
+          "decimals": 2,
           "format": "none",
           "gauge": {
             "maxValue": 100,
@@ -603,6 +607,7 @@
             "rgba(50, 172, 45, 0.97)"
           ],
           "datasource": "$datasource",
+          "decimals": 2,
           "format": "percent",
           "gauge": {
             "maxValue": 100,
@@ -688,6 +693,7 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": "$datasource",
+          "decimals": 2,
           "fill": 1,
           "id": 10,
           "legend": {
@@ -802,6 +808,7 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": "$datasource",
+          "decimals": 2,
           "fill": 3,
           "id": 7,
           "legend": {
@@ -927,6 +934,7 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": "$datasource",
+          "decimals": 2,
           "fill": 1,
           "id": 6,
           "legend": {
@@ -1041,6 +1049,7 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": "$datasource",
+          "decimals": 2,
           "fill": 0,
           "id": 8,
           "legend": {
@@ -1209,6 +1218,7 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": "$datasource",
+          "decimals": 2,
           "fill": 1,
           "id": 11,
           "legend": {
@@ -1317,6 +1327,7 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": "$datasource",
+          "decimals": 2,
           "fill": 1,
           "id": 9,
           "legend": {
@@ -1614,5 +1625,5 @@
   },
   "timezone": "",
   "title": "Oracle 数据库性能视图",
-  "version": 1
+  "version": 2
 }

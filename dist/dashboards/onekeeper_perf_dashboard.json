@@ -137,6 +137,7 @@
             "rgba(50, 172, 45, 0.97)"
           ],
           "datasource": "$datasource",
+          "decimals": 2,
           "editable": true,
           "error": false,
           "format": "ops",
@@ -228,6 +229,7 @@
             "rgba(50, 172, 45, 0.97)"
           ],
           "datasource": "$datasource",
+          "decimals": 2,
           "editable": true,
           "error": false,
           "format": "none",
@@ -331,6 +333,7 @@
             "rgba(245, 54, 54, 0.9)"
           ],
           "datasource": "$datasource",
+          "decimals": 2,
           "format": "percent",
           "gauge": {
             "maxValue": 100,
@@ -408,7 +411,7 @@
               "value": "null"
             }
           ],
-          "valueName": "avg"
+          "valueName": "current"
         },
         {
           "cacheTimeout": null,
@@ -420,6 +423,7 @@
             "rgba(245, 54, 54, 0.9)"
           ],
           "datasource": "$datasource",
+          "decimals": 2,
           "format": "percent",
           "gauge": {
             "maxValue": 100,
@@ -497,7 +501,7 @@
               "value": "null"
             }
           ],
-          "valueName": "avg"
+          "valueName": "current"
         },
         {
           "cacheTimeout": null,
@@ -509,7 +513,7 @@
             "rgba(245, 54, 54, 0.9)"
           ],
           "datasource": "$datasource",
-          "decimals": null,
+          "decimals": 2,
           "format": "percent",
           "gauge": {
             "maxValue": 100,
@@ -587,7 +591,7 @@
               "value": "null"
             }
           ],
-          "valueName": "avg"
+          "valueName": "current"
         },
         {
           "cacheTimeout": null,
@@ -599,7 +603,7 @@
             "rgba(245, 54, 54, 0.9)"
           ],
           "datasource": "$datasource",
-          "decimals": null,
+          "decimals": 2,
           "format": "percent",
           "gauge": {
             "maxValue": 100,
@@ -677,7 +681,7 @@
               "value": "null"
             }
           ],
-          "valueName": "avg"
+          "valueName": "current"
         }
       ],
       "repeat": null,
@@ -697,6 +701,7 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": "$datasource",
+          "decimals": 2,
           "editable": true,
           "error": false,
           "fill": 1,
@@ -804,6 +809,7 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": "$datasource",
+          "decimals": 2,
           "fill": 1,
           "id": 8,
           "legend": {
@@ -926,6 +932,7 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": "$datasource",
+          "decimals": 2,
           "fill": 1,
           "id": 14,
           "legend": {
@@ -1056,6 +1063,7 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": "$datasource",
+          "decimals": 2,
           "editable": true,
           "error": false,
           "fill": 0,
@@ -1152,6 +1160,7 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": "$datasource",
+          "decimals": 2,
           "editable": true,
           "error": false,
           "fill": 0,
@@ -1403,7 +1412,7 @@
         "options": [],
         "query": "*",
         "refresh": 1,
-        "regex": "/Linux servers/",
+        "regex": "",
         "sort": 0,
         "tagValuesQuery": "",
         "tags": [],
@@ -1464,5 +1473,5 @@
   },
   "timezone": "browser",
   "title": "Onekeeper 性能视图",
-  "version": 1
+  "version": 2
 }
