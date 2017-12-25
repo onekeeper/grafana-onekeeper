@@ -62,6 +62,12 @@
       "name": "SQL Server 数据库性能视图",
       "path": "dashboards/mssql_perf_dashboard.json",
       "addToNav": false
+    },
+    {
+      "type": "dashboard",
+      "name": "Tomcat 应用性能视图",
+      "path": "dashboards/tomcat_perf_dashboard.json",
+      "addToNav": false
     }
   ],
 
