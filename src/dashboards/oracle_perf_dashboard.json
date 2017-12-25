@@ -146,7 +146,7 @@
           ],
           "datasource": "$datasource",
           "decimals": 2,
-          "format": "none",
+          "format": "short",
           "gauge": {
             "maxValue": 100,
             "minValue": 0,
@@ -506,7 +506,7 @@
           ],
           "datasource": "$datasource",
           "decimals": 2,
-          "format": "none",
+          "format": "short",
           "gauge": {
             "maxValue": 100,
             "minValue": 0,
@@ -1625,5 +1625,5 @@
   },
   "timezone": "",
   "title": "Oracle 数据库性能视图",
-  "version": 2
+  "version": 3
 }

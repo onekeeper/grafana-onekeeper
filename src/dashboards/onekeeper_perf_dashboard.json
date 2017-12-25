@@ -232,7 +232,7 @@
           "decimals": 2,
           "editable": true,
           "error": false,
-          "format": "none",
+          "format": "short",
           "gauge": {
             "maxValue": 100,
             "minValue": 0,
@@ -1473,5 +1473,5 @@
   },
   "timezone": "browser",
   "title": "Onekeeper 性能视图",
-  "version": 2
+  "version": 3
 }
