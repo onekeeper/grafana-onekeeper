@@ -68,6 +68,12 @@
       "name": "Tomcat 应用性能视图",
       "path": "dashboards/tomcat_perf_dashboard.json",
       "addToNav": false
+    },
+    {
+      "type": "dashboard",
+      "name": "ActiveMQ 应用性能视图",
+      "path": "dashboards/activemq_perf_dashboard.json",
+      "addToNav": false
     }
   ],
 
