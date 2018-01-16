@@ -74,6 +74,12 @@
       "name": "ActiveMQ 应用性能视图",
       "path": "dashboards/activemq_perf_dashboard.json",
       "addToNav": false
+    },
+    {
+      "type": "dashboard",
+      "name": "WebLogic 应用性能视图",
+      "path": "dashboards/weblogic_perf_dashboard.json",
+      "addToNav": false
     }
   ],
 
