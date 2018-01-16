@@ -229,7 +229,7 @@
             "rgba(50, 172, 45, 0.97)"
           ],
           "datasource": "$datasource",
-          "decimals": 2,
+          "decimals": null,
           "editable": true,
           "error": false,
           "format": "short",
@@ -321,7 +321,7 @@
     },
     {
       "collapse": false,
-      "height": "300px",
+      "height": 229,
       "panels": [
         {
           "cacheTimeout": null,
@@ -370,7 +370,7 @@
               "to": "null"
             }
           ],
-          "span": 3,
+          "span": 2,
           "sparkline": {
             "fillColor": "rgba(31, 118, 189, 0.18)",
             "full": false,
@@ -460,7 +460,7 @@
               "to": "null"
             }
           ],
-          "span": 3,
+          "span": 2,
           "sparkline": {
             "fillColor": "rgba(31, 118, 189, 0.18)",
             "full": false,
@@ -491,7 +491,187 @@
             }
           ],
           "thresholds": "80,90",
-          "title": "采集进程使用率",
+          "title": "通用采集进程使用率",
+          "type": "singlestat",
+          "valueFontSize": "80%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            }
+          ],
+          "valueName": "current"
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": false,
+          "colors": [
+            "rgba(50, 172, 45, 0.97)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(245, 54, 54, 0.9)"
+          ],
+          "datasource": "$datasource",
+          "decimals": 2,
+          "format": "percent",
+          "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": true,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "id": 16,
+          "interval": null,
+          "links": [],
+          "mappingType": 1,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "maxDataPoints": 100,
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "null",
+              "text": "N/A",
+              "to": "null"
+            }
+          ],
+          "span": 2,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": false
+          },
+          "tableColumn": "",
+          "targets": [
+            {
+              "application": {
+                "filter": "Performance"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "$host"
+              },
+              "item": {
+                "filter": "Busy java poller processes in %"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "A"
+            }
+          ],
+          "thresholds": "80,90",
+          "title": "JAVA采集进程使用率",
+          "type": "singlestat",
+          "valueFontSize": "80%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            }
+          ],
+          "valueName": "current"
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": false,
+          "colors": [
+            "rgba(50, 172, 45, 0.97)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(245, 54, 54, 0.9)"
+          ],
+          "datasource": "$datasource",
+          "decimals": 2,
+          "format": "percent",
+          "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": true,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "id": 17,
+          "interval": null,
+          "links": [],
+          "mappingType": 1,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "maxDataPoints": 100,
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "null",
+              "text": "N/A",
+              "to": "null"
+            }
+          ],
+          "span": 2,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": false
+          },
+          "tableColumn": "",
+          "targets": [
+            {
+              "application": {
+                "filter": "Performance"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "$host"
+              },
+              "item": {
+                "filter": "Busy alert manager processes in %"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "A"
+            }
+          ],
+          "thresholds": "80,90",
+          "title": "告警进程使用率",
           "type": "singlestat",
           "valueFontSize": "80%",
           "valueMaps": [
@@ -550,7 +730,7 @@
               "to": "null"
             }
           ],
-          "span": 3,
+          "span": 2,
           "sparkline": {
             "fillColor": "rgba(31, 118, 189, 0.18)",
             "full": false,
@@ -640,7 +820,7 @@
               "to": "null"
             }
           ],
-          "span": 3,
+          "span": 2,
           "sparkline": {
             "fillColor": "rgba(31, 118, 189, 0.18)",
             "full": false,
@@ -773,7 +953,7 @@
           "tooltip": {
             "msResolution": false,
             "shared": true,
-            "sort": 0,
+            "sort": 2,
             "value_type": "individual"
           },
           "type": "graph",
@@ -1124,7 +1304,7 @@
           "tooltip": {
             "msResolution": false,
             "shared": true,
-            "sort": 0,
+            "sort": 2,
             "value_type": "cumulative"
           },
           "type": "graph",
@@ -1473,5 +1653,5 @@
   },
   "timezone": "browser",
   "title": "Onekeeper 性能视图",
-  "version": 3
+  "version": 4
 }
