@@ -80,6 +80,12 @@
       "name": "WebLogic 应用性能视图",
       "path": "dashboards/weblogic_perf_dashboard.json",
       "addToNav": false
+    },
+    {
+      "type": "dashboard",
+      "name": "MySQL 数据库性能视图",
+      "path": "dashboards/mysql_perf_dashboard.json",
+      "addToNav": false
     }
   ],
 
