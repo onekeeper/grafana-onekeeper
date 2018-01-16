@@ -191,6 +191,96 @@
             "thresholdLabels": false,
             "thresholdMarkers": true
           },
+          "id": 14,
+          "interval": null,
+          "links": [],
+          "mappingType": 1,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "maxDataPoints": 100,
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "null",
+              "text": "N/A",
+              "to": "null"
+            }
+          ],
+          "span": 2,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": true
+          },
+          "tableColumn": "",
+          "targets": [
+            {
+              "application": {
+                "filter": "JVM CPU"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "$host"
+              },
+              "item": {
+                "filter": "Process CPU usage in %"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "A"
+            }
+          ],
+          "thresholds": "",
+          "title": "CPU 使用率",
+          "type": "singlestat",
+          "valueFontSize": "80%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            }
+          ],
+          "valueName": "current"
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": true,
+          "colorValue": false,
+          "colors": [
+            "rgba(5, 145, 179, 0.97)",
+            "rgba(5, 145, 179, 0.97)",
+            "rgba(5, 145, 179, 0.97)"
+          ],
+          "datasource": "$datasource",
+          "decimals": 2,
+          "format": "percent",
+          "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
           "id": 18,
           "interval": null,
           "links": [],
@@ -463,7 +553,7 @@
             "rgba(5, 145, 179, 0.97)"
           ],
           "datasource": "$datasource",
-          "decimals": 2,
+          "decimals": null,
           "format": "short",
           "gauge": {
             "maxValue": 100,
@@ -532,116 +622,6 @@
           ],
           "thresholds": "",
           "title": "线程数",
-          "type": "singlestat",
-          "valueFontSize": "80%",
-          "valueMaps": [
-            {
-              "op": "=",
-              "text": "N/A",
-              "value": "null"
-            }
-          ],
-          "valueName": "current"
-        },
-        {
-          "cacheTimeout": null,
-          "colorBackground": true,
-          "colorValue": false,
-          "colors": [
-            "rgba(5, 145, 179, 0.97)",
-            "rgba(5, 145, 179, 0.97)",
-            "rgba(5, 145, 179, 0.97)"
-          ],
-          "datasource": "$datasource",
-          "decimals": 2,
-          "format": "short",
-          "gauge": {
-            "maxValue": 100,
-            "minValue": 0,
-            "show": false,
-            "thresholdLabels": false,
-            "thresholdMarkers": true
-          },
-          "id": 14,
-          "interval": null,
-          "links": [],
-          "mappingType": 1,
-          "mappingTypes": [
-            {
-              "name": "value to text",
-              "value": 1
-            },
-            {
-              "name": "range to text",
-              "value": 2
-            }
-          ],
-          "maxDataPoints": 100,
-          "nullPointMode": "connected",
-          "nullText": null,
-          "postfix": "",
-          "postfixFontSize": "50%",
-          "prefix": "",
-          "prefixFontSize": "50%",
-          "rangeMaps": [
-            {
-              "from": "null",
-              "text": "N/A",
-              "to": "null"
-            }
-          ],
-          "span": 2,
-          "sparkline": {
-            "fillColor": "rgba(31, 118, 189, 0.18)",
-            "full": false,
-            "lineColor": "rgb(31, 120, 193)",
-            "show": true
-          },
-          "tableColumn": "",
-          "targets": [
-            {
-              "application": {
-                "filter": "JVM Class"
-              },
-              "functions": [
-                {
-                  "def": {
-                    "category": "Aggregate",
-                    "defaultParams": [
-                      "1m"
-                    ],
-                    "name": "sum",
-                    "params": [
-                      {
-                        "name": "interval",
-                        "type": "string"
-                      }
-                    ]
-                  },
-                  "params": [
-                    "1m"
-                  ],
-                  "text": "sum(1m)"
-                }
-              ],
-              "group": {
-                "filter": "$group"
-              },
-              "host": {
-                "filter": "$host"
-              },
-              "item": {
-                "filter": "Loaded class count"
-              },
-              "mode": 0,
-              "options": {
-                "showDisabledItems": false
-              },
-              "refId": "A"
-            }
-          ],
-          "thresholds": "",
-          "title": "加载对象数",
           "type": "singlestat",
           "valueFontSize": "80%",
           "valueMaps": [
@@ -1361,5 +1341,5 @@
   },
   "timezone": "",
   "title": "Tomcat 应用性能视图",
-  "version": 1
+  "version": 2
 }
