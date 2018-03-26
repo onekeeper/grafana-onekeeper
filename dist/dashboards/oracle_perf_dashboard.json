@@ -72,6 +72,7 @@
             "thresholdLabels": false,
             "thresholdMarkers": true
           },
+          "hideTimeOverride": true,
           "id": 20,
           "interval": null,
           "links": [],
@@ -131,6 +132,7 @@
             }
           ],
           "thresholds": "0.5,0.5",
+          "timeFrom": "1m",
           "title": "监听",
           "type": "singlestat",
           "valueFontSize": "50%",
@@ -172,6 +174,7 @@
             "thresholdLabels": false,
             "thresholdMarkers": true
           },
+          "hideTimeOverride": true,
           "id": 2,
           "interval": null,
           "links": [],
@@ -231,6 +234,7 @@
             }
           ],
           "thresholds": "0.5,0.5",
+          "timeFrom": "1m",
           "title": "实例",
           "type": "singlestat",
           "valueFontSize": "50%",
@@ -272,6 +276,7 @@
             "thresholdLabels": false,
             "thresholdMarkers": true
           },
+          "hideTimeOverride": true,
           "id": 21,
           "interval": null,
           "links": [],
@@ -331,6 +336,7 @@
             }
           ],
           "thresholds": "0.66,1.33",
+          "timeFrom": "1m",
           "title": "表空间",
           "type": "singlestat",
           "valueFontSize": "50%",
