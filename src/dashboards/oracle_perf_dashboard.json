@@ -3,6 +3,18 @@
   "__requires": [
     {
       "type": "panel",
+      "id": "grafana-flow-panel",
+      "name": "Flow Chart",
+      "version": ""
+    },
+    {
+      "type": "panel",
+      "id": "grafana-progress-panel",
+      "name": "Progress Chart",
+      "version": ""
+    },
+    {
+      "type": "panel",
       "id": "graph",
       "name": "Graph",
       "version": ""
@@ -17,6 +29,12 @@
       "type": "panel",
       "id": "singlestat",
       "name": "Singlestat",
+      "version": ""
+    },
+    {
+      "type": "panel",
+      "id": "table",
+      "name": "Table",
       "version": ""
     }
   ],
@@ -33,22 +51,122 @@
   "rows": [
     {
       "collapse": false,
-      "height": 137,
+      "height": 93,
       "panels": [
         {
           "cacheTimeout": null,
           "colorBackground": true,
           "colorValue": false,
           "colors": [
-            "rgba(245, 54, 54, 0.9)",
+            "rgba(50, 172, 45, 0.97)",
             "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
+            "rgba(245, 54, 54, 0.9)"
           ],
           "datasource": "$datasource",
-          "decimals": null,
+          "decimals": 0,
           "format": "none",
           "gauge": {
-            "maxValue": 100,
+            "maxValue": 1,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "id": 20,
+          "interval": null,
+          "links": [],
+          "mappingType": 1,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "maxDataPoints": "",
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "null",
+              "text": "N/A",
+              "to": "null"
+            }
+          ],
+          "span": 1,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": false
+          },
+          "tableColumn": "",
+          "targets": [
+            {
+              "application": {
+                "filter": "Listener"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "$host"
+              },
+              "item": {
+                "filter": "Status of listener"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "A"
+            }
+          ],
+          "thresholds": "0.5,0.5",
+          "title": "监听",
+          "type": "singlestat",
+          "valueFontSize": "50%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            },
+            {
+              "op": "=",
+              "text": "异常",
+              "value": "1"
+            },
+            {
+              "op": "=",
+              "text": "正常",
+              "value": "0"
+            }
+          ],
+          "valueName": "current"
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": true,
+          "colorValue": false,
+          "colors": [
+            "rgba(50, 172, 45, 0.97)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(245, 54, 54, 0.9)"
+          ],
+          "datasource": "$datasource",
+          "decimals": 0,
+          "format": "none",
+          "gauge": {
+            "maxValue": 1,
             "minValue": 0,
             "show": false,
             "thresholdLabels": false,
@@ -68,7 +186,7 @@
               "value": 2
             }
           ],
-          "maxDataPoints": 100,
+          "maxDataPoints": "",
           "nullPointMode": "connected",
           "nullText": null,
           "postfix": "",
@@ -82,7 +200,7 @@
               "to": "null"
             }
           ],
-          "span": 2,
+          "span": 1,
           "sparkline": {
             "fillColor": "rgba(31, 118, 189, 0.18)",
             "full": false,
@@ -112,10 +230,10 @@
               "refId": "A"
             }
           ],
-          "thresholds": "0,1",
-          "title": "运行状态",
+          "thresholds": "0.5,0.5",
+          "title": "实例",
           "type": "singlestat",
-          "valueFontSize": "80%",
+          "valueFontSize": "50%",
           "valueMaps": [
             {
               "op": "=",
@@ -124,12 +242,12 @@
             },
             {
               "op": "=",
-              "text": "在线",
+              "text": "异常",
               "value": "1"
             },
             {
               "op": "=",
-              "text": "离线",
+              "text": "正常",
               "value": "0"
             }
           ],
@@ -140,21 +258,21 @@
           "colorBackground": true,
           "colorValue": false,
           "colors": [
-            "rgba(5, 145, 179, 0.97)",
-            "rgba(5, 145, 179, 0.97)",
-            "rgba(5, 145, 179, 0.97)"
+            "rgba(50, 172, 45, 0.97)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(245, 54, 54, 0.9)"
           ],
           "datasource": "$datasource",
-          "decimals": 2,
-          "format": "short",
+          "decimals": 0,
+          "format": "none",
           "gauge": {
-            "maxValue": 100,
+            "maxValue": 2,
             "minValue": 0,
             "show": false,
             "thresholdLabels": false,
             "thresholdMarkers": true
           },
-          "id": 18,
+          "id": 21,
           "interval": null,
           "links": [],
           "mappingType": 1,
@@ -168,7 +286,7 @@
               "value": 2
             }
           ],
-          "maxDataPoints": 100,
+          "maxDataPoints": "",
           "nullPointMode": "connected",
           "nullText": null,
           "postfix": "",
@@ -182,18 +300,18 @@
               "to": "null"
             }
           ],
-          "span": 2,
+          "span": 1,
           "sparkline": {
             "fillColor": "rgba(31, 118, 189, 0.18)",
             "full": false,
             "lineColor": "rgb(31, 120, 193)",
-            "show": true
+            "show": false
           },
           "tableColumn": "",
           "targets": [
             {
               "application": {
-                "filter": "Performance"
+                "filter": "Instance"
               },
               "functions": [],
               "group": {
@@ -203,7 +321,7 @@
                 "filter": "$host"
               },
               "item": {
-                "filter": "Active sessions"
+                "filter": "Status of instance"
               },
               "mode": 0,
               "options": {
@@ -212,15 +330,30 @@
               "refId": "A"
             }
           ],
-          "thresholds": "",
-          "title": "活动会话",
+          "thresholds": "0.66,1.33",
+          "title": "表空间",
           "type": "singlestat",
-          "valueFontSize": "80%",
+          "valueFontSize": "50%",
           "valueMaps": [
             {
               "op": "=",
               "text": "N/A",
               "value": "null"
+            },
+            {
+              "op": "=",
+              "text": "正常",
+              "value": "0"
+            },
+            {
+              "op": "=",
+              "text": "警告",
+              "value": "1"
+            },
+            {
+              "op": "=",
+              "text": "异常",
+              "value": "2"
             }
           ],
           "valueName": "current"
@@ -230,13 +363,13 @@
           "colorBackground": true,
           "colorValue": false,
           "colors": [
-            "rgba(5, 145, 179, 0.97)",
-            "rgba(5, 145, 179, 0.97)",
-            "rgba(5, 145, 179, 0.97)"
+            "rgba(94, 177, 228, 0.97)",
+            "rgba(94, 177, 228, 0.97)",
+            "rgba(94, 177, 228, 0.97)"
           ],
           "datasource": "$datasource",
           "decimals": 2,
-          "format": "ops",
+          "format": "µs",
           "gauge": {
             "maxValue": 100,
             "minValue": 0,
@@ -258,7 +391,7 @@
               "value": 2
             }
           ],
-          "maxDataPoints": 100,
+          "maxDataPoints": "",
           "nullPointMode": "connected",
           "nullText": null,
           "postfix": "",
@@ -293,7 +426,7 @@
                 "filter": "$host"
               },
               "item": {
-                "filter": "User commits"
+                "filter": "Logical reads response  time"
               },
               "mode": 0,
               "options": {
@@ -303,9 +436,9 @@
             }
           ],
           "thresholds": "",
-          "title": "事务数",
+          "title": "逻辑读时间",
           "type": "singlestat",
-          "valueFontSize": "80%",
+          "valueFontSize": "50%",
           "valueMaps": [
             {
               "op": "=",
@@ -320,9 +453,9 @@
           "colorBackground": true,
           "colorValue": false,
           "colors": [
-            "rgba(5, 145, 179, 0.97)",
-            "rgba(5, 145, 179, 0.97)",
-            "rgba(5, 145, 179, 0.97)"
+            "rgba(94, 177, 228, 0.97)",
+            "rgba(94, 177, 228, 0.97)",
+            "rgba(94, 177, 228, 0.97)"
           ],
           "datasource": "$datasource",
           "decimals": 2,
@@ -348,7 +481,7 @@
               "value": 2
             }
           ],
-          "maxDataPoints": 100,
+          "maxDataPoints": "",
           "nullPointMode": "connected",
           "nullText": null,
           "postfix": "",
@@ -383,7 +516,7 @@
                 "filter": "$host"
               },
               "item": {
-                "filter": "Hard parse"
+                "filter": "Logical reads per second"
               },
               "mode": 0,
               "options": {
@@ -393,9 +526,9 @@
             }
           ],
           "thresholds": "",
-          "title": "硬解析",
+          "title": "逻辑读次数",
           "type": "singlestat",
-          "valueFontSize": "80%",
+          "valueFontSize": "50%",
           "valueMaps": [
             {
               "op": "=",
@@ -410,13 +543,193 @@
           "colorBackground": true,
           "colorValue": false,
           "colors": [
-            "rgba(5, 145, 179, 0.97)",
-            "rgba(5, 145, 179, 0.97)",
-            "rgba(5, 145, 179, 0.97)"
+            "rgba(94, 177, 228, 0.97)",
+            "rgba(94, 177, 228, 0.97)",
+            "rgba(94, 177, 228, 0.97)"
           ],
           "datasource": "$datasource",
-          "decimals": 2,
-          "format": "Bps",
+          "decimals": null,
+          "format": "short",
+          "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "id": 18,
+          "interval": null,
+          "links": [],
+          "mappingType": 1,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "maxDataPoints": "",
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "null",
+              "text": "N/A",
+              "to": "null"
+            }
+          ],
+          "span": 1,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": true
+          },
+          "tableColumn": "",
+          "targets": [
+            {
+              "application": {
+                "filter": "Instance"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "$host"
+              },
+              "item": {
+                "filter": "Number of alerts (5min)"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "A"
+            }
+          ],
+          "thresholds": "",
+          "title": "5分钟错误",
+          "type": "singlestat",
+          "valueFontSize": "50%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            }
+          ],
+          "valueName": "current"
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": true,
+          "colorValue": false,
+          "colors": [
+            "rgba(94, 177, 228, 0.97)",
+            "rgba(94, 177, 228, 0.97)",
+            "rgba(94, 177, 228, 0.97)"
+          ],
+          "datasource": "$datasource",
+          "decimals": null,
+          "format": "short",
+          "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "id": 22,
+          "interval": null,
+          "links": [],
+          "mappingType": 1,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "maxDataPoints": "",
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "null",
+              "text": "N/A",
+              "to": "null"
+            }
+          ],
+          "span": 1,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": true
+          },
+          "tableColumn": "",
+          "targets": [
+            {
+              "application": {
+                "filter": "Instance"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "$host"
+              },
+              "item": {
+                "filter": "Number of alerts (5min)"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "A"
+            }
+          ],
+          "thresholds": "",
+          "title": "24小时错误",
+          "type": "singlestat",
+          "valueFontSize": "50%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            }
+          ],
+          "valueName": "current"
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": true,
+          "colorValue": false,
+          "colors": [
+            "rgba(94, 177, 228, 0.97)",
+            "rgba(94, 177, 228, 0.97)",
+            "rgba(94, 177, 228, 0.97)"
+          ],
+          "datasource": "$datasource",
+          "decimals": null,
+          "format": "short",
           "gauge": {
             "maxValue": 100,
             "minValue": 0,
@@ -438,7 +751,7 @@
               "value": 2
             }
           ],
-          "maxDataPoints": 100,
+          "maxDataPoints": "",
           "nullPointMode": "connected",
           "nullText": null,
           "postfix": "",
@@ -452,7 +765,7 @@
               "to": "null"
             }
           ],
-          "span": 2,
+          "span": 1,
           "sparkline": {
             "fillColor": "rgba(31, 118, 189, 0.18)",
             "full": false,
@@ -463,7 +776,7 @@
           "targets": [
             {
               "application": {
-                "filter": "Performance"
+                "filter": "Change"
               },
               "functions": [],
               "group": {
@@ -473,7 +786,7 @@
                 "filter": "$host"
               },
               "item": {
-                "filter": "Redo size"
+                "filter": "Total changes (5min)"
               },
               "mode": 0,
               "options": {
@@ -483,9 +796,9 @@
             }
           ],
           "thresholds": "",
-          "title": "Redo 量",
+          "title": "5分钟变更",
           "type": "singlestat",
-          "valueFontSize": "80%",
+          "valueFontSize": "50%",
           "valueMaps": [
             {
               "op": "=",
@@ -500,12 +813,12 @@
           "colorBackground": true,
           "colorValue": false,
           "colors": [
-            "rgba(5, 145, 179, 0.97)",
-            "rgba(5, 145, 179, 0.97)",
-            "rgba(5, 145, 179, 0.97)"
+            "rgba(94, 177, 228, 0.97)",
+            "rgba(94, 177, 228, 0.97)",
+            "rgba(94, 177, 228, 0.97)"
           ],
           "datasource": "$datasource",
-          "decimals": 2,
+          "decimals": null,
           "format": "short",
           "gauge": {
             "maxValue": 100,
@@ -514,7 +827,7 @@
             "thresholdLabels": false,
             "thresholdMarkers": true
           },
-          "id": 15,
+          "id": 23,
           "interval": null,
           "links": [],
           "mappingType": 1,
@@ -528,7 +841,7 @@
               "value": 2
             }
           ],
-          "maxDataPoints": 100,
+          "maxDataPoints": "",
           "nullPointMode": "connected",
           "nullText": null,
           "postfix": "",
@@ -542,7 +855,7 @@
               "to": "null"
             }
           ],
-          "span": 2,
+          "span": 1,
           "sparkline": {
             "fillColor": "rgba(31, 118, 189, 0.18)",
             "full": false,
@@ -553,7 +866,7 @@
           "targets": [
             {
               "application": {
-                "filter": "Performance"
+                "filter": "Change"
               },
               "functions": [],
               "group": {
@@ -563,7 +876,7 @@
                 "filter": "$host"
               },
               "item": {
-                "filter": "Undo steal blocks"
+                "filter": "Total changes (24h)"
               },
               "mode": 0,
               "options": {
@@ -573,9 +886,9 @@
             }
           ],
           "thresholds": "",
-          "title": "Undo 紧张程度",
+          "title": "24 小时变更",
           "type": "singlestat",
-          "valueFontSize": "80%",
+          "valueFontSize": "50%",
           "valueMaps": [
             {
               "op": "=",
@@ -584,39 +897,28 @@
             }
           ],
           "valueName": "current"
-        }
-      ],
-      "repeat": null,
-      "repeatIteration": null,
-      "repeatRowId": null,
-      "showTitle": false,
-      "title": "Dashboard Row",
-      "titleSize": "h6"
-    },
-    {
-      "collapse": false,
-      "height": 248,
-      "panels": [
+        },
         {
           "cacheTimeout": null,
-          "colorBackground": false,
-          "colorValue": true,
+          "colorBackground": true,
+          "colorValue": false,
           "colors": [
-            "rgba(245, 54, 54, 0.9)",
+            "rgba(50, 172, 45, 0.97)",
             "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
+            "rgba(245, 54, 54, 0.9)"
           ],
           "datasource": "$datasource",
-          "decimals": 2,
-          "format": "percent",
+          "decimals": null,
+          "format": "none",
           "gauge": {
-            "maxValue": 100,
+            "maxValue": 2,
             "minValue": 0,
-            "show": true,
+            "show": false,
             "thresholdLabels": false,
             "thresholdMarkers": true
           },
-          "id": 17,
+          "hideTimeOverride": true,
+          "id": 24,
           "interval": null,
           "links": [],
           "mappingType": 1,
@@ -630,7 +932,7 @@
               "value": 2
             }
           ],
-          "maxDataPoints": 100,
+          "maxDataPoints": "",
           "nullPointMode": "connected",
           "nullText": null,
           "postfix": "",
@@ -644,7 +946,7 @@
               "to": "null"
             }
           ],
-          "span": 2,
+          "span": 1,
           "sparkline": {
             "fillColor": "rgba(31, 118, 189, 0.18)",
             "full": false,
@@ -665,7 +967,7 @@
                 "filter": "$host"
               },
               "item": {
-                "filter": "Free space of all data tablespaces in %"
+                "filter": "Status of daliy backup"
               },
               "mode": 0,
               "options": {
@@ -674,22 +976,50 @@
               "refId": "A"
             }
           ],
-          "thresholds": "10,20",
-          "title": "可用空间",
+          "thresholds": "0.66,1.33",
+          "timeFrom": "48h",
+          "title": "备份",
           "type": "singlestat",
-          "valueFontSize": "80%",
+          "valueFontSize": "50%",
           "valueMaps": [
             {
               "op": "=",
               "text": "N/A",
               "value": "null"
+            },
+            {
+              "op": "=",
+              "text": "警告",
+              "value": "1"
+            },
+            {
+              "op": "=",
+              "text": "正常",
+              "value": "0"
+            },
+            {
+              "op": "=",
+              "text": "异常",
+              "value": "2"
             }
           ],
-          "valueName": "avg"
-        },
+          "valueName": "current"
+        }
+      ],
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": false,
+      "title": "Dashboard Row",
+      "titleSize": "h6"
+    },
+    {
+      "collapse": false,
+      "height": 146,
+      "panels": [
         {
           "aliasColors": {},
-          "bars": true,
+          "bars": false,
           "dashLength": 10,
           "dashes": false,
           "datasource": "$datasource",
@@ -705,7 +1035,7 @@
             "total": false,
             "values": false
           },
-          "lines": false,
+          "lines": true,
           "linewidth": 1,
           "links": [],
           "maxDataPoints": "",
@@ -716,18 +1046,22 @@
           "renderer": "flot",
           "seriesOverrides": [
             {
-              "alias": "Total parse",
-              "transform": "negative-Y"
+              "alias": "Average connection time",
+              "yaxis": 1
+            },
+            {
+              "alias": "Connections per second",
+              "yaxis": 2
             }
           ],
           "spaceLength": 10,
-          "span": 5,
+          "span": 3,
           "stack": false,
-          "steppedLine": false,
+          "steppedLine": true,
           "targets": [
             {
               "application": {
-                "filter": "Performance"
+                "filter": "Connection"
               },
               "functions": [],
               "group": {
@@ -737,7 +1071,7 @@
                 "filter": "$host"
               },
               "item": {
-                "filter": "Execute count"
+                "filter": "Average connection time"
               },
               "mode": 0,
               "options": {
@@ -747,7 +1081,7 @@
             },
             {
               "application": {
-                "filter": "Performance"
+                "filter": "Connection"
               },
               "functions": [],
               "group": {
@@ -757,7 +1091,7 @@
                 "filter": "$host"
               },
               "item": {
-                "filter": "Total parse"
+                "filter": "Connections per second"
               },
               "mode": 0,
               "options": {
@@ -769,7 +1103,7 @@
           "thresholds": [],
           "timeFrom": null,
           "timeShift": null,
-          "title": "SQL 执行次数",
+          "title": "数据库登录",
           "tooltip": {
             "shared": true,
             "sort": 0,
@@ -781,11 +1115,13 @@
             "mode": "time",
             "name": null,
             "show": true,
-            "values": []
+            "values": [
+              "total"
+            ]
           },
           "yaxes": [
             {
-              "format": "ops",
+              "format": "µs",
               "label": null,
               "logBase": 1,
               "max": null,
@@ -793,8 +1129,8 @@
               "show": true
             },
             {
-              "format": "short",
-              "label": null,
+              "format": "ops",
+              "label": "",
               "logBase": 1,
               "max": null,
               "min": null,
@@ -803,45 +1139,26 @@
           ]
         },
         {
-          "aliasColors": {},
-          "bars": false,
-          "dashLength": 10,
-          "dashes": false,
           "datasource": "$datasource",
-          "decimals": 2,
-          "fill": 3,
-          "id": 7,
-          "legend": {
-            "avg": false,
-            "current": false,
-            "max": false,
-            "min": false,
-            "show": false,
-            "total": false,
-            "values": false
+          "forward": {
+            "format": "ops",
+            "label": "Latch gets",
+            "show": true,
+            "unit": "ops"
           },
-          "lines": true,
-          "linewidth": 1,
+          "id": 25,
           "links": [],
-          "nullPointMode": "null",
-          "percentage": false,
-          "pointradius": 5,
-          "points": false,
-          "renderer": "flot",
-          "seriesOverrides": [
-            {
-              "alias": "DB block changes",
-              "transform": "negative-Y"
-            }
-          ],
-          "spaceLength": 10,
-          "span": 5,
-          "stack": false,
-          "steppedLine": false,
+          "opposite": {
+            "format": "µs",
+            "label": "Latch gets",
+            "show": true,
+            "unit": "us"
+          },
+          "span": 1,
           "targets": [
             {
               "application": {
-                "filter": "Performance"
+                "filter": "SQL Parse"
               },
               "functions": [],
               "group": {
@@ -851,7 +1168,7 @@
                 "filter": "$host"
               },
               "item": {
-                "filter": "Consistent gets"
+                "filter": "Latch gets per second"
               },
               "mode": 0,
               "options": {
@@ -861,7 +1178,7 @@
             },
             {
               "application": {
-                "filter": "Performance"
+                "filter": "SQL Parse"
               },
               "functions": [],
               "group": {
@@ -871,7 +1188,7 @@
                 "filter": "$host"
               },
               "item": {
-                "filter": "DB block changes"
+                "filter": "Latch gets time"
               },
               "mode": 0,
               "options": {
@@ -880,41 +1197,499 @@
               "refId": "B"
             }
           ],
-          "thresholds": [],
-          "timeFrom": null,
-          "timeShift": null,
-          "title": "读写请求数",
-          "tooltip": {
-            "shared": true,
-            "sort": 0,
-            "value_type": "individual"
-          },
-          "type": "graph",
-          "xaxis": {
-            "buckets": null,
-            "mode": "time",
-            "name": null,
-            "show": true,
-            "values": []
-          },
-          "yaxes": [
+          "title": "",
+          "transparent": true,
+          "type": "grafana-flow-panel"
+        },
+        {
+          "barsArr": [
             {
-              "format": "iops",
-              "label": null,
-              "logBase": 1,
-              "max": null,
-              "min": null,
-              "show": true
+              "format": "decbytes",
+              "label": "Library cache",
+              "unit": "B"
             },
             {
-              "format": "short",
-              "label": null,
-              "logBase": 1,
-              "max": null,
-              "min": null,
-              "show": true
+              "format": "decbytes",
+              "label": "Row cache",
+              "unit": "B"
+            },
+            {
+              "format": "decbytes",
+              "label": "Free",
+              "unit": "B"
             }
-          ]
+          ],
+          "colorArr": [
+            "#5eb1e4",
+            "#4888e0",
+            "#2adf6e"
+          ],
+          "datasource": "$datasource",
+          "id": 26,
+          "links": [],
+          "progressArr": [
+            {
+              "format": "percent",
+              "label": "Shared pool hits",
+              "type": "solid",
+              "unit": "%"
+            },
+            {
+              "format": "decbytes",
+              "label": "Shared pool size",
+              "type": "solid",
+              "unit": "B"
+            }
+          ],
+          "span": 2,
+          "targets": [
+            {
+              "application": {
+                "filter": "Shared Pool"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "$host"
+              },
+              "item": {
+                "filter": "Shared pool hit ratio"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "A"
+            },
+            {
+              "application": {
+                "filter": "Shared Pool"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "$host"
+              },
+              "item": {
+                "filter": "Shared pool size"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "B"
+            },
+            {
+              "application": {
+                "filter": "Shared Pool"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "$host"
+              },
+              "item": {
+                "filter": "Library cache size"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "C"
+            },
+            {
+              "application": {
+                "filter": "Shared Pool"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "$host"
+              },
+              "item": {
+                "filter": "Row cache size"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "D"
+            },
+            {
+              "application": {
+                "filter": "Shared Pool"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "$host"
+              },
+              "item": {
+                "filter": "Shared pool free size"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "E"
+            }
+          ],
+          "title": "Parse",
+          "type": "grafana-progress-panel"
+        },
+        {
+          "datasource": "$datasource",
+          "forward": {
+            "format": "ops",
+            "label": "Executions",
+            "show": true,
+            "unit": "ops"
+          },
+          "id": 27,
+          "links": [],
+          "opposite": {
+            "format": "µs",
+            "label": "Executions",
+            "show": true,
+            "unit": "us"
+          },
+          "span": 1,
+          "targets": [
+            {
+              "application": {
+                "filter": "SQL Execution"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "$host"
+              },
+              "item": {
+                "filter": "Executions per second"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "A"
+            },
+            {
+              "application": {
+                "filter": "SQL Execution"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "$host"
+              },
+              "item": {
+                "filter": "Average execution time"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "B"
+            }
+          ],
+          "title": "",
+          "transparent": true,
+          "type": "grafana-flow-panel"
+        },
+        {
+          "barsArr": [
+            {
+              "format": "decbytes",
+              "label": "Default pool",
+              "unit": "B"
+            },
+            {
+              "format": "decbytes",
+              "label": "Keep pool",
+              "unit": "B"
+            },
+            {
+              "format": "decbytes",
+              "label": "Recycle pool",
+              "unit": "B"
+            }
+          ],
+          "colorArr": [
+            "#5eb1e4",
+            "#4888e0",
+            "#2adf6e"
+          ],
+          "datasource": "$datasource",
+          "id": 28,
+          "links": [],
+          "progressArr": [
+            {
+              "format": "percent",
+              "label": "Buffer cache hits",
+              "type": "solid",
+              "unit": "%"
+            },
+            {
+              "format": "decbytes",
+              "label": "Buffer cache size",
+              "type": "solid",
+              "unit": "B"
+            }
+          ],
+          "span": 2,
+          "targets": [
+            {
+              "application": {
+                "filter": "Buffer Cache"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "$host"
+              },
+              "item": {
+                "filter": "Buffer cache hit ratio"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "A"
+            },
+            {
+              "application": {
+                "filter": "Buffer Cache"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "$host"
+              },
+              "item": {
+                "filter": "Buffer cache size"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "B"
+            },
+            {
+              "application": {
+                "filter": "Buffer Cache"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "$host"
+              },
+              "item": {
+                "filter": "Default pool size"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "C"
+            },
+            {
+              "application": {
+                "filter": "Buffer Cache"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "$host"
+              },
+              "item": {
+                "filter": "Keep pool size"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "D"
+            },
+            {
+              "application": {
+                "filter": "Buffer Cache"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "$host"
+              },
+              "item": {
+                "filter": "Recycle pool size"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "E"
+            }
+          ],
+          "title": "Execute",
+          "type": "grafana-progress-panel"
+        },
+        {
+          "datasource": "$datasource",
+          "forward": {
+            "format": "Bps",
+            "label": "流量",
+            "show": true,
+            "unit": "Bps"
+          },
+          "id": 29,
+          "links": [],
+          "opposite": {
+            "format": "ops",
+            "label": "Commits",
+            "show": true,
+            "unit": "ops"
+          },
+          "span": 1,
+          "targets": [
+            {
+              "application": {
+                "filter": "SQL Commit"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "$host"
+              },
+              "item": {
+                "filter": "SQL*Net throughput"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "A"
+            },
+            {
+              "application": {
+                "filter": "SQL Commit"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "$host"
+              },
+              "item": {
+                "filter": "Commits per second"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "B"
+            }
+          ],
+          "title": "",
+          "transparent": true,
+          "type": "grafana-flow-panel"
+        },
+        {
+          "barsArr": [],
+          "colorArr": [
+            "#5eb1e4",
+            "#4888e0",
+            "#2adf6e"
+          ],
+          "datasource": "$datasource",
+          "id": 30,
+          "links": [],
+          "progressArr": [
+            {
+              "format": "decbytes",
+              "label": "Log buffer size",
+              "percent": "100%",
+              "type": "solid",
+              "unit": "B",
+              "value": 6995968,
+              "valueShow": "7.00 MB"
+            },
+            {
+              "label": "Log buffer waits",
+              "type": "solid",
+              "unit": ""
+            }
+          ],
+          "span": 2,
+          "targets": [
+            {
+              "application": {
+                "filter": "SQL Commit"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "$host"
+              },
+              "item": {
+                "filter": "Log buffer size"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "A"
+            },
+            {
+              "application": {
+                "filter": "SQL Commit"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "$host"
+              },
+              "item": {
+                "filter": "Log buffer space waits"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "B"
+            }
+          ],
+          "title": "Commit",
+          "type": "grafana-progress-panel"
         }
       ],
       "repeat": null,
@@ -926,7 +1701,7 @@
     },
     {
       "collapse": false,
-      "height": 284,
+      "height": 152,
       "panels": [
         {
           "aliasColors": {},
@@ -957,18 +1732,19 @@
           "renderer": "flot",
           "seriesOverrides": [
             {
-              "alias": "Bytes sent via SQL*Net to client",
-              "transform": "negative-Y"
+              "alias": "Active session limit",
+              "color": "#BF1B00",
+              "fill": 0
             }
           ],
           "spaceLength": 10,
           "span": 3,
           "stack": false,
-          "steppedLine": false,
+          "steppedLine": true,
           "targets": [
             {
               "application": {
-                "filter": "Performance"
+                "filter": "Connection"
               },
               "functions": [],
               "group": {
@@ -978,7 +1754,7 @@
                 "filter": "$host"
               },
               "item": {
-                "filter": "Bytes received via SQL*Net from client"
+                "filter": "Total Session"
               },
               "mode": 0,
               "options": {
@@ -988,7 +1764,7 @@
             },
             {
               "application": {
-                "filter": "Performance"
+                "filter": "Connection"
               },
               "functions": [],
               "group": {
@@ -998,19 +1774,39 @@
                 "filter": "$host"
               },
               "item": {
-                "filter": "Bytes sent via SQL*Net to client"
+                "filter": "Active session"
               },
               "mode": 0,
               "options": {
                 "showDisabledItems": false
               },
               "refId": "B"
+            },
+            {
+              "application": {
+                "filter": "Connection"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "$host"
+              },
+              "item": {
+                "filter": "Active session limit"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "C"
             }
           ],
           "thresholds": [],
           "timeFrom": null,
           "timeShift": null,
-          "title": "客户端网络流量",
+          "title": "数据库会话",
           "tooltip": {
             "shared": true,
             "sort": 0,
@@ -1026,7 +1822,7 @@
           },
           "yaxes": [
             {
-              "format": "Bps",
+              "format": "short",
               "label": null,
               "logBase": 1,
               "max": null,
@@ -1044,15 +1840,79 @@
           ]
         },
         {
+          "datasource": "$datasource",
+          "forward": {
+            "format": "ops",
+            "label": "Parses",
+            "show": true,
+            "unit": "ops"
+          },
+          "id": 31,
+          "links": [],
+          "opposite": {
+            "format": "µs",
+            "label": "Parses",
+            "show": true,
+            "unit": "us"
+          },
+          "span": 1,
+          "targets": [
+            {
+              "application": {
+                "filter": "SQL Parse"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "$host"
+              },
+              "item": {
+                "filter": "Total parse per second"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "A"
+            },
+            {
+              "application": {
+                "filter": "SQL Parse"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "$host"
+              },
+              "item": {
+                "filter": "Average parse time"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "B"
+            }
+          ],
+          "title": "",
+          "transparent": true,
+          "type": "grafana-flow-panel"
+        },
+        {
           "aliasColors": {},
           "bars": false,
           "dashLength": 10,
           "dashes": false,
           "datasource": "$datasource",
           "decimals": 2,
-          "fill": 0,
-          "id": 8,
+          "fill": 1,
+          "id": 32,
           "legend": {
+            "alignAsTable": false,
             "avg": false,
             "current": false,
             "max": false,
@@ -1062,18 +1922,160 @@
             "values": false
           },
           "lines": true,
-          "linewidth": 2,
+          "linewidth": 1,
           "links": [],
           "nullPointMode": "null",
           "percentage": false,
-          "pointradius": 1,
+          "pointradius": 5,
           "points": false,
           "renderer": "flot",
           "seriesOverrides": [],
           "spaceLength": 10,
-          "span": 3,
+          "span": 2,
           "stack": false,
           "steppedLine": false,
+          "targets": [
+            {
+              "application": {
+                "filter": "SQL Parse"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "$host"
+              },
+              "item": {
+                "filter": "Average parse time"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "A"
+            },
+            {
+              "application": {
+                "filter": "SQL Parse"
+              },
+              "functions": [
+                {
+                  "added": false,
+                  "def": {
+                    "category": "Transform",
+                    "defaultParams": [
+                      0.2
+                    ],
+                    "name": "exponentialMovingAverage",
+                    "params": [
+                      {
+                        "name": "smoothing",
+                        "options": [
+                          6,
+                          10,
+                          60,
+                          100,
+                          600
+                        ],
+                        "type": "float"
+                      }
+                    ]
+                  },
+                  "params": [
+                    "10"
+                  ],
+                  "text": "exponentialMovingAverage(10)"
+                },
+                {
+                  "added": false,
+                  "def": {
+                    "category": "Alias",
+                    "defaultParams": [],
+                    "name": "setAlias",
+                    "params": [
+                      {
+                        "name": "alias",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "params": [
+                    "Exp Moving Window"
+                  ],
+                  "text": "setAlias(Exp Moving Window)"
+                }
+              ],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "$host"
+              },
+              "item": {
+                "filter": "Average parse time"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "B"
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "µs",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "ops",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": false
+            }
+          ]
+        },
+        {
+          "datasource": "$datasource",
+          "forward": {
+            "format": "ops",
+            "label": "Logical reads",
+            "show": true,
+            "unit": "ops",
+            "value": "18 ops"
+          },
+          "id": 33,
+          "links": [],
+          "opposite": {
+            "format": "µs",
+            "label": "Logical reads",
+            "show": true,
+            "unit": "us"
+          },
+          "span": 1,
           "targets": [
             {
               "application": {
@@ -1087,7 +2089,7 @@
                 "filter": "$host"
               },
               "item": {
-                "filter": "DB file parallel write"
+                "filter": "Logical reads per second"
               },
               "mode": 0,
               "options": {
@@ -1107,17 +2109,55 @@
                 "filter": "$host"
               },
               "item": {
-                "filter": "DB file scattered read"
+                "filter": "Logical reads response  time"
               },
               "mode": 0,
               "options": {
                 "showDisabledItems": false
               },
               "refId": "B"
-            },
+            }
+          ],
+          "title": "",
+          "transparent": true,
+          "type": "grafana-flow-panel"
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "$datasource",
+          "decimals": 2,
+          "fill": 1,
+          "id": 34,
+          "legend": {
+            "alignAsTable": false,
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "span": 2,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
             {
               "application": {
-                "filter": "Performance"
+                "filter": "SQL Execution"
               },
               "functions": [],
               "group": {
@@ -1127,7 +2167,600 @@
                 "filter": "$host"
               },
               "item": {
-                "filter": "DB file sequential read"
+                "filter": "Average execution time"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "A"
+            },
+            {
+              "application": {
+                "filter": "SQL Execution"
+              },
+              "functions": [
+                {
+                  "added": false,
+                  "def": {
+                    "category": "Transform",
+                    "defaultParams": [
+                      0.2
+                    ],
+                    "name": "exponentialMovingAverage",
+                    "params": [
+                      {
+                        "name": "smoothing",
+                        "options": [
+                          6,
+                          10,
+                          60,
+                          100,
+                          600
+                        ],
+                        "type": "float"
+                      }
+                    ]
+                  },
+                  "params": [
+                    "10"
+                  ],
+                  "text": "exponentialMovingAverage(10)"
+                },
+                {
+                  "added": false,
+                  "def": {
+                    "category": "Alias",
+                    "defaultParams": [],
+                    "name": "setAlias",
+                    "params": [
+                      {
+                        "name": "alias",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "params": [
+                    "Exp Moving Window"
+                  ],
+                  "text": "setAlias(Exp Moving Window)"
+                }
+              ],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "$host"
+              },
+              "item": {
+                "filter": "Average execution time"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "B"
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "µs",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "ops",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": false
+            }
+          ]
+        },
+        {
+          "datasource": "$datasource",
+          "forward": {
+            "format": "µs",
+            "label": "Commits",
+            "show": true,
+            "unit": "us"
+          },
+          "id": 35,
+          "links": [],
+          "opposite": {
+            "format": "Bps",
+            "label": "Redo",
+            "show": true,
+            "unit": "Bps"
+          },
+          "span": 1,
+          "targets": [
+            {
+              "application": {
+                "filter": "SQL Commit"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "$host"
+              },
+              "item": {
+                "filter": "Average commit time"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "A"
+            },
+            {
+              "application": {
+                "filter": "SQL Commit"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "$host"
+              },
+              "item": {
+                "filter": "Redo size per second"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "B"
+            }
+          ],
+          "title": "",
+          "transparent": true,
+          "type": "grafana-flow-panel"
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "$datasource",
+          "decimals": 2,
+          "fill": 1,
+          "id": 36,
+          "legend": {
+            "alignAsTable": false,
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "span": 2,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "application": {
+                "filter": "SQL Commit"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "$host"
+              },
+              "item": {
+                "filter": "Average commit time"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "A"
+            },
+            {
+              "application": {
+                "filter": "SQL Commit"
+              },
+              "functions": [
+                {
+                  "added": false,
+                  "def": {
+                    "category": "Transform",
+                    "defaultParams": [
+                      0.2
+                    ],
+                    "name": "exponentialMovingAverage",
+                    "params": [
+                      {
+                        "name": "smoothing",
+                        "options": [
+                          6,
+                          10,
+                          60,
+                          100,
+                          600
+                        ],
+                        "type": "float"
+                      }
+                    ]
+                  },
+                  "params": [
+                    "10"
+                  ],
+                  "text": "exponentialMovingAverage(10)"
+                },
+                {
+                  "added": false,
+                  "def": {
+                    "category": "Alias",
+                    "defaultParams": [],
+                    "name": "setAlias",
+                    "params": [
+                      {
+                        "name": "alias",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "params": [
+                    "Exp Moving Window"
+                  ],
+                  "text": "setAlias(Exp Moving Window)"
+                }
+              ],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "$host"
+              },
+              "item": {
+                "filter": "Average commit time"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "B"
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "µs",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "ops",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": false
+            }
+          ]
+        }
+      ],
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": false,
+      "title": "Dashboard Row",
+      "titleSize": "h6"
+    },
+    {
+      "collapse": false,
+      "height": 174,
+      "panels": [
+        {
+          "columns": [
+            {
+              "text": "Current",
+              "value": "current"
+            }
+          ],
+          "datasource": "$datasource",
+          "fontSize": "100%",
+          "id": 37,
+          "links": [],
+          "pageSize": null,
+          "scroll": true,
+          "showHeader": true,
+          "sort": {
+            "col": 1,
+            "desc": true
+          },
+          "span": 3,
+          "styles": [
+            {
+              "alias": "Time",
+              "dateFormat": "YYYY-MM-DD HH:mm:ss",
+              "pattern": "Time",
+              "type": "date"
+            },
+            {
+              "alias": "资源",
+              "colorMode": null,
+              "colors": [
+                "rgba(245, 54, 54, 0.9)",
+                "rgba(237, 129, 40, 0.89)",
+                "rgba(50, 172, 45, 0.97)"
+              ],
+              "dateFormat": "YYYY-MM-DD HH:mm:ss",
+              "decimals": 2,
+              "pattern": "Metric",
+              "thresholds": [],
+              "type": "number",
+              "unit": "short"
+            },
+            {
+              "alias": "使用率",
+              "colorMode": "value",
+              "colors": [
+                "rgba(50, 172, 45, 0.97)",
+                "rgba(237, 129, 40, 0.89)",
+                "rgba(245, 54, 54, 0.9)"
+              ],
+              "dateFormat": "YYYY-MM-DD HH:mm:ss",
+              "decimals": 0,
+              "pattern": "Current",
+              "thresholds": [
+                "85",
+                "90"
+              ],
+              "type": "number",
+              "unit": "percent"
+            },
+            {
+              "alias": "",
+              "colorMode": null,
+              "colors": [
+                "rgba(245, 54, 54, 0.9)",
+                "rgba(237, 129, 40, 0.89)",
+                "rgba(50, 172, 45, 0.97)"
+              ],
+              "decimals": 2,
+              "pattern": "/.*/",
+              "thresholds": [],
+              "type": "number",
+              "unit": "short"
+            }
+          ],
+          "targets": [
+            {
+              "application": {
+                "filter": "Resource"
+              },
+              "functions": [
+                {
+                  "added": false,
+                  "def": {
+                    "category": "Alias",
+                    "defaultParams": [
+                      "/(.*)/",
+                      "$1"
+                    ],
+                    "name": "replaceAlias",
+                    "params": [
+                      {
+                        "name": "regexp",
+                        "type": "string"
+                      },
+                      {
+                        "name": "newAlias",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "params": [
+                    "/(.*) used in %/",
+                    "$1"
+                  ],
+                  "text": "replaceAlias(/(.*) used in %/, $1)"
+                }
+              ],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "$host"
+              },
+              "item": {
+                "filter": "/(.*) %/"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "A"
+            }
+          ],
+          "title": "",
+          "transform": "timeseries_aggregations",
+          "type": "table"
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "$datasource",
+          "decimals": 2,
+          "fill": 1,
+          "id": 38,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "max": true,
+            "min": true,
+            "rightSide": false,
+            "show": false,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "maxDataPoints": "",
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [
+            {
+              "alias": "Cursor: mutex S time",
+              "color": "#0A50A1",
+              "fill": 0,
+              "yaxis": 1
+            },
+            {
+              "alias": "Cursor: pin S wait on X time",
+              "color": "#70DBED",
+              "fill": 0,
+              "yaxis": 1
+            },
+            {
+              "alias": "Library cache: mutex X time",
+              "color": "#508642",
+              "fill": 0,
+              "yaxis": 1
+            },
+            {
+              "alias": "Cursor: mutex S waits",
+              "color": "#0A50A1",
+              "fill": 5,
+              "yaxis": 2
+            },
+            {
+              "alias": "Cursor: pin S wait on X waits",
+              "color": "#65C5DB",
+              "fill": 5,
+              "yaxis": 2
+            },
+            {
+              "alias": "Library cache: mutex X waits",
+              "color": "#508642",
+              "fill": 5,
+              "yaxis": 2
+            }
+          ],
+          "spaceLength": 10,
+          "span": 3,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "application": {
+                "filter": "Mutex"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "$host"
+              },
+              "item": {
+                "filter": "Cursor: mutex S time"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "A"
+            },
+            {
+              "application": {
+                "filter": "Mutex"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "$host"
+              },
+              "item": {
+                "filter": "Cursor: mutex S waits"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "B"
+            },
+            {
+              "application": {
+                "filter": "Mutex"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "$host"
+              },
+              "item": {
+                "filter": "Cursor: pin S wait on X time"
               },
               "mode": 0,
               "options": {
@@ -1137,7 +2770,7 @@
             },
             {
               "application": {
-                "filter": "Performance"
+                "filter": "Mutex"
               },
               "functions": [],
               "group": {
@@ -1147,7 +2780,7 @@
                 "filter": "$host"
               },
               "item": {
-                "filter": "Direct path read"
+                "filter": "Cursor: pin S wait on X waits"
               },
               "mode": 0,
               "options": {
@@ -1157,7 +2790,7 @@
             },
             {
               "application": {
-                "filter": "Performance"
+                "filter": "Mutex"
               },
               "functions": [],
               "group": {
@@ -1167,19 +2800,39 @@
                 "filter": "$host"
               },
               "item": {
-                "filter": "Direct path write"
+                "filter": "Library cache: mutex X time"
               },
               "mode": 0,
               "options": {
                 "showDisabledItems": false
               },
               "refId": "E"
+            },
+            {
+              "application": {
+                "filter": "Mutex"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "$host"
+              },
+              "item": {
+                "filter": "Library cache: mutex X waits"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "F"
             }
           ],
           "thresholds": [],
           "timeFrom": null,
           "timeShift": null,
-          "title": "IO 延时",
+          "title": "Mutex",
           "tooltip": {
             "shared": true,
             "sort": 0,
@@ -1195,7 +2848,7 @@
           },
           "yaxes": [
             {
-              "format": "ms",
+              "format": "µs",
               "label": null,
               "logBase": 1,
               "max": null,
@@ -1220,7 +2873,7 @@
           "datasource": "$datasource",
           "decimals": 2,
           "fill": 1,
-          "id": 11,
+          "id": 39,
           "legend": {
             "avg": false,
             "current": false,
@@ -1233,12 +2886,50 @@
           "lines": true,
           "linewidth": 1,
           "links": [],
+          "maxDataPoints": "",
           "nullPointMode": "null",
           "percentage": false,
           "pointradius": 5,
           "points": false,
           "renderer": "flot",
-          "seriesOverrides": [],
+          "seriesOverrides": [
+            {
+              "alias": "Latch: shared pool time",
+              "color": "#0A50A1",
+              "fill": 0,
+              "yaxis": 1
+            },
+            {
+              "alias": "Latch: cache buffers chains time",
+              "color": "#70DBED",
+              "fill": 0,
+              "yaxis": 1
+            },
+            {
+              "alias": "Latch: row cache objects time",
+              "color": "#508642",
+              "fill": 0,
+              "yaxis": 1
+            },
+            {
+              "alias": "Latch: shared pool waits",
+              "color": "#0A50A1",
+              "fill": 5,
+              "yaxis": 2
+            },
+            {
+              "alias": "Latch: cache buffers chains waits",
+              "color": "#65C5DB",
+              "fill": 5,
+              "yaxis": 2
+            },
+            {
+              "alias": "Latch: row cache objects waits",
+              "color": "#508642",
+              "fill": 5,
+              "yaxis": 2
+            }
+          ],
           "spaceLength": 10,
           "span": 3,
           "stack": false,
@@ -1246,7 +2937,7 @@
           "targets": [
             {
               "application": {
-                "filter": "Performance"
+                "filter": "Latch"
               },
               "functions": [],
               "group": {
@@ -1256,7 +2947,7 @@
                 "filter": "$host"
               },
               "item": {
-                "filter": "Log file parallel write"
+                "filter": "Latch: shared pool time"
               },
               "mode": 0,
               "options": {
@@ -1266,7 +2957,7 @@
             },
             {
               "application": {
-                "filter": "Performance"
+                "filter": "Latch"
               },
               "functions": [],
               "group": {
@@ -1276,19 +2967,99 @@
                 "filter": "$host"
               },
               "item": {
-                "filter": "Log file sync"
+                "filter": "Latch: shared pool waits"
               },
               "mode": 0,
               "options": {
                 "showDisabledItems": false
               },
               "refId": "B"
+            },
+            {
+              "application": {
+                "filter": "Latch"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "$host"
+              },
+              "item": {
+                "filter": "Latch: cache buffers chains time"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "C"
+            },
+            {
+              "application": {
+                "filter": "Latch"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "$host"
+              },
+              "item": {
+                "filter": "Latch: cache buffers chains waits"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "D"
+            },
+            {
+              "application": {
+                "filter": "Latch"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "$host"
+              },
+              "item": {
+                "filter": "Latch: row cache objects time"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "E"
+            },
+            {
+              "application": {
+                "filter": "Latch"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "$host"
+              },
+              "item": {
+                "filter": "Latch: row cache objects waits"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "F"
             }
           ],
           "thresholds": [],
           "timeFrom": null,
           "timeShift": null,
-          "title": "Redo IO 延时",
+          "title": "Latch",
           "tooltip": {
             "shared": true,
             "sort": 0,
@@ -1304,7 +3075,7 @@
           },
           "yaxes": [
             {
-              "format": "ms",
+              "format": "µs",
               "label": null,
               "logBase": 1,
               "max": null,
@@ -1329,7 +3100,7 @@
           "datasource": "$datasource",
           "decimals": 2,
           "fill": 1,
-          "id": 9,
+          "id": 40,
           "legend": {
             "avg": false,
             "current": false,
@@ -1342,12 +3113,50 @@
           "lines": true,
           "linewidth": 1,
           "links": [],
+          "maxDataPoints": "",
           "nullPointMode": "null",
           "percentage": false,
           "pointradius": 5,
           "points": false,
           "renderer": "flot",
-          "seriesOverrides": [],
+          "seriesOverrides": [
+            {
+              "alias": "Enq: TM - contention time",
+              "color": "#0A50A1",
+              "fill": 0,
+              "yaxis": 1
+            },
+            {
+              "alias": "Enq: TX - index contention time",
+              "color": "#70DBED",
+              "fill": 0,
+              "yaxis": 1
+            },
+            {
+              "alias": "Library cache: mutex X time",
+              "color": "#508642",
+              "fill": 0,
+              "yaxis": 1
+            },
+            {
+              "alias": "Enq: TX - index contention waits",
+              "color": "#0A50A1",
+              "fill": 5,
+              "yaxis": 2
+            },
+            {
+              "alias": "Enq: TX - row lock contention time",
+              "color": "#65C5DB",
+              "fill": 5,
+              "yaxis": 2
+            },
+            {
+              "alias": "Enq: TX - row lock contention waits",
+              "color": "#508642",
+              "fill": 5,
+              "yaxis": 2
+            }
+          ],
           "spaceLength": 10,
           "span": 3,
           "stack": false,
@@ -1355,7 +3164,7 @@
           "targets": [
             {
               "application": {
-                "filter": "Performance"
+                "filter": "Lock"
               },
               "functions": [],
               "group": {
@@ -1365,7 +3174,7 @@
                 "filter": "$host"
               },
               "item": {
-                "filter": "Enq TM count"
+                "filter": "Enq: TM - contention time"
               },
               "mode": 0,
               "options": {
@@ -1375,7 +3184,7 @@
             },
             {
               "application": {
-                "filter": "Performance"
+                "filter": "Lock"
               },
               "functions": [],
               "group": {
@@ -1385,19 +3194,99 @@
                 "filter": "$host"
               },
               "item": {
-                "filter": "Enq TX count"
+                "filter": "Enq: TM - contention waits"
               },
               "mode": 0,
               "options": {
                 "showDisabledItems": false
               },
               "refId": "B"
+            },
+            {
+              "application": {
+                "filter": "Lock"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "$host"
+              },
+              "item": {
+                "filter": "Enq: TX - index contention time"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "C"
+            },
+            {
+              "application": {
+                "filter": "Lock"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "$host"
+              },
+              "item": {
+                "filter": "Enq: TX - index contention waits"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "D"
+            },
+            {
+              "application": {
+                "filter": "Lock"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "$host"
+              },
+              "item": {
+                "filter": "Enq: TX - row lock contention time"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "E"
+            },
+            {
+              "application": {
+                "filter": "Lock"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "$host"
+              },
+              "item": {
+                "filter": "Enq: TX - row lock contention waits"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "F"
             }
           ],
           "thresholds": [],
           "timeFrom": null,
           "timeShift": null,
-          "title": "事务锁",
+          "title": "Lock",
           "tooltip": {
             "shared": true,
             "sort": 0,
@@ -1413,7 +3302,7 @@
           },
           "yaxes": [
             {
-              "format": "short",
+              "format": "µs",
               "label": null,
               "logBase": 1,
               "max": null,
@@ -1448,7 +3337,8 @@
           "datasource": "$datasource",
           "fontSize": "100%",
           "hideHostsInMaintenance": false,
-          "hostField": true,
+          "hostField": false,
+          "hostTechNameField": false,
           "id": 19,
           "infoField": false,
           "lastChangeField": true,
@@ -1595,7 +3485,7 @@
     ]
   },
   "time": {
-    "from": "now-3h",
+    "from": "now-1h",
     "to": "now"
   },
   "timepicker": {
@@ -1625,5 +3515,5 @@
   },
   "timezone": "",
   "title": "Oracle 数据库性能视图",
-  "version": 3
+  "version": 4
 }
