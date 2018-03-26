@@ -908,12 +908,12 @@
           "renderer": "flot",
           "seriesOverrides": [
             {
-              "alias": "/user/",
-              "color": "#1F78C1"
-            },
-            {
               "alias": "/system/",
               "color": "#BF1B00"
+            },
+            {
+              "alias": "/user/",
+              "color": "#1F78C1"
             },
             {
               "alias": "/iowait/",
@@ -937,7 +937,7 @@
                 "filter": "$host"
               },
               "item": {
-                "filter": "/CPU (?!idle)/"
+                "filter": "/CPU (?!idle|load|usage)/"
               },
               "mode": 0,
               "options": {
@@ -1004,7 +1004,7 @@
             "values": false
           },
           "lines": true,
-          "linewidth": 1,
+          "linewidth": 2,
           "links": [],
           "nullPointMode": "null",
           "percentage": false,
@@ -1013,15 +1013,8 @@
           "renderer": "flot",
           "seriesOverrides": [
             {
-              "alias": "Total memory",
-              "color": "#1F78C1",
-              "fill": 0,
-              "linewidth": 2
-            },
-            {
-              "alias": "Available memory",
-              "color": "#629E51",
-              "fill": 3
+              "alias": "Used memory in %",
+              "color": "#E5AC0E"
             }
           ],
           "spaceLength": 10,
@@ -1041,39 +1034,19 @@
                 "filter": "$host"
               },
               "item": {
-                "filter": "Total memory"
+                "filter": "Used memory in %"
               },
               "mode": 0,
               "options": {
                 "showDisabledItems": false
               },
               "refId": "A"
-            },
-            {
-              "application": {
-                "filter": "Memory"
-              },
-              "functions": [],
-              "group": {
-                "filter": "$group"
-              },
-              "host": {
-                "filter": "$host"
-              },
-              "item": {
-                "filter": "Available memory"
-              },
-              "mode": 0,
-              "options": {
-                "showDisabledItems": false
-              },
-              "refId": "B"
             }
           ],
           "thresholds": [],
           "timeFrom": null,
           "timeShift": null,
-          "title": "可用内存",
+          "title": "内存利用率",
           "tooltip": {
             "shared": true,
             "sort": 0,
@@ -1089,7 +1062,7 @@
           },
           "yaxes": [
             {
-              "format": "decbytes",
+              "format": "percent",
               "label": null,
               "logBase": 1,
               "max": null,
@@ -1097,12 +1070,12 @@
               "show": true
             },
             {
-              "format": "short",
+              "format": "decbytes",
               "label": null,
               "logBase": 1,
               "max": null,
               "min": null,
-              "show": true
+              "show": false
             }
           ]
         },
@@ -1125,7 +1098,7 @@
             "values": false
           },
           "lines": true,
-          "linewidth": 1,
+          "linewidth": 2,
           "links": [],
           "nullPointMode": "null",
           "percentage": false,
@@ -1136,11 +1109,7 @@
             {
               "alias": "Used space on file system \"/etc/hostname\" in %",
               "color": "#BA43A9",
-              "fill": 2
-            },
-            {
-              "alias": "Used inodes on file system \"/etc/hostname\" in %",
-              "fill": 3
+              "yaxis": 1
             }
           ],
           "spaceLength": 10,
@@ -1167,26 +1136,6 @@
                 "showDisabledItems": false
               },
               "refId": "A"
-            },
-            {
-              "application": {
-                "filter": "File System"
-              },
-              "functions": [],
-              "group": {
-                "filter": "$group"
-              },
-              "host": {
-                "filter": "$host"
-              },
-              "item": {
-                "filter": "Used inodes on file system \"/etc/hostname\" in %"
-              },
-              "mode": 0,
-              "options": {
-                "showDisabledItems": false
-              },
-              "refId": "B"
             }
           ],
           "thresholds": [],
@@ -1209,7 +1158,7 @@
           "yaxes": [
             {
               "format": "percent",
-              "label": null,
+              "label": "",
               "logBase": 1,
               "max": null,
               "min": null,
@@ -1653,5 +1602,5 @@
   },
   "timezone": "browser",
   "title": "Onekeeper 性能视图",
-  "version": 4
+  "version": 5
 }
