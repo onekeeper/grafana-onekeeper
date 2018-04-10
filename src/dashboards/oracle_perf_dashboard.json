@@ -132,7 +132,7 @@
             }
           ],
           "thresholds": "0.5,0.5",
-          "timeFrom": "1m",
+          "timeFrom": "5m",
           "title": "监听",
           "type": "singlestat",
           "valueFontSize": "50%",
@@ -234,7 +234,7 @@
             }
           ],
           "thresholds": "0.5,0.5",
-          "timeFrom": "1m",
+          "timeFrom": "5m",
           "title": "实例",
           "type": "singlestat",
           "valueFontSize": "50%",
@@ -326,7 +326,7 @@
                 "filter": "$host"
               },
               "item": {
-                "filter": "Status of instance"
+                "filter": "Stats of tablespace space used"
               },
               "mode": 0,
               "options": {
@@ -336,7 +336,8 @@
             }
           ],
           "thresholds": "0.66,1.33",
-          "timeFrom": "1m",
+          "timeFrom": "5m",
+          "timeShift": null,
           "title": "表空间",
           "type": "singlestat",
           "valueFontSize": "50%",
@@ -383,6 +384,7 @@
             "thresholdLabels": false,
             "thresholdMarkers": true
           },
+          "hideTimeOverride": true,
           "id": 16,
           "interval": null,
           "links": [],
@@ -442,6 +444,7 @@
             }
           ],
           "thresholds": "",
+          "timeFrom": "5m",
           "title": "逻辑读时间",
           "type": "singlestat",
           "valueFontSize": "50%",
@@ -473,6 +476,7 @@
             "thresholdLabels": false,
             "thresholdMarkers": true
           },
+          "hideTimeOverride": true,
           "id": 13,
           "interval": null,
           "links": [],
@@ -532,6 +536,7 @@
             }
           ],
           "thresholds": "",
+          "timeFrom": "5m",
           "title": "逻辑读次数",
           "type": "singlestat",
           "valueFontSize": "50%",
@@ -563,6 +568,7 @@
             "thresholdLabels": false,
             "thresholdMarkers": true
           },
+          "hideTimeOverride": true,
           "id": 18,
           "interval": null,
           "links": [],
@@ -622,6 +628,7 @@
             }
           ],
           "thresholds": "",
+          "timeFrom": "5m",
           "title": "5分钟错误",
           "type": "singlestat",
           "valueFontSize": "50%",
@@ -653,6 +660,7 @@
             "thresholdLabels": false,
             "thresholdMarkers": true
           },
+          "hideTimeOverride": true,
           "id": 22,
           "interval": null,
           "links": [],
@@ -702,7 +710,7 @@
                 "filter": "$host"
               },
               "item": {
-                "filter": "Number of alerts (5min)"
+                "filter": "Number of alerts (24h)"
               },
               "mode": 0,
               "options": {
@@ -712,6 +720,7 @@
             }
           ],
           "thresholds": "",
+          "timeFrom": "5m",
           "title": "24小时错误",
           "type": "singlestat",
           "valueFontSize": "50%",
@@ -743,6 +752,7 @@
             "thresholdLabels": false,
             "thresholdMarkers": true
           },
+          "hideTimeOverride": true,
           "id": 14,
           "interval": null,
           "links": [],
@@ -802,6 +812,7 @@
             }
           ],
           "thresholds": "",
+          "timeFrom": "5m",
           "title": "5分钟变更",
           "type": "singlestat",
           "valueFontSize": "50%",
@@ -833,6 +844,7 @@
             "thresholdLabels": false,
             "thresholdMarkers": true
           },
+          "hideTimeOverride": true,
           "id": 23,
           "interval": null,
           "links": [],
@@ -892,6 +904,7 @@
             }
           ],
           "thresholds": "",
+          "timeFrom": "5m",
           "title": "24 小时变更",
           "type": "singlestat",
           "valueFontSize": "50%",
@@ -1152,6 +1165,7 @@
             "show": true,
             "unit": "ops"
           },
+          "hideTimeOverride": true,
           "id": 25,
           "links": [],
           "opposite": {
@@ -1203,6 +1217,7 @@
               "refId": "B"
             }
           ],
+          "timeFrom": "5m",
           "title": "",
           "transparent": true,
           "type": "grafana-flow-panel"
@@ -1231,6 +1246,7 @@
             "#2adf6e"
           ],
           "datasource": "$datasource",
+          "hideTimeOverride": true,
           "id": 26,
           "links": [],
           "progressArr": [
@@ -1350,6 +1366,7 @@
               "refId": "E"
             }
           ],
+          "timeFrom": "5m",
           "title": "Parse",
           "type": "grafana-progress-panel"
         },
@@ -1357,15 +1374,16 @@
           "datasource": "$datasource",
           "forward": {
             "format": "ops",
-            "label": "Executions",
+            "label": "Logical reads",
             "show": true,
             "unit": "ops"
           },
-          "id": 27,
+          "hideTimeOverride": true,
+          "id": 33,
           "links": [],
           "opposite": {
             "format": "µs",
-            "label": "Executions",
+            "label": "Logical reads",
             "show": true,
             "unit": "us"
           },
@@ -1373,7 +1391,7 @@
           "targets": [
             {
               "application": {
-                "filter": "SQL Execution"
+                "filter": "Performance"
               },
               "functions": [],
               "group": {
@@ -1383,7 +1401,7 @@
                 "filter": "$host"
               },
               "item": {
-                "filter": "Executions per second"
+                "filter": "Logical reads per second"
               },
               "mode": 0,
               "options": {
@@ -1393,7 +1411,7 @@
             },
             {
               "application": {
-                "filter": "SQL Execution"
+                "filter": "Performance"
               },
               "functions": [],
               "group": {
@@ -1403,7 +1421,7 @@
                 "filter": "$host"
               },
               "item": {
-                "filter": "Average execution time"
+                "filter": "Logical reads response  time"
               },
               "mode": 0,
               "options": {
@@ -1412,6 +1430,7 @@
               "refId": "B"
             }
           ],
+          "timeFrom": "5m",
           "title": "",
           "transparent": true,
           "type": "grafana-flow-panel"
@@ -1440,6 +1459,7 @@
             "#2adf6e"
           ],
           "datasource": "$datasource",
+          "hideTimeOverride": true,
           "id": 28,
           "links": [],
           "progressArr": [
@@ -1559,6 +1579,7 @@
               "refId": "E"
             }
           ],
+          "timeFrom": "5m",
           "title": "Execute",
           "type": "grafana-progress-panel"
         },
@@ -1570,11 +1591,12 @@
             "show": true,
             "unit": "Bps"
           },
+          "hideTimeOverride": true,
           "id": 29,
           "links": [],
           "opposite": {
-            "format": "ops",
-            "label": "Commits",
+            "format": "Bps",
+            "label": "Redo",
             "show": true,
             "unit": "ops"
           },
@@ -1612,7 +1634,7 @@
                 "filter": "$host"
               },
               "item": {
-                "filter": "Commits per second"
+                "filter": "Redo size per second"
               },
               "mode": 0,
               "options": {
@@ -1621,6 +1643,7 @@
               "refId": "B"
             }
           ],
+          "timeFrom": "5m",
           "title": "",
           "transparent": true,
           "type": "grafana-flow-panel"
@@ -1633,17 +1656,15 @@
             "#2adf6e"
           ],
           "datasource": "$datasource",
+          "hideTimeOverride": true,
           "id": 30,
           "links": [],
           "progressArr": [
             {
               "format": "decbytes",
               "label": "Log buffer size",
-              "percent": "100%",
               "type": "solid",
-              "unit": "B",
-              "value": 6995968,
-              "valueShow": "7.00 MB"
+              "unit": "B"
             },
             {
               "label": "Log buffer waits",
@@ -1694,6 +1715,7 @@
               "refId": "B"
             }
           ],
+          "timeFrom": "5m",
           "title": "Commit",
           "type": "grafana-progress-panel"
         }
@@ -1853,6 +1875,7 @@
             "show": true,
             "unit": "ops"
           },
+          "hideTimeOverride": true,
           "id": 31,
           "links": [],
           "opposite": {
@@ -1904,6 +1927,7 @@
               "refId": "B"
             }
           ],
+          "timeFrom": "5m",
           "title": "",
           "transparent": true,
           "type": "grafana-flow-panel"
@@ -1916,6 +1940,7 @@
           "datasource": "$datasource",
           "decimals": 2,
           "fill": 1,
+          "hideTimeOverride": false,
           "id": 32,
           "legend": {
             "alignAsTable": false,
@@ -1935,7 +1960,13 @@
           "pointradius": 5,
           "points": false,
           "renderer": "flot",
-          "seriesOverrides": [],
+          "seriesOverrides": [
+            {
+              "alias": "Exp Moving Window",
+              "fill": 0,
+              "linewidth": 2
+            }
+          ],
           "spaceLength": 10,
           "span": 2,
           "stack": false,
@@ -1967,7 +1998,6 @@
               },
               "functions": [
                 {
-                  "added": false,
                   "def": {
                     "category": "Transform",
                     "defaultParams": [
@@ -1994,7 +2024,6 @@
                   "text": "exponentialMovingAverage(10)"
                 },
                 {
-                  "added": false,
                   "def": {
                     "category": "Alias",
                     "defaultParams": [],
@@ -2068,16 +2097,16 @@
           "datasource": "$datasource",
           "forward": {
             "format": "ops",
-            "label": "Logical reads",
+            "label": "Executions",
             "show": true,
-            "unit": "ops",
-            "value": "18 ops"
+            "unit": "ops"
           },
-          "id": 33,
+          "hideTimeOverride": true,
+          "id": 27,
           "links": [],
           "opposite": {
             "format": "µs",
-            "label": "Logical reads",
+            "label": "Executions",
             "show": true,
             "unit": "us"
           },
@@ -2085,7 +2114,7 @@
           "targets": [
             {
               "application": {
-                "filter": "Performance"
+                "filter": "SQL Execution"
               },
               "functions": [],
               "group": {
@@ -2095,7 +2124,7 @@
                 "filter": "$host"
               },
               "item": {
-                "filter": "Logical reads per second"
+                "filter": "Executions per second"
               },
               "mode": 0,
               "options": {
@@ -2105,7 +2134,7 @@
             },
             {
               "application": {
-                "filter": "Performance"
+                "filter": "SQL Execution"
               },
               "functions": [],
               "group": {
@@ -2115,7 +2144,7 @@
                 "filter": "$host"
               },
               "item": {
-                "filter": "Logical reads response  time"
+                "filter": "Average execution time"
               },
               "mode": 0,
               "options": {
@@ -2124,6 +2153,7 @@
               "refId": "B"
             }
           ],
+          "timeFrom": "5m",
           "title": "",
           "transparent": true,
           "type": "grafana-flow-panel"
@@ -2155,7 +2185,13 @@
           "pointradius": 5,
           "points": false,
           "renderer": "flot",
-          "seriesOverrides": [],
+          "seriesOverrides": [
+            {
+              "alias": "Exp Moving Window",
+              "fill": 0,
+              "linewidth": 2
+            }
+          ],
           "spaceLength": 10,
           "span": 2,
           "stack": false,
@@ -2187,7 +2223,6 @@
               },
               "functions": [
                 {
-                  "added": false,
                   "def": {
                     "category": "Transform",
                     "defaultParams": [
@@ -2214,7 +2249,6 @@
                   "text": "exponentialMovingAverage(10)"
                 },
                 {
-                  "added": false,
                   "def": {
                     "category": "Alias",
                     "defaultParams": [],
@@ -2287,21 +2321,42 @@
         {
           "datasource": "$datasource",
           "forward": {
-            "format": "µs",
+            "format": "ops",
             "label": "Commits",
             "show": true,
             "unit": "us"
           },
+          "hideTimeOverride": true,
           "id": 35,
           "links": [],
           "opposite": {
-            "format": "Bps",
-            "label": "Redo",
+            "format": "µs",
+            "label": "Commits",
             "show": true,
             "unit": "Bps"
           },
           "span": 1,
           "targets": [
+            {
+              "application": {
+                "filter": "SQL Commit"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "$host"
+              },
+              "item": {
+                "filter": "Commits per second"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "B"
+            },
             {
               "application": {
                 "filter": "SQL Commit"
@@ -2321,28 +2376,9 @@
                 "showDisabledItems": false
               },
               "refId": "A"
-            },
-            {
-              "application": {
-                "filter": "SQL Commit"
-              },
-              "functions": [],
-              "group": {
-                "filter": "$group"
-              },
-              "host": {
-                "filter": "$host"
-              },
-              "item": {
-                "filter": "Redo size per second"
-              },
-              "mode": 0,
-              "options": {
-                "showDisabledItems": false
-              },
-              "refId": "B"
             }
           ],
+          "timeFrom": "5m",
           "title": "",
           "transparent": true,
           "type": "grafana-flow-panel"
@@ -2374,7 +2410,13 @@
           "pointradius": 5,
           "points": false,
           "renderer": "flot",
-          "seriesOverrides": [],
+          "seriesOverrides": [
+            {
+              "alias": "Exp Moving Window",
+              "fill": 0,
+              "linewidth": 2
+            }
+          ],
           "spaceLength": 10,
           "span": 2,
           "stack": false,
@@ -2406,7 +2448,6 @@
               },
               "functions": [
                 {
-                  "added": false,
                   "def": {
                     "category": "Transform",
                     "defaultParams": [
@@ -2433,7 +2474,6 @@
                   "text": "exponentialMovingAverage(10)"
                 },
                 {
-                  "added": false,
                   "def": {
                     "category": "Alias",
                     "defaultParams": [],
@@ -2524,6 +2564,7 @@
           ],
           "datasource": "$datasource",
           "fontSize": "100%",
+          "hideTimeOverride": true,
           "id": 37,
           "links": [],
           "pageSize": null,
@@ -2596,7 +2637,6 @@
               },
               "functions": [
                 {
-                  "added": false,
                   "def": {
                     "category": "Alias",
                     "defaultParams": [
@@ -2638,6 +2678,7 @@
               "refId": "A"
             }
           ],
+          "timeFrom": "5m",
           "title": "",
           "transform": "timeseries_aggregations",
           "type": "table"
@@ -3110,6 +3151,7 @@
           "legend": {
             "avg": false,
             "current": false,
+            "hideEmpty": false,
             "max": false,
             "min": false,
             "show": false,
@@ -3139,19 +3181,19 @@
               "yaxis": 1
             },
             {
-              "alias": "Library cache: mutex X time",
+              "alias": "Enq: TX - row lock contention time",
               "color": "#508642",
               "fill": 0,
               "yaxis": 1
             },
             {
-              "alias": "Enq: TX - index contention waits",
+              "alias": "Enq: TM - contention waits",
               "color": "#0A50A1",
               "fill": 5,
               "yaxis": 2
             },
             {
-              "alias": "Enq: TX - row lock contention time",
+              "alias": "Enq: TX - index contention waits",
               "color": "#65C5DB",
               "fill": 5,
               "yaxis": 2
@@ -3521,5 +3563,5 @@
   },
   "timezone": "",
   "title": "Oracle 数据库性能视图",
-  "version": 4
+  "version": 5
 }
