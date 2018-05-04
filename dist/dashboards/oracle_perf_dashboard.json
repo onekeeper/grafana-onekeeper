@@ -1367,7 +1367,7 @@
             }
           ],
           "timeFrom": "5m",
-          "title": "Parse",
+          "title": "SQL 解析",
           "type": "grafana-progress-panel"
         },
         {
@@ -1580,7 +1580,7 @@
             }
           ],
           "timeFrom": "5m",
-          "title": "Execute",
+          "title": "SQL 执行",
           "type": "grafana-progress-panel"
         },
         {
@@ -1716,7 +1716,7 @@
             }
           ],
           "timeFrom": "5m",
-          "title": "Commit",
+          "title": "SQL 提交",
           "type": "grafana-progress-panel"
         }
       ],
@@ -3563,5 +3563,5 @@
   },
   "timezone": "",
   "title": "Oracle 数据库性能视图",
-  "version": 5
+  "version": 6
 }
