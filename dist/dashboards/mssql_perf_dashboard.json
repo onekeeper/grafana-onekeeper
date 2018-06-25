@@ -83,7 +83,7 @@
             }
           ],
           "repeat": "application",
-          "span": 2.4,
+          "span": 3,
           "sparkline": {
             "fillColor": "rgba(31, 118, 189, 0.18)",
             "full": false,
@@ -197,7 +197,7 @@
             }
           ],
           "repeat": "application",
-          "span": 2.4,
+          "span": 3,
           "sparkline": {
             "fillColor": "rgba(31, 118, 189, 0.18)",
             "full": false,
@@ -301,7 +301,7 @@
             }
           ],
           "repeat": "application",
-          "span": 2.4,
+          "span": 3,
           "sparkline": {
             "fillColor": "rgba(31, 118, 189, 0.18)",
             "full": false,
@@ -405,7 +405,7 @@
             }
           ],
           "spaceLength": 10,
-          "span": 2.4,
+          "span": 3,
           "stack": false,
           "steppedLine": false,
           "targets": [
@@ -555,7 +555,7 @@
             }
           ],
           "spaceLength": 10,
-          "span": 2.4,
+          "span": 3,
           "stack": true,
           "steppedLine": false,
           "targets": [
@@ -690,7 +690,7 @@
             }
           ],
           "spaceLength": 10,
-          "span": 2.4,
+          "span": 3,
           "stack": false,
           "steppedLine": false,
           "targets": [
@@ -785,24 +785,33 @@
       "panels": [
         {
           "ackEventColor": "rgba(0, 0, 0, 0)",
-          "ageField": true,
-          "datasource": "$datasource",
+          "customLastChangeFormat": true,
+          "datasources": [
+            "$datasource"
+          ],
+          "descriptionAtNewLine": false,
+          "descriptionField": false,
           "fontSize": "100%",
-          "hideHostsInMaintenance": false,
+          "highlightBackground": true,
+          "highlightNewEvents": true,
+          "highlightNewerThan": "1h",
           "hostField": true,
+          "hostGroups": true,
+          "hostTechNameField": false,
+          "hostsInMaintenance": true,
           "id": 67,
-          "infoField": false,
-          "lastChangeField": true,
+          "lastChangeFormat": "YYYY-MM-DD hh:mm:ss",
           "limit": 9999,
           "links": [],
           "okEventColor": "rgba(0, 245, 153, 0.45)",
           "pageSize": 10,
-          "scroll": true,
+          "schemaVersion": 4,
           "severityField": false,
           "showEvents": {
             "text": "Problems",
             "value": "1"
           },
+          "showTags": false,
           "showTriggers": "all triggers",
           "sortTriggersBy": {
             "text": "last change",
@@ -810,6 +819,25 @@
           },
           "span": 12,
           "statusField": false,
+          "targets": {
+            "$datasource": {
+              "application": {
+                "filter": ""
+              },
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "$host"
+              },
+              "tags": {
+                "filter": ""
+              },
+              "trigger": {
+                "filter": ""
+              }
+            }
+          },
           "title": "告警信息",
           "triggerSeverity": [
             {
@@ -849,20 +877,6 @@
               "show": true
             }
           ],
-          "triggers": {
-            "application": {
-              "filter": "$application"
-            },
-            "group": {
-              "filter": "$group"
-            },
-            "host": {
-              "filter": "$host"
-            },
-            "trigger": {
-              "filter": ""
-            }
-          },
           "type": "hzmc-onekeeper-triggers-panel"
         }
       ],
@@ -1006,5 +1020,5 @@
   },
   "timezone": "",
   "title": "SQL Server 数据库性能视图",
-  "version": 2
+  "version": 3
 }

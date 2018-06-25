@@ -426,7 +426,16 @@
               "options": {
                 "showDisabledItems": false
               },
-              "refId": "A"
+              "refId": "A",
+              "resultFormat": "time_series",
+              "table": {
+                "skipEmptyValues": false
+              },
+              "triggers": {
+                "acknowledged": 2,
+                "count": true,
+                "minSeverity": 3
+              }
             }
           ],
           "thresholds": "",
@@ -504,14 +513,24 @@
               },
               "functions": [
                 {
+                  "added": false,
                   "def": {
                     "category": "Aggregate",
-                    "defaultParams": [],
-                    "name": "sumSeries",
-                    "params": []
+                    "defaultParams": [
+                      "1m"
+                    ],
+                    "name": "sum",
+                    "params": [
+                      {
+                        "name": "interval",
+                        "type": "string"
+                      }
+                    ]
                   },
-                  "params": [],
-                  "text": "sumSeries()"
+                  "params": [
+                    "1m"
+                  ],
+                  "text": "sum(1m)"
                 }
               ],
               "group": {
@@ -527,7 +546,16 @@
               "options": {
                 "showDisabledItems": false
               },
-              "refId": "A"
+              "refId": "A",
+              "resultFormat": "time_series",
+              "table": {
+                "skipEmptyValues": false
+              },
+              "triggers": {
+                "acknowledged": 2,
+                "count": true,
+                "minSeverity": 3
+              }
             }
           ],
           "thresholds": "",
@@ -1140,24 +1168,33 @@
       "panels": [
         {
           "ackEventColor": "rgba(0, 0, 0, 0)",
-          "ageField": true,
-          "datasource": "$datasource",
+          "customLastChangeFormat": true,
+          "datasources": [
+            "$datasource"
+          ],
+          "descriptionAtNewLine": false,
+          "descriptionField": false,
           "fontSize": "100%",
-          "hideHostsInMaintenance": false,
+          "highlightBackground": true,
+          "highlightNewEvents": true,
+          "highlightNewerThan": "1h",
           "hostField": true,
+          "hostGroups": true,
+          "hostTechNameField": false,
+          "hostsInMaintenance": true,
           "id": 19,
-          "infoField": false,
-          "lastChangeField": true,
+          "lastChangeFormat": "YYYY-MM-DD hh:mm:ss",
           "limit": 9999,
           "links": [],
           "okEventColor": "rgba(0, 245, 153, 0.45)",
           "pageSize": 10,
-          "scroll": true,
+          "schemaVersion": 4,
           "severityField": false,
           "showEvents": {
             "text": "Problems",
             "value": "1"
           },
+          "showTags": false,
           "showTriggers": "all triggers",
           "sortTriggersBy": {
             "text": "last change",
@@ -1165,6 +1202,25 @@
           },
           "span": 12,
           "statusField": false,
+          "targets": {
+            "$datasource": {
+              "application": {
+                "filter": ""
+              },
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "$host"
+              },
+              "tags": {
+                "filter": ""
+              },
+              "trigger": {
+                "filter": ""
+              }
+            }
+          },
           "title": "告警信息",
           "triggerSeverity": [
             {
@@ -1204,20 +1260,6 @@
               "show": true
             }
           ],
-          "triggers": {
-            "application": {
-              "filter": ""
-            },
-            "group": {
-              "filter": "$group"
-            },
-            "host": {
-              "filter": "$host"
-            },
-            "trigger": {
-              "filter": ""
-            }
-          },
           "type": "hzmc-onekeeper-triggers-panel"
         }
       ],
@@ -1341,5 +1383,5 @@
   },
   "timezone": "",
   "title": "Tomcat 应用性能视图",
-  "version": 2
+  "version": 3
 }
