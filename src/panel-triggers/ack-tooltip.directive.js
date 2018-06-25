@@ -1,6 +1,16 @@
 import angular from 'angular';
 import $ from 'jquery';
-import Drop from 'tether-drop';
+
+System.config({
+  paths: {
+    tether: System.getConfig().baseURL + "plugins/hzmc-onekeeper-app/vendor/npm/tether.min.js"
+  }
+});
+
+let Drop;
+System.amdRequire(["plugins/hzmc-onekeeper-app/vendor/npm/drop.min.js"], (drop) => {
+  Drop = drop;
+});
 
 /** @ngInject */
 angular
@@ -101,7 +111,11 @@ angular
 
           function closeDrop() {
             setTimeout(function() {
-              drop.destroy();
+              try {
+                drop.destroy();
+              } catch (err) {
+                console.log('drop.destroy() error: ', err.message);
+              }
             });
           }
 

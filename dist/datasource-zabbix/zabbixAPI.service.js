@@ -135,7 +135,7 @@ System.register(['angular', 'lodash', './utils', './zabbixAPICore.service'], fun
         key: 'getApps',
         value: function getApps(hostids) {
           var params = {
-            output: ['applicationid', 'name'],
+            output: 'extend',
             hostids: hostids
           };
 
@@ -315,7 +315,7 @@ System.register(['angular', 'lodash', './utils', './zabbixAPICore.service'], fun
         key: 'getTriggers',
         value: function getTriggers(groupids, hostids, applicationids, options) {
           var showTriggers = options.showTriggers,
-              hideHostsInMaintenance = options.hideHostsInMaintenance,
+              maintenance = options.maintenance,
               timeFrom = options.timeFrom,
               timeTo = options.timeTo;
 
@@ -335,17 +335,18 @@ System.register(['angular', 'lodash', './utils', './zabbixAPICore.service'], fun
               value: 1
             },
             selectGroups: ['name'],
-            selectHosts: ['name', 'host'],
+            selectHosts: ['name', 'host', 'maintenance_status'],
             selectItems: ['name', 'key_', 'lastvalue'],
-            selectLastEvent: 'extend'
+            selectLastEvent: 'extend',
+            selectTags: 'extend'
           };
 
           if (showTriggers) {
             params.filter.value = showTriggers;
           }
 
-          if (hideHostsInMaintenance) {
-            params.maintenance = false;
+          if (maintenance) {
+            params.maintenance = true;
           }
 
           if (timeFrom || timeTo) {
@@ -413,12 +414,73 @@ System.register(['angular', 'lodash', './utils', './zabbixAPICore.service'], fun
 
           return this.request('trigger.get', params);
         }
+      }, {
+        key: 'getHostAlerts',
+        value: function getHostAlerts(hostids, applicationids, options) {
+          var minSeverity = options.minSeverity,
+              acknowledged = options.acknowledged,
+              count = options.count,
+              timeFrom = options.timeFrom,
+              timeTo = options.timeTo;
+
+          var params = {
+            output: 'extend',
+            hostids: hostids,
+            min_severity: minSeverity,
+            filter: { value: 1 },
+            expandDescription: true,
+            expandData: true,
+            expandComment: true,
+            monitored: true,
+            skipDependent: true,
+            selectLastEvent: 'extend',
+            selectGroups: 'extend',
+            selectHosts: ['host', 'name']
+          };
+
+          if (count && acknowledged !== 0 && acknowledged !== 1) {
+            params.countOutput = true;
+          }
+
+          if (applicationids && applicationids.length) {
+            params.applicationids = applicationids;
+          }
+
+          if (timeFrom || timeTo) {
+            params.lastChangeSince = timeFrom;
+            params.lastChangeTill = timeTo;
+          }
+
+          return this.request('trigger.get', params).then(function (triggers) {
+            if (!count || acknowledged === 0 || acknowledged === 1) {
+              triggers = filterTriggersByAcknowledge(triggers, acknowledged);
+              if (count) {
+                triggers = triggers.length;
+              }
+            }
+            return triggers;
+          });
+        }
       }]);
 
       return ZabbixAPI;
     }();
 
     return ZabbixAPI;
+  }
+
+  function filterTriggersByAcknowledge(triggers, acknowledged) {
+    if (acknowledged === 0) {
+      return _.filter(triggers, function (trigger) {
+        return trigger.lastEvent.acknowledged === "0";
+      });
+    } else if (acknowledged === 1) {
+      return _.filter(triggers, function (trigger) {
+        return trigger.lastEvent.acknowledged === "1";
+      });
+    } else {
+      return triggers;
+    }
   }
 
   function isNotAuthorized(message) {

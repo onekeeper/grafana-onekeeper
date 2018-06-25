@@ -1,6 +1,6 @@
 'use strict';
 
-System.register(['app/plugins/sdk', 'lodash', './constants', './utils', './metricFunctions', './migrations', './add-metric-function.directive', './metric-function-editor.directive', './css/query-editor.css!'], function (_export, _context) {
+System.register(['app/plugins/sdk', 'lodash', './constants', './utils', './metricFunctions', './migrations', './add-metric-function.directive', './metric-function-editor.directive'], function (_export, _context) {
   "use strict";
 
   var QueryCtrl, _, c, utils, metricFunctions, migrations, _createClass, ZabbixQueryController;
@@ -48,7 +48,7 @@ System.register(['app/plugins/sdk', 'lodash', './constants', './utils', './metri
       metricFunctions = _metricFunctions;
     }, function (_migrations) {
       migrations = _migrations;
-    }, function (_addMetricFunctionDirective) {}, function (_metricFunctionEditorDirective) {}, function (_cssQueryEditorCss) {}],
+    }, function (_addMetricFunctionDirective) {}, function (_metricFunctionEditorDirective) {}],
     execute: function () {
       _createClass = function () {
         function defineProperties(target, props) {
@@ -83,15 +83,23 @@ System.register(['app/plugins/sdk', 'lodash', './constants', './utils', './metri
           _this.replaceTemplateVars = _this.datasource.replaceTemplateVars;
           _this.templateSrv = templateSrv;
 
-          _this.editorModes = [{ value: 'num', text: 'Metrics', mode: c.MODE_METRICS }, { value: 'text', text: 'Text', mode: c.MODE_TEXT }, { value: 'itemid', text: 'Item ID', mode: c.MODE_ITEMID }];
+          _this.editorModes = [{ value: 'num', text: 'Metrics', mode: c.MODE_METRICS }, { value: 'text', text: 'Text', mode: c.MODE_TEXT }, { value: 'itservice', text: 'IT Services', mode: c.MODE_ITSERVICE }, { value: 'itemid', text: 'Item ID', mode: c.MODE_ITEMID }, { value: 'triggers', text: 'Triggers', mode: c.MODE_TRIGGERS }];
 
           _this.$scope.editorMode = {
             METRICS: c.MODE_METRICS,
             TEXT: c.MODE_TEXT,
-            ITEMID: c.MODE_ITEMID
+            ITSERVICE: c.MODE_ITSERVICE,
+            ITEMID: c.MODE_ITEMID,
+            TRIGGERS: c.MODE_TRIGGERS
           };
 
           _this.slaPropertyList = [{ name: "Status", property: "status" }, { name: "SLA", property: "sla" }, { name: "OK time", property: "okTime" }, { name: "Problem time", property: "problemTime" }, { name: "Down time", property: "downtimeTime" }];
+
+          _this.ackFilters = [{ text: 'all triggers', value: 2 }, { text: 'unacknowledged', value: 0 }, { text: 'acknowledged', value: 1 }];
+
+          _this.resultFormats = [{ text: 'Time series', value: 'time_series' }, { text: 'Table', value: 'table' }];
+
+          _this.triggerSeverity = c.TRIGGER_SEVERITY;
 
           // Map functions for bs-typeahead
           _this.getGroupNames = _.bind(_this.getMetricNames, _this, 'groupList');
@@ -132,8 +140,17 @@ System.register(['app/plugins/sdk', 'lodash', './constants', './utils', './metri
               'application': { 'filter': "" },
               'item': { 'filter': "" },
               'functions': [],
+              'triggers': {
+                'count': true,
+                'minSeverity': 3,
+                'acknowledged': 2
+              },
               'options': {
-                'showDisabledItems': false
+                'showDisabledItems': false,
+                'skipEmptyValues': false
+              },
+              'table': {
+                'skipEmptyValues': false
               }
             };
             _.defaults(target, targetDefaults);
@@ -143,8 +160,7 @@ System.register(['app/plugins/sdk', 'lodash', './constants', './utils', './metri
               return metricFunctions.createFuncInstance(func.def, func.params);
             });
 
-            if (target.mode === c.MODE_METRICS || target.mode === c.MODE_TEXT) {
-
+            if (target.mode === c.MODE_METRICS || target.mode === c.MODE_TEXT || target.mode === c.MODE_TRIGGERS) {
               this.initFilters();
             } else if (target.mode === c.MODE_ITSERVICE) {
               _.defaults(target, { slaProperty: { name: "SLA", property: "sla" } });
@@ -153,6 +169,7 @@ System.register(['app/plugins/sdk', 'lodash', './constants', './utils', './metri
           };
 
           _this.init();
+          _this.queryOptionsText = _this.renderQueryOptionsText();
           return _this;
         }
 
@@ -354,7 +371,8 @@ System.register(['app/plugins/sdk', 'lodash', './constants', './utils', './metri
           key: 'renderQueryOptionsText',
           value: function renderQueryOptionsText() {
             var optionsMap = {
-              showDisabledItems: "Show disabled items"
+              showDisabledItems: "Show disabled items",
+              skipEmptyValues: "Skip empty values"
             };
             var options = [];
             _.forOwn(this.target.options, function (value, key) {

@@ -28,26 +28,31 @@ class ZabbixAPIDatasource {
     this.basicAuth        = instanceSettings.basicAuth;
     this.withCredentials  = instanceSettings.withCredentials;
 
+    const jsonData = instanceSettings.jsonData || {};
+
     // Zabbix API credentials
-    this.username         = instanceSettings.jsonData.username;
-    this.password         = instanceSettings.jsonData.password;
+    this.username         = jsonData.username;
+    this.password         = jsonData.password;
 
     // Use trends instead history since specified time
-    this.trends           = instanceSettings.jsonData.trends;
-    this.trendsFrom       = instanceSettings.jsonData.trendsFrom || '7d';
-    this.trendsRange      = instanceSettings.jsonData.trendsRange || '4d';
+    this.trends           = jsonData.trends;
+    this.trendsFrom       = jsonData.trendsFrom || '7d';
+    this.trendsRange      = jsonData.trendsRange || '4d';
 
     // Set cache update interval
-    var ttl = instanceSettings.jsonData.cacheTTL || '1h';
+    var ttl = jsonData.cacheTTL || '1h';
     this.cacheTTL = utils.parseInterval(ttl);
 
     // Alerting options
-    this.alertingEnabled = instanceSettings.jsonData.alerting;
-    this.addThresholds = instanceSettings.jsonData.addThresholds;
-    this.alertingMinSeverity = instanceSettings.jsonData.alertingMinSeverity || c.SEV_WARNING;
+    this.alertingEnabled =     jsonData.alerting;
+    this.addThresholds =       jsonData.addThresholds;
+    this.alertingMinSeverity = jsonData.alertingMinSeverity || c.SEV_WARNING;
+
+    // Other options
+    this.disableReadOnlyUsersAck = jsonData.disableReadOnlyUsersAck;
 
     // Direct DB Connection options
-    let dbConnectionOptions = instanceSettings.jsonData.dbConnection || {};
+    let dbConnectionOptions = jsonData.dbConnection || {};
     this.enableDirectDBConnection = dbConnectionOptions.enable;
     this.sqlDatasourceId = dbConnectionOptions.datasourceId;
 
@@ -114,8 +119,7 @@ class ZabbixAPIDatasource {
       let useTrends = this.isUseTrends(timeRange);
 
       // Metrics or Text query mode
-      if (!target.mode || target.mode === c.MODE_METRICS ||
-          target.mode === c.MODE_TEXT || target.mode === c.MODE_ITEMID) {
+      if (!target.mode || target.mode === c.MODE_METRICS || target.mode === c.MODE_TEXT) {
         // Migrate old targets
         target = migrations.migrate(target);
 
@@ -128,12 +132,21 @@ class ZabbixAPIDatasource {
           return this.queryNumericData(target, timeRange, useTrends, options);
         } else if (target.mode === c.MODE_TEXT) {
           return this.queryTextData(target, timeRange);
-        } else if (target.mode === c.MODE_ITEMID) {
-          return this.queryItemIdData(target, timeRange, useTrends, options);
         }
+      } else if (target.mode === c.MODE_ITEMID) {
+        // Item ID mode
+        if (!target.itemids) {
+          return [];
+        }
+        return this.queryItemIdData(target, timeRange, useTrends, options);
       } else if (target.mode === c.MODE_ITSERVICE) {
         // IT services mode
         return this.queryITServiceData(target, timeRange, options);
+      } else if (target.mode === c.MODE_TRIGGERS) {
+        // Triggers mode
+        return this.queryTriggersData(target, timeRange);
+      } else {
+        return [];
       }
     });
 
@@ -195,11 +208,7 @@ class ZabbixAPIDatasource {
 
     return getHistoryPromise
     .then(timeseries => this.applyDataProcessingFunctions(timeseries, target))
-    .then(timeseries => downsampleSeries(timeseries, options))
-    .catch(error => {
-      console.log(error);
-      return [];
-    });
+    .then(timeseries => downsampleSeries(timeseries, options));
   }
 
   getTrendValueType(target) {
@@ -280,7 +289,11 @@ class ZabbixAPIDatasource {
         if (items.length) {
           return this.zabbix.getHistory(items, timeFrom, timeTo)
           .then(history => {
-            return responseHandler.handleText(history, items, target);
+            if (target.resultFormat === 'table') {
+              return responseHandler.handleHistoryAsTable(history, items, target);
+            } else {
+              return responseHandler.handleText(history, items, target);
+            }
           });
         } else {
           return Promise.resolve([]);
@@ -348,6 +361,31 @@ class ZabbixAPIDatasource {
     });
   }
 
+  queryTriggersData(target, timeRange) {
+    let [timeFrom, timeTo] = timeRange;
+    return this.zabbix.getHostsFromTarget(target)
+    .then((results) => {
+      let [hosts, apps] = results;
+      if (hosts.length) {
+        let hostids = _.map(hosts, 'hostid');
+        let appids = _.map(apps, 'applicationid');
+        let options = {
+          minSeverity: target.triggers.minSeverity,
+          acknowledged: target.triggers.acknowledged,
+          count: target.triggers.count,
+          timeFrom: timeFrom,
+          timeTo: timeTo
+        };
+        return this.zabbix.getHostAlerts(hostids, appids, options)
+        .then((triggers) => {
+          return responseHandler.handleTriggersResponse(triggers, timeRange);
+        });
+      } else {
+        return Promise.resolve([]);
+      }
+    });
+  }
+
   /**
    * Test connection to Zabbix API
    * @return {object} Connection status and Zabbix API version
@@ -378,13 +416,13 @@ class ZabbixAPIDatasource {
         return {
           status: "error",
           title: error.message,
-          message: error.data
+          message: error.message
         };
       } else if (error.data && error.data.message) {
         return {
           status: "error",
           title: "Connection failed",
-          message: error.data.message
+          message: "Connection failed: " + error.data.message
         };
       } else {
         return {
@@ -541,6 +579,9 @@ class ZabbixAPIDatasource {
       let items = _.flatten(results);
       let itemids = _.map(items, 'itemid');
 
+      if (itemids.length === 0) {
+        return [];
+      }
       return this.zabbix.getAlerts(itemids);
     })
     .then(triggers => {
@@ -706,7 +747,7 @@ function filterEnabledTargets(targets) {
 }
 
 function getTriggerThreshold(expression) {
-  let thresholdPattern = /.*[<>]([\d\.]+)/;
+  let thresholdPattern = /.*[<>=]{1,2}([\d\.]+)/;
   let finded_thresholds = expression.match(thresholdPattern);
   if (finded_thresholds && finded_thresholds.length >= 2) {
     let threshold = finded_thresholds[1];

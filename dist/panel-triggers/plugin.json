@@ -7,10 +7,6 @@
     "author": {
       "name": "Alexander Zobnin",
       "url": "https://github.com/onekeeper/grafana-onekeeper"
-    },
-    "logos": {
-      "small": "img/icn-table-panel.svg",
-      "large": "img/icn-table-panel.svg"
     }
   }
 }

@@ -149,6 +149,13 @@ System.register(['lodash', 'jquery'], function (_export, _context) {
       });
 
       addFuncDef({
+        name: 'percentil',
+        category: 'Aggregate',
+        params: [{ name: 'interval', type: 'string' }, { name: 'percent', type: 'float', options: [25, 50, 75, 90, 95, 99, 99.9] }],
+        defaultParams: ['1m', 95]
+      });
+
+      addFuncDef({
         name: 'min',
         category: 'Aggregate',
         params: [{ name: 'interval', type: 'string' }],
@@ -197,6 +204,13 @@ System.register(['lodash', 'jquery'], function (_export, _context) {
         category: 'Filter',
         params: [{ name: 'number', type: 'int' }, { name: 'value', type: 'string', options: ['avg', 'min', 'max', 'sum', 'count', 'median'] }],
         defaultParams: [5, 'avg']
+      });
+
+      addFuncDef({
+        name: 'sortSeries',
+        category: 'Filter',
+        params: [{ name: 'direction', type: 'string', options: ['asc', 'desc'] }],
+        defaultParams: ['asc']
       });
 
       // Trends

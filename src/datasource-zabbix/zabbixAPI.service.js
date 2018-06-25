@@ -139,7 +139,7 @@ function ZabbixAPIServiceFactory(alertSrv, zabbixAPICoreService) {
 
     getApps(hostids) {
       var params = {
-        output: ['applicationid', 'name'],
+        output: 'extend',
         hostids: hostids
       };
 
@@ -342,7 +342,7 @@ function ZabbixAPIServiceFactory(alertSrv, zabbixAPICoreService) {
     }
 
     getTriggers(groupids, hostids, applicationids, options) {
-      let {showTriggers, hideHostsInMaintenance, timeFrom, timeTo} = options;
+      let {showTriggers, maintenance, timeFrom, timeTo} = options;
 
       let params = {
         output: 'extend',
@@ -359,17 +359,18 @@ function ZabbixAPIServiceFactory(alertSrv, zabbixAPICoreService) {
           value: 1
         },
         selectGroups: ['name'],
-        selectHosts: ['name', 'host'],
+        selectHosts: ['name', 'host', 'maintenance_status'],
         selectItems: ['name', 'key_', 'lastvalue'],
-        selectLastEvent: 'extend'
+        selectLastEvent: 'extend',
+        selectTags: 'extend'
       };
 
       if (showTriggers) {
         params.filter.value = showTriggers;
       }
 
-      if (hideHostsInMaintenance) {
-        params.maintenance = false;
+      if (maintenance) {
+        params.maintenance = true;
       }
 
       if (timeFrom || timeTo) {
@@ -433,9 +434,61 @@ function ZabbixAPIServiceFactory(alertSrv, zabbixAPICoreService) {
 
       return this.request('trigger.get', params);
     }
+
+    getHostAlerts(hostids, applicationids, options) {
+      let {minSeverity, acknowledged, count, timeFrom, timeTo} = options;
+      let params = {
+        output: 'extend',
+        hostids: hostids,
+        min_severity: minSeverity,
+        filter: { value: 1 },
+        expandDescription: true,
+        expandData: true,
+        expandComment: true,
+        monitored: true,
+        skipDependent: true,
+        selectLastEvent: 'extend',
+        selectGroups: 'extend',
+        selectHosts: ['host', 'name']
+      };
+
+      if (count && acknowledged !== 0 && acknowledged !== 1) {
+        params.countOutput = true;
+      }
+
+      if (applicationids && applicationids.length) {
+        params.applicationids = applicationids;
+      }
+
+      if (timeFrom || timeTo) {
+        params.lastChangeSince = timeFrom;
+        params.lastChangeTill = timeTo;
+      }
+
+      return this.request('trigger.get', params)
+      .then((triggers) => {
+        if (!count || acknowledged === 0 || acknowledged === 1) {
+          triggers = filterTriggersByAcknowledge(triggers, acknowledged);
+          if (count) {
+            triggers = triggers.length;
+          }
+        }
+        return triggers;
+      });
+    }
   }
 
   return ZabbixAPI;
+}
+
+function filterTriggersByAcknowledge(triggers, acknowledged) {
+  if (acknowledged === 0) {
+    return _.filter(triggers, (trigger) => trigger.lastEvent.acknowledged === "0");
+  } else if (acknowledged === 1) {
+    return _.filter(triggers, (trigger) => trigger.lastEvent.acknowledged === "1");
+  } else {
+    return triggers;
+  }
 }
 
 function isNotAuthorized(message) {

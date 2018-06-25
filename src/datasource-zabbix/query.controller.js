@@ -8,8 +8,6 @@ import * as migrations from './migrations';
 import './add-metric-function.directive';
 import './metric-function-editor.directive';
 
-import './css/query-editor.css!';
-
 export class ZabbixQueryController extends QueryCtrl {
 
   // ZabbixQueryCtrl constructor
@@ -24,13 +22,17 @@ export class ZabbixQueryController extends QueryCtrl {
     this.editorModes = [
       {value: 'num',       text: 'Metrics',     mode: c.MODE_METRICS},
       {value: 'text',      text: 'Text',        mode: c.MODE_TEXT},
-      {value: 'itemid',    text: 'Item ID',     mode: c.MODE_ITEMID}
+      {value: 'itservice', text: 'IT Services', mode: c.MODE_ITSERVICE},
+      {value: 'itemid',    text: 'Item ID',     mode: c.MODE_ITEMID},
+      {value: 'triggers',  text: 'Triggers',    mode: c.MODE_TRIGGERS}
     ];
 
     this.$scope.editorMode = {
       METRICS: c.MODE_METRICS,
       TEXT: c.MODE_TEXT,
-      ITEMID: c.MODE_ITEMID
+      ITSERVICE: c.MODE_ITSERVICE,
+      ITEMID: c.MODE_ITEMID,
+      TRIGGERS: c.MODE_TRIGGERS
     };
 
     this.slaPropertyList = [
@@ -40,6 +42,16 @@ export class ZabbixQueryController extends QueryCtrl {
       {name: "Problem time", property: "problemTime"},
       {name: "Down time", property: "downtimeTime"}
     ];
+
+    this.ackFilters = [
+      {text: 'all triggers', value: 2},
+      {text: 'unacknowledged', value: 0},
+      {text: 'acknowledged', value: 1},
+    ];
+
+    this.resultFormats = [{ text: 'Time series', value: 'time_series' }, { text: 'Table', value: 'table' }];
+
+    this.triggerSeverity = c.TRIGGER_SEVERITY;
 
     // Map functions for bs-typeahead
     this.getGroupNames = _.bind(this.getMetricNames, this, 'groupList');
@@ -78,8 +90,17 @@ export class ZabbixQueryController extends QueryCtrl {
         'application': { 'filter': "" },
         'item': { 'filter': "" },
         'functions': [],
+        'triggers': {
+          'count': true,
+          'minSeverity': 3,
+          'acknowledged': 2
+        },
         'options': {
-          'showDisabledItems': false
+          'showDisabledItems': false,
+          'skipEmptyValues': false
+        },
+        'table': {
+          'skipEmptyValues': false
         }
       };
       _.defaults(target, targetDefaults);
@@ -90,8 +111,8 @@ export class ZabbixQueryController extends QueryCtrl {
       });
 
       if (target.mode === c.MODE_METRICS ||
-          target.mode === c.MODE_TEXT) {
-
+          target.mode === c.MODE_TEXT ||
+          target.mode === c.MODE_TRIGGERS) {
         this.initFilters();
       }
       else if (target.mode === c.MODE_ITSERVICE) {
@@ -101,6 +122,7 @@ export class ZabbixQueryController extends QueryCtrl {
     };
 
     this.init();
+    this.queryOptionsText = this.renderQueryOptionsText();
   }
 
   initFilters() {
@@ -280,7 +302,8 @@ export class ZabbixQueryController extends QueryCtrl {
 
   renderQueryOptionsText() {
     var optionsMap = {
-      showDisabledItems: "Show disabled items"
+      showDisabledItems: "Show disabled items",
+      skipEmptyValues: "Skip empty values"
     };
     var options = [];
     _.forOwn(this.target.options, (value, key) => {

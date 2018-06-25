@@ -3,7 +3,7 @@
 System.register(['lodash', './utils', './timeseries'], function (_export, _context) {
   "use strict";
 
-  var _, utils, ts, downsampleSeries, groupBy, groupBy_exported, sumSeries, delta, rate, scale, simpleMovingAverage, expMovingAverage, SUM, COUNT, AVERAGE, MIN, MAX, MEDIAN, metricFunctions, aggregationFunctions;
+  var _, utils, ts, downsampleSeries, groupBy, groupBy_exported, sumSeries, delta, rate, scale, simpleMovingAverage, expMovingAverage, SUM, COUNT, AVERAGE, MIN, MAX, MEDIAN, PERCENTIL, metricFunctions, aggregationFunctions;
 
   function limit(order, n, orderByFunc, timeseries) {
     var orderByCallback = aggregationFunctions[orderByFunc];
@@ -19,6 +19,12 @@ System.register(['lodash', './utils', './timeseries'], function (_export, _conte
     } else {
       return sortedTimeseries.slice(-n);
     }
+  }
+
+  function sortSeries(direction, timeseries) {
+    return _.orderBy(timeseries, [function (ts) {
+      return ts.target.toLowerCase();
+    }], direction);
   }
 
   function setAlias(alias, timeseries) {
@@ -59,12 +65,22 @@ System.register(['lodash', './utils', './timeseries'], function (_export, _conte
   function aggregateByWrapper(interval, aggregateFunc, datapoints) {
     // Flatten all points in frame and then just use groupBy()
     var flattenedPoints = _.flatten(datapoints, true);
+    // groupBy_perf works with sorted series only
+    var sortedPoints = ts.sortByTime(flattenedPoints);
     var groupByCallback = aggregationFunctions[aggregateFunc];
-    return groupBy(flattenedPoints, interval, groupByCallback);
+    return groupBy(sortedPoints, interval, groupByCallback);
   }
 
   function aggregateWrapper(groupByCallback, interval, datapoints) {
     var flattenedPoints = _.flatten(datapoints, true);
+    // groupBy_perf works with sorted series only
+    var sortedPoints = ts.sortByTime(flattenedPoints);
+    return groupBy(sortedPoints, interval, groupByCallback);
+  }
+
+  function percentil(interval, n, datapoints) {
+    var flattenedPoints = _.flatten(datapoints, true);
+    var groupByCallback = _.partial(PERCENTIL, n);
     return groupBy(flattenedPoints, interval, groupByCallback);
   }
 
@@ -120,6 +136,7 @@ System.register(['lodash', './utils', './timeseries'], function (_export, _conte
       MIN = ts.MIN;
       MAX = ts.MAX;
       MEDIAN = ts.MEDIAN;
+      PERCENTIL = ts.PERCENTIL;
       metricFunctions = {
         groupBy: groupByWrapper,
         scale: scale,
@@ -129,6 +146,7 @@ System.register(['lodash', './utils', './timeseries'], function (_export, _conte
         exponentialMovingAverage: expMovingAverage,
         aggregateBy: aggregateByWrapper,
         // Predefined aggs
+        percentil: percentil,
         average: _.partial(aggregateWrapper, AVERAGE),
         min: _.partial(aggregateWrapper, MIN),
         max: _.partial(aggregateWrapper, MAX),
@@ -138,6 +156,7 @@ System.register(['lodash', './utils', './timeseries'], function (_export, _conte
         sumSeries: sumSeries,
         top: _.partial(limit, 'top'),
         bottom: _.partial(limit, 'bottom'),
+        sortSeries: sortSeries,
         timeShift: timeShift,
         setAlias: setAlias,
         setAliasByRegex: setAliasByRegex,

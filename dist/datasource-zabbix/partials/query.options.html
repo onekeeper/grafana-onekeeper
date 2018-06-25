@@ -21,6 +21,18 @@
           Max data points
         </a>
       </span>
+      <span class="gf-form-label width-10">
+        <i class="fa fa-info-circle"></i>
+        <a ng-click="ctrl.panelCtrl.toggleEditorHelp(2);" bs-tooltip="'click to show helpful info'" data-placement="bottom">
+          IT services
+        </a>
+      </span>
+      <span class="gf-form-label width-12">
+        <i class="fa fa-info-circle"></i>
+        <a ng-click="ctrl.panelCtrl.toggleEditorHelp(3)" bs-tooltip="'click to show helpful info'" data-placement="bottom">
+          IT service property
+        </a>
+      </span>
       <span class="gf-form-label width-8">
         <i class="fa fa-info-circle"></i>
         <a ng-click="ctrl.panelCtrl.toggleEditorHelp(4)" bs-tooltip="'click to show helpful info'" data-placement="bottom">
@@ -47,6 +59,25 @@
       </ul>
     </div>
 
+    <div class="grafana-info-box span8" ng-if="ctrl.panelCtrl.editorHelpIndex === 2">
+      <h5>IT services</h5>
+      <ul>
+        <li>Select "IT services" in targets menu to activate IT services mode.</li>
+      </ul>
+    </div>
+
+    <div class="grafana-info-box span8" ng-if="ctrl.panelCtrl.editorHelpIndex === 3">
+      <h5>IT service property</h5>
+      <ul>
+        <li>Onekeeper returns the following availability information about IT service</li>
+        <li>Status - current status of the IT service</li>
+        <li>SLA - SLA for the given time interval</li>
+        <li>OK time - time the service was in OK state, in seconds</li>
+        <li>Problem time - time the service was in problem state, in seconds</li>
+        <li>Down time - time the service was in scheduled downtime, in seconds</li>
+      </ul>
+    </div>
+
     <div class="grafana-info-box span8" ng-if="ctrl.panelCtrl.editorHelpIndex === 4">
       <h5>Text filter</h5>
       <ul>
@@ -55,4 +86,3 @@
     </div>
   </div>
 </div>
-

@@ -15,12 +15,34 @@ module.exports = function(grunt) {
       test: {
         src: ["dist/test"]
       },
+      vendor: {
+        src: ["vendor"]
+      },
       tmp: {
         src: ["tmp"]
       }
     },
 
     copy: {
+      node_modules: {
+        cwd: './node_modules',
+        expand: true,
+        flatten: true,
+        filter: 'isFile',
+        src: [
+          'tether-drop/dist/js/drop.min.js',
+          'tether/dist/js/tether.min.js',
+        ],
+        dest: 'vendor/npm'
+      },
+      vendor_to_dist: {
+        cwd: 'vendor',
+        expand: true,
+        src: [
+          '**/*'
+        ],
+        dest: 'dist/vendor'
+      },
       src_to_dist: {
         cwd: 'src',
         expand: true,
@@ -29,6 +51,7 @@ module.exports = function(grunt) {
           '!datasource-zabbix/*.js',
           '!panel-triggers/*.js',
           '!components/*.js',
+          '!vendor/*.js',
           '!module.js',
           '!**/*.scss'
         ],
@@ -65,6 +88,7 @@ module.exports = function(grunt) {
             'datasource-zabbix/*.js',
             'panel-triggers/*.js',
             'components/*.js',
+            'vendor/*.js',
             'module.js',
           ],
           dest: 'dist/'
@@ -85,18 +109,6 @@ module.exports = function(grunt) {
           src: ['**/*.js'],
           dest: 'dist/test/specs'
         }]
-      }
-    },
-
-    mochaTest: {
-      test: {
-        options: {
-          reporter: 'spec'
-        },
-        src: [
-          'dist/test/datasource-zabbix/specs/test-main.js',
-          'dist/test/datasource-zabbix/specs/*_specs.js'
-        ]
       }
     },
 
@@ -149,22 +161,21 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask('default', [
-    'clean:dist',
+    'clean',
     'sass',
-    'copy:src_to_dist',
-    'copy:pluginDef',
+    'copy',
     'jshint',
     'jscs',
-    'babel',
-    'mochaTest'
+    'babel:dist'
   ]);
 
   grunt.registerTask('watchTask', [
     'clean:dist',
     'sass',
+    'copy:vendor_to_dist',
     'copy:src_to_dist',
     'copy:pluginDef',
-    'babel',
+    'babel:dist',
     'jshint',
     'jscs'
   ]);

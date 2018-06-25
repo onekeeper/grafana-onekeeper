@@ -83,6 +83,10 @@ System.register(['lodash', './utils'], function (_export, _context) {
   }
 
   function groupBy_perf(datapoints, interval, groupByCallback) {
+    if (datapoints.length === 0) {
+      return [];
+    }
+
     var ms_interval = utils.parseInterval(interval);
     var grouped_series = [];
     var frame_values = [];
@@ -301,6 +305,11 @@ System.register(['lodash', './utils'], function (_export, _context) {
     return ema;
   }
 
+  function PERCENTIL(n, values) {
+    var sorted = _.sortBy(values);
+    return sorted[Math.floor(sorted.length * n / 100)];
+  }
+
   function COUNT(values) {
     return values.length;
   }
@@ -470,7 +479,9 @@ System.register(['lodash', './utils'], function (_export, _context) {
         AVERAGE: AVERAGE,
         MIN: MIN,
         MAX: MAX,
-        MEDIAN: MEDIAN
+        MEDIAN: MEDIAN,
+        PERCENTIL: PERCENTIL,
+        sortByTime: sortByTime
       };
 
       _export('default', exportedFunctions);

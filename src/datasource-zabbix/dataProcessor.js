@@ -18,6 +18,7 @@ let AVERAGE = ts.AVERAGE;
 let MIN = ts.MIN;
 let MAX = ts.MAX;
 let MEDIAN = ts.MEDIAN;
+let PERCENTIL = ts.PERCENTIL;
 
 function limit(order, n, orderByFunc, timeseries) {
   let orderByCallback = aggregationFunctions[orderByFunc];
@@ -33,6 +34,12 @@ function limit(order, n, orderByFunc, timeseries) {
   } else {
     return sortedTimeseries.slice(-n);
   }
+}
+
+function sortSeries(direction, timeseries) {
+  return _.orderBy(timeseries, [function (ts) {
+    return ts.target.toLowerCase();
+  }], direction);
 }
 
 function setAlias(alias, timeseries) {
@@ -72,13 +79,23 @@ function groupByWrapper(interval, groupFunc, datapoints) {
 
 function aggregateByWrapper(interval, aggregateFunc, datapoints) {
   // Flatten all points in frame and then just use groupBy()
-  var flattenedPoints = _.flatten(datapoints, true);
-  var groupByCallback = aggregationFunctions[aggregateFunc];
-  return groupBy(flattenedPoints, interval, groupByCallback);
+  const flattenedPoints = _.flatten(datapoints, true);
+  // groupBy_perf works with sorted series only
+  const sortedPoints = ts.sortByTime(flattenedPoints);
+  let groupByCallback = aggregationFunctions[aggregateFunc];
+  return groupBy(sortedPoints, interval, groupByCallback);
 }
 
 function aggregateWrapper(groupByCallback, interval, datapoints) {
   var flattenedPoints = _.flatten(datapoints, true);
+  // groupBy_perf works with sorted series only
+  const sortedPoints = ts.sortByTime(flattenedPoints);
+  return groupBy(sortedPoints, interval, groupByCallback);
+}
+
+function percentil(interval, n, datapoints) {
+  var flattenedPoints = _.flatten(datapoints, true);
+  var groupByCallback = _.partial(PERCENTIL, n);
   return groupBy(flattenedPoints, interval, groupByCallback);
 }
 
@@ -108,6 +125,7 @@ let metricFunctions = {
   exponentialMovingAverage: expMovingAverage,
   aggregateBy: aggregateByWrapper,
   // Predefined aggs
+  percentil: percentil,
   average: _.partial(aggregateWrapper, AVERAGE),
   min: _.partial(aggregateWrapper, MIN),
   max: _.partial(aggregateWrapper, MAX),
@@ -117,6 +135,7 @@ let metricFunctions = {
   sumSeries: sumSeries,
   top: _.partial(limit, 'top'),
   bottom: _.partial(limit, 'bottom'),
+  sortSeries: sortSeries,
   timeShift: timeShift,
   setAlias: setAlias,
   setAliasByRegex: setAliasByRegex,
