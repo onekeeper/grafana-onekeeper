@@ -83,9 +83,9 @@ System.register(['lodash', './utils'], function (_export, _context) {
   }
 
   function groupBy_perf(datapoints, interval, groupByCallback) {
-    if (datapoints.length === 0) {
-      return [];
-    }
+    // if (datapoints.length === 0) {
+    //  return [];
+    // }
 
     var ms_interval = utils.parseInterval(interval);
     var grouped_series = [];

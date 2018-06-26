@@ -59,6 +59,12 @@
     },
     {
       "type": "dashboard",
+      "name": "Oracle RAC 性能视图",
+      "path": "dashboards/rac_perf_dashboard.json",
+      "addToNav": false
+    },
+    {
+      "type": "dashboard",
       "name": "SQL Server 数据库性能视图",
       "path": "dashboards/mssql_perf_dashboard.json",
       "addToNav": false

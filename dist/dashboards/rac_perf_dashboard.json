@@ -1,0 +1,6038 @@
+{
+  "__inputs": [],
+  "__requires": [
+    {
+      "type": "panel",
+      "id": "grafana-flow-panel",
+      "name": "Flow Chart",
+      "version": ""
+    },
+    {
+      "type": "panel",
+      "id": "grafana-progress-panel",
+      "name": "Progress Chart",
+      "version": ""
+    },
+    {
+      "type": "panel",
+      "id": "graph",
+      "name": "Graph",
+      "version": ""
+    },
+    {
+      "type": "panel",
+      "id": "hzmc-onekeeper-triggers-panel",
+      "name": "Triggers",
+      "version": ""
+    },
+    {
+      "type": "panel",
+      "id": "singlestat",
+      "name": "Singlestat",
+      "version": ""
+    },
+    {
+      "type": "panel",
+      "id": "table",
+      "name": "Table",
+      "version": ""
+    }
+  ],
+  "annotations": {
+    "list": []
+  },
+  "editable": true,
+  "gnetId": null,
+  "graphTooltip": 0,
+  "hideControls": false,
+  "id": null,
+  "links": [],
+  "refresh": "1m",
+  "rows": [
+    {
+      "collapse": false,
+      "height": 93,
+      "panels": [
+        {
+          "cacheTimeout": null,
+          "colorBackground": true,
+          "colorValue": false,
+          "colors": [
+            "rgba(50, 172, 45, 0.97)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(245, 54, 54, 0.9)"
+          ],
+          "datasource": "$datasource",
+          "decimals": 0,
+          "format": "none",
+          "gauge": {
+            "maxValue": 1,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "hideTimeOverride": true,
+          "id": 20,
+          "interval": null,
+          "links": [],
+          "mappingType": 1,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "maxDataPoints": "",
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "null",
+              "text": "N/A",
+              "to": "null"
+            }
+          ],
+          "span": 1,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": false
+          },
+          "tableColumn": "",
+          "targets": [
+            {
+              "application": {
+                "filter": "Listener"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "$node1"
+              },
+              "item": {
+                "filter": "Status of listener"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "A"
+            }
+          ],
+          "thresholds": "0.5,0.5",
+          "timeFrom": "5m",
+          "title": "监听",
+          "type": "singlestat",
+          "valueFontSize": "50%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            },
+            {
+              "op": "=",
+              "text": "异常",
+              "value": "1"
+            },
+            {
+              "op": "=",
+              "text": "正常",
+              "value": "0"
+            }
+          ],
+          "valueName": "current"
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": true,
+          "colorValue": false,
+          "colors": [
+            "rgba(50, 172, 45, 0.97)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(245, 54, 54, 0.9)"
+          ],
+          "datasource": "$datasource",
+          "decimals": 0,
+          "format": "none",
+          "gauge": {
+            "maxValue": 1,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "hideTimeOverride": true,
+          "id": 2,
+          "interval": null,
+          "links": [],
+          "mappingType": 1,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "maxDataPoints": "",
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "null",
+              "text": "N/A",
+              "to": "null"
+            }
+          ],
+          "span": 1,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": false
+          },
+          "tableColumn": "",
+          "targets": [
+            {
+              "application": {
+                "filter": "Instance"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "$node1"
+              },
+              "item": {
+                "filter": "Status of instance"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "A"
+            }
+          ],
+          "thresholds": "0.5,0.5",
+          "timeFrom": "5m",
+          "title": "实例",
+          "type": "singlestat",
+          "valueFontSize": "50%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            },
+            {
+              "op": "=",
+              "text": "异常",
+              "value": "1"
+            },
+            {
+              "op": "=",
+              "text": "正常",
+              "value": "0"
+            }
+          ],
+          "valueName": "current"
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": true,
+          "colorValue": false,
+          "colors": [
+            "rgba(94, 177, 228, 0.97)",
+            "rgba(94, 177, 228, 0.97)",
+            "rgba(94, 177, 228, 0.97)"
+          ],
+          "datasource": "$datasource",
+          "decimals": 2,
+          "format": "µs",
+          "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "hideTimeOverride": true,
+          "id": 16,
+          "interval": null,
+          "links": [],
+          "mappingType": 1,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "maxDataPoints": "",
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "null",
+              "text": "N/A",
+              "to": "null"
+            }
+          ],
+          "span": 2,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": true
+          },
+          "tableColumn": "",
+          "targets": [
+            {
+              "application": {
+                "filter": "Performance"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "$node1"
+              },
+              "item": {
+                "filter": "Logical reads response  time"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "A"
+            }
+          ],
+          "thresholds": "",
+          "timeFrom": "5m",
+          "title": "逻辑读时间",
+          "type": "singlestat",
+          "valueFontSize": "50%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            }
+          ],
+          "valueName": "current"
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": true,
+          "colorValue": false,
+          "colors": [
+            "rgba(94, 177, 228, 0.97)",
+            "rgba(94, 177, 228, 0.97)",
+            "rgba(94, 177, 228, 0.97)"
+          ],
+          "datasource": "$datasource",
+          "decimals": 2,
+          "format": "ops",
+          "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "hideTimeOverride": true,
+          "id": 13,
+          "interval": null,
+          "links": [],
+          "mappingType": 1,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "maxDataPoints": "",
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "null",
+              "text": "N/A",
+              "to": "null"
+            }
+          ],
+          "span": 2,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": true
+          },
+          "tableColumn": "",
+          "targets": [
+            {
+              "application": {
+                "filter": "Performance"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "$node1"
+              },
+              "item": {
+                "filter": "Logical reads per second"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "A"
+            }
+          ],
+          "thresholds": "",
+          "timeFrom": "5m",
+          "title": "逻辑读次数",
+          "type": "singlestat",
+          "valueFontSize": "50%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            }
+          ],
+          "valueName": "current"
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": true,
+          "colorValue": false,
+          "colors": [
+            "rgba(94, 177, 228, 0.97)",
+            "rgba(94, 177, 228, 0.97)",
+            "rgba(94, 177, 228, 0.97)"
+          ],
+          "datasource": "$datasource",
+          "decimals": null,
+          "format": "short",
+          "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "hideTimeOverride": true,
+          "id": 18,
+          "interval": null,
+          "links": [],
+          "mappingType": 1,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "maxDataPoints": "",
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "null",
+              "text": "N/A",
+              "to": "null"
+            }
+          ],
+          "span": 1,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": true
+          },
+          "tableColumn": "",
+          "targets": [
+            {
+              "application": {
+                "filter": "Instance"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "$node1"
+              },
+              "item": {
+                "filter": "Number of alerts (5min)"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "A"
+            }
+          ],
+          "thresholds": "",
+          "timeFrom": "5m",
+          "title": "5分钟错误",
+          "type": "singlestat",
+          "valueFontSize": "50%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            }
+          ],
+          "valueName": "current"
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": true,
+          "colorValue": false,
+          "colors": [
+            "rgba(94, 177, 228, 0.97)",
+            "rgba(94, 177, 228, 0.97)",
+            "rgba(94, 177, 228, 0.97)"
+          ],
+          "datasource": "$datasource",
+          "decimals": null,
+          "format": "short",
+          "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "hideTimeOverride": true,
+          "id": 22,
+          "interval": null,
+          "links": [],
+          "mappingType": 1,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "maxDataPoints": "",
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "null",
+              "text": "N/A",
+              "to": "null"
+            }
+          ],
+          "span": 1,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": true
+          },
+          "tableColumn": "",
+          "targets": [
+            {
+              "application": {
+                "filter": "Instance"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "$node1"
+              },
+              "item": {
+                "filter": "Number of alerts (24h)"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "A"
+            }
+          ],
+          "thresholds": "",
+          "timeFrom": "5m",
+          "title": "24小时错误",
+          "type": "singlestat",
+          "valueFontSize": "50%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            }
+          ],
+          "valueName": "current"
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": true,
+          "colorValue": false,
+          "colors": [
+            "rgba(94, 177, 228, 0.97)",
+            "rgba(94, 177, 228, 0.97)",
+            "rgba(94, 177, 228, 0.97)"
+          ],
+          "datasource": "$datasource",
+          "decimals": null,
+          "format": "short",
+          "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "hideTimeOverride": true,
+          "id": 14,
+          "interval": null,
+          "links": [],
+          "mappingType": 1,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "maxDataPoints": "",
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "null",
+              "text": "N/A",
+              "to": "null"
+            }
+          ],
+          "span": 1,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": true
+          },
+          "tableColumn": "",
+          "targets": [
+            {
+              "application": {
+                "filter": "Change"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "$node1"
+              },
+              "item": {
+                "filter": "Total changes (5min)"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "A"
+            }
+          ],
+          "thresholds": "",
+          "timeFrom": "5m",
+          "title": "5分钟变更",
+          "type": "singlestat",
+          "valueFontSize": "50%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            }
+          ],
+          "valueName": "current"
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": true,
+          "colorValue": false,
+          "colors": [
+            "rgba(94, 177, 228, 0.97)",
+            "rgba(94, 177, 228, 0.97)",
+            "rgba(94, 177, 228, 0.97)"
+          ],
+          "datasource": "$datasource",
+          "decimals": null,
+          "format": "short",
+          "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "hideTimeOverride": true,
+          "id": 23,
+          "interval": null,
+          "links": [],
+          "mappingType": 1,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "maxDataPoints": "",
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "null",
+              "text": "N/A",
+              "to": "null"
+            }
+          ],
+          "span": 1,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": true
+          },
+          "tableColumn": "",
+          "targets": [
+            {
+              "application": {
+                "filter": "Change"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "$node1"
+              },
+              "item": {
+                "filter": "Total changes (24h)"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "A"
+            }
+          ],
+          "thresholds": "",
+          "timeFrom": "5m",
+          "title": "24 小时变更",
+          "type": "singlestat",
+          "valueFontSize": "50%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            }
+          ],
+          "valueName": "current"
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": true,
+          "colorValue": false,
+          "colors": [
+            "rgba(50, 172, 45, 0.97)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(245, 54, 54, 0.9)"
+          ],
+          "datasource": "$datasource",
+          "decimals": null,
+          "format": "none",
+          "gauge": {
+            "maxValue": 2,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "hideTimeOverride": true,
+          "id": 24,
+          "interval": null,
+          "links": [],
+          "mappingType": 1,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "maxDataPoints": "",
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "null",
+              "text": "N/A",
+              "to": "null"
+            }
+          ],
+          "span": 2,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": false
+          },
+          "tableColumn": "",
+          "targets": [
+            {
+              "application": {
+                "filter": "Instance"
+              },
+              "functions": [
+                {
+                  "def": {
+                    "category": "Aggregate",
+                    "defaultParams": [
+                      "1m"
+                    ],
+                    "name": "max",
+                    "params": [
+                      {
+                        "name": "interval",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "params": [
+                    "1m"
+                  ],
+                  "text": "max(1m)"
+                }
+              ],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "/$node1|$node2/"
+              },
+              "item": {
+                "filter": "Status of daliy backup"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "A",
+              "resultFormat": "time_series",
+              "table": {
+                "skipEmptyValues": false
+              },
+              "triggers": {
+                "acknowledged": 2,
+                "count": true,
+                "minSeverity": 3
+              }
+            }
+          ],
+          "thresholds": "0.66,1.33",
+          "timeFrom": "24h",
+          "title": "备份",
+          "type": "singlestat",
+          "valueFontSize": "50%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            },
+            {
+              "op": "=",
+              "text": "警告",
+              "value": "1"
+            },
+            {
+              "op": "=",
+              "text": "正常",
+              "value": "0"
+            },
+            {
+              "op": "=",
+              "text": "异常",
+              "value": "2"
+            }
+          ],
+          "valueName": "current"
+        }
+      ],
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": false,
+      "title": "Dashboard Row",
+      "titleSize": "h6"
+    },
+    {
+      "collapse": false,
+      "height": 93,
+      "panels": [
+        {
+          "cacheTimeout": null,
+          "colorBackground": true,
+          "colorValue": false,
+          "colors": [
+            "rgba(50, 172, 45, 0.97)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(245, 54, 54, 0.9)"
+          ],
+          "datasource": "$datasource",
+          "decimals": 0,
+          "format": "none",
+          "gauge": {
+            "maxValue": 1,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "hideTimeOverride": true,
+          "id": 42,
+          "interval": null,
+          "links": [],
+          "mappingType": 1,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "maxDataPoints": "",
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "null",
+              "text": "N/A",
+              "to": "null"
+            }
+          ],
+          "span": 1,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": false
+          },
+          "tableColumn": "",
+          "targets": [
+            {
+              "application": {
+                "filter": "Listener"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "$node2"
+              },
+              "item": {
+                "filter": "Status of listener"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "A"
+            }
+          ],
+          "thresholds": "0.5,0.5",
+          "timeFrom": "5m",
+          "title": "监听",
+          "type": "singlestat",
+          "valueFontSize": "50%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            },
+            {
+              "op": "=",
+              "text": "异常",
+              "value": "1"
+            },
+            {
+              "op": "=",
+              "text": "正常",
+              "value": "0"
+            }
+          ],
+          "valueName": "current"
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": true,
+          "colorValue": false,
+          "colors": [
+            "rgba(50, 172, 45, 0.97)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(245, 54, 54, 0.9)"
+          ],
+          "datasource": "$datasource",
+          "decimals": 0,
+          "format": "none",
+          "gauge": {
+            "maxValue": 1,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "hideTimeOverride": true,
+          "id": 43,
+          "interval": null,
+          "links": [],
+          "mappingType": 1,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "maxDataPoints": "",
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "null",
+              "text": "N/A",
+              "to": "null"
+            }
+          ],
+          "span": 1,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": false
+          },
+          "tableColumn": "",
+          "targets": [
+            {
+              "application": {
+                "filter": "Instance"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "$node2"
+              },
+              "item": {
+                "filter": "Status of instance"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "A"
+            }
+          ],
+          "thresholds": "0.5,0.5",
+          "timeFrom": "5m",
+          "title": "实例",
+          "type": "singlestat",
+          "valueFontSize": "50%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            },
+            {
+              "op": "=",
+              "text": "异常",
+              "value": "1"
+            },
+            {
+              "op": "=",
+              "text": "正常",
+              "value": "0"
+            }
+          ],
+          "valueName": "current"
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": true,
+          "colorValue": false,
+          "colors": [
+            "rgba(94, 177, 228, 0.97)",
+            "rgba(94, 177, 228, 0.97)",
+            "rgba(94, 177, 228, 0.97)"
+          ],
+          "datasource": "$datasource",
+          "decimals": 2,
+          "format": "µs",
+          "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "hideTimeOverride": true,
+          "id": 44,
+          "interval": null,
+          "links": [],
+          "mappingType": 1,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "maxDataPoints": "",
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "null",
+              "text": "N/A",
+              "to": "null"
+            }
+          ],
+          "span": 2,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": true
+          },
+          "tableColumn": "",
+          "targets": [
+            {
+              "application": {
+                "filter": "Performance"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "$node2"
+              },
+              "item": {
+                "filter": "Logical reads response  time"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "A"
+            }
+          ],
+          "thresholds": "",
+          "timeFrom": "5m",
+          "title": "逻辑读时间",
+          "type": "singlestat",
+          "valueFontSize": "50%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            }
+          ],
+          "valueName": "current"
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": true,
+          "colorValue": false,
+          "colors": [
+            "rgba(94, 177, 228, 0.97)",
+            "rgba(94, 177, 228, 0.97)",
+            "rgba(94, 177, 228, 0.97)"
+          ],
+          "datasource": "$datasource",
+          "decimals": 2,
+          "format": "ops",
+          "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "hideTimeOverride": true,
+          "id": 45,
+          "interval": null,
+          "links": [],
+          "mappingType": 1,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "maxDataPoints": "",
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "null",
+              "text": "N/A",
+              "to": "null"
+            }
+          ],
+          "span": 2,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": true
+          },
+          "tableColumn": "",
+          "targets": [
+            {
+              "application": {
+                "filter": "Performance"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "$node2"
+              },
+              "item": {
+                "filter": "Logical reads per second"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "A"
+            }
+          ],
+          "thresholds": "",
+          "timeFrom": "5m",
+          "title": "逻辑读次数",
+          "type": "singlestat",
+          "valueFontSize": "50%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            }
+          ],
+          "valueName": "current"
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": true,
+          "colorValue": false,
+          "colors": [
+            "rgba(94, 177, 228, 0.97)",
+            "rgba(94, 177, 228, 0.97)",
+            "rgba(94, 177, 228, 0.97)"
+          ],
+          "datasource": "$datasource",
+          "decimals": null,
+          "format": "short",
+          "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "hideTimeOverride": true,
+          "id": 46,
+          "interval": null,
+          "links": [],
+          "mappingType": 1,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "maxDataPoints": "",
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "null",
+              "text": "N/A",
+              "to": "null"
+            }
+          ],
+          "span": 1,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": true
+          },
+          "tableColumn": "",
+          "targets": [
+            {
+              "application": {
+                "filter": "Instance"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "$node2"
+              },
+              "item": {
+                "filter": "Number of alerts (5min)"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "A"
+            }
+          ],
+          "thresholds": "",
+          "timeFrom": "5m",
+          "title": "5分钟错误",
+          "type": "singlestat",
+          "valueFontSize": "50%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            }
+          ],
+          "valueName": "current"
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": true,
+          "colorValue": false,
+          "colors": [
+            "rgba(94, 177, 228, 0.97)",
+            "rgba(94, 177, 228, 0.97)",
+            "rgba(94, 177, 228, 0.97)"
+          ],
+          "datasource": "$datasource",
+          "decimals": null,
+          "format": "short",
+          "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "hideTimeOverride": true,
+          "id": 47,
+          "interval": null,
+          "links": [],
+          "mappingType": 1,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "maxDataPoints": "",
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "null",
+              "text": "N/A",
+              "to": "null"
+            }
+          ],
+          "span": 1,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": true
+          },
+          "tableColumn": "",
+          "targets": [
+            {
+              "application": {
+                "filter": "Instance"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "$node2"
+              },
+              "item": {
+                "filter": "Number of alerts (24h)"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "A"
+            }
+          ],
+          "thresholds": "",
+          "timeFrom": "5m",
+          "title": "24小时错误",
+          "type": "singlestat",
+          "valueFontSize": "50%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            }
+          ],
+          "valueName": "current"
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": true,
+          "colorValue": false,
+          "colors": [
+            "rgba(94, 177, 228, 0.97)",
+            "rgba(94, 177, 228, 0.97)",
+            "rgba(94, 177, 228, 0.97)"
+          ],
+          "datasource": "$datasource",
+          "decimals": null,
+          "format": "short",
+          "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "hideTimeOverride": true,
+          "id": 48,
+          "interval": null,
+          "links": [],
+          "mappingType": 1,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "maxDataPoints": "",
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "null",
+              "text": "N/A",
+              "to": "null"
+            }
+          ],
+          "span": 1,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": true
+          },
+          "tableColumn": "",
+          "targets": [
+            {
+              "application": {
+                "filter": "Change"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "$node2"
+              },
+              "item": {
+                "filter": "Total changes (5min)"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "A"
+            }
+          ],
+          "thresholds": "",
+          "timeFrom": "5m",
+          "title": "5分钟变更",
+          "type": "singlestat",
+          "valueFontSize": "50%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            }
+          ],
+          "valueName": "current"
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": true,
+          "colorValue": false,
+          "colors": [
+            "rgba(94, 177, 228, 0.97)",
+            "rgba(94, 177, 228, 0.97)",
+            "rgba(94, 177, 228, 0.97)"
+          ],
+          "datasource": "$datasource",
+          "decimals": null,
+          "format": "short",
+          "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "hideTimeOverride": true,
+          "id": 49,
+          "interval": null,
+          "links": [],
+          "mappingType": 1,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "maxDataPoints": "",
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "null",
+              "text": "N/A",
+              "to": "null"
+            }
+          ],
+          "span": 1,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": true
+          },
+          "tableColumn": "",
+          "targets": [
+            {
+              "application": {
+                "filter": "Change"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "$node2"
+              },
+              "item": {
+                "filter": "Total changes (24h)"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "A"
+            }
+          ],
+          "thresholds": "",
+          "timeFrom": "5m",
+          "title": "24 小时变更",
+          "type": "singlestat",
+          "valueFontSize": "50%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            }
+          ],
+          "valueName": "current"
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": true,
+          "colorValue": false,
+          "colors": [
+            "rgba(50, 172, 45, 0.97)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(245, 54, 54, 0.9)"
+          ],
+          "datasource": "$datasource",
+          "decimals": 0,
+          "format": "none",
+          "gauge": {
+            "maxValue": 2,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "hideTimeOverride": true,
+          "id": 21,
+          "interval": null,
+          "links": [],
+          "mappingType": 1,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "maxDataPoints": "",
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "null",
+              "text": "N/A",
+              "to": "null"
+            }
+          ],
+          "span": 1,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": false
+          },
+          "tableColumn": "",
+          "targets": [
+            {
+              "application": {
+                "filter": "Instance"
+              },
+              "functions": [
+                {
+                  "def": {
+                    "category": "Aggregate",
+                    "defaultParams": [
+                      "1m"
+                    ],
+                    "name": "max",
+                    "params": [
+                      {
+                        "name": "interval",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "params": [
+                    "1m"
+                  ],
+                  "text": "max(1m)"
+                }
+              ],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "/$node1|$node2/"
+              },
+              "item": {
+                "filter": "Space stats of all tablespaces"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "A",
+              "resultFormat": "time_series",
+              "table": {
+                "skipEmptyValues": false
+              },
+              "triggers": {
+                "acknowledged": 2,
+                "count": true,
+                "minSeverity": 3
+              }
+            }
+          ],
+          "thresholds": "0.66,1.33",
+          "timeFrom": "5m",
+          "timeShift": null,
+          "title": "表空间",
+          "type": "singlestat",
+          "valueFontSize": "50%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            },
+            {
+              "op": "=",
+              "text": "正常",
+              "value": "0"
+            },
+            {
+              "op": "=",
+              "text": "警告",
+              "value": "1"
+            },
+            {
+              "op": "=",
+              "text": "异常",
+              "value": "2"
+            }
+          ],
+          "valueName": "current"
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": true,
+          "colorValue": false,
+          "colors": [
+            "rgba(94, 177, 228, 0.97)",
+            "rgba(94, 177, 228, 0.97)",
+            "rgba(94, 177, 228, 0.97)"
+          ],
+          "datasource": "$datasource",
+          "decimals": 2,
+          "format": "decbytes",
+          "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "hideTimeOverride": true,
+          "id": 51,
+          "interval": null,
+          "links": [],
+          "mappingType": 1,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "maxDataPoints": "",
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "null",
+              "text": "N/A",
+              "to": "null"
+            }
+          ],
+          "span": 1,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": false
+          },
+          "tableColumn": "",
+          "targets": [
+            {
+              "application": {
+                "filter": "Instance"
+              },
+              "functions": [
+                {
+                  "def": {
+                    "category": "Aggregate",
+                    "defaultParams": [
+                      "1m"
+                    ],
+                    "name": "max",
+                    "params": [
+                      {
+                        "name": "interval",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "params": [
+                    "1m"
+                  ],
+                  "text": "max(1m)"
+                }
+              ],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "/$node1|$node2/"
+              },
+              "item": {
+                "filter": "Total space of all tablespaces"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "A",
+              "resultFormat": "time_series",
+              "table": {
+                "skipEmptyValues": false
+              },
+              "triggers": {
+                "acknowledged": 2,
+                "count": true,
+                "minSeverity": 3
+              }
+            }
+          ],
+          "thresholds": "",
+          "timeFrom": "10m",
+          "title": "表空间",
+          "type": "singlestat",
+          "valueFontSize": "50%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            }
+          ],
+          "valueName": "current"
+        }
+      ],
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": false,
+      "title": "Dashboard Row",
+      "titleSize": "h6"
+    },
+    {
+      "collapse": false,
+      "height": 146,
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "$datasource",
+          "decimals": 2,
+          "fill": 1,
+          "id": 10,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "maxDataPoints": "",
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [
+            {
+              "alias": "Average connection time",
+              "yaxis": 1
+            },
+            {
+              "alias": "Connections per second",
+              "yaxis": 2
+            }
+          ],
+          "spaceLength": 10,
+          "span": 3,
+          "stack": false,
+          "steppedLine": true,
+          "targets": [
+            {
+              "application": {
+                "filter": "Connection"
+              },
+              "functions": [
+                {
+                  "def": {
+                    "category": "Aggregate",
+                    "defaultParams": [
+                      "1m"
+                    ],
+                    "name": "average",
+                    "params": [
+                      {
+                        "name": "interval",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "params": [
+                    "1m"
+                  ],
+                  "text": "average(1m)"
+                },
+                {
+                  "def": {
+                    "category": "Alias",
+                    "defaultParams": [],
+                    "name": "setAlias",
+                    "params": [
+                      {
+                        "name": "alias",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "params": [
+                    "Average connection time"
+                  ],
+                  "text": "setAlias(Average connection time)"
+                }
+              ],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "/$node1|$node2/"
+              },
+              "item": {
+                "filter": "Average connection time"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "A",
+              "resultFormat": "time_series",
+              "table": {
+                "skipEmptyValues": false
+              },
+              "triggers": {
+                "acknowledged": 2,
+                "count": true,
+                "minSeverity": 3
+              }
+            },
+            {
+              "application": {
+                "filter": "Connection"
+              },
+              "functions": [
+                {
+                  "def": {
+                    "category": "Aggregate",
+                    "defaultParams": [
+                      "1m"
+                    ],
+                    "name": "sum",
+                    "params": [
+                      {
+                        "name": "interval",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "params": [
+                    "1m"
+                  ],
+                  "text": "sum(1m)"
+                },
+                {
+                  "def": {
+                    "category": "Alias",
+                    "defaultParams": [],
+                    "name": "setAlias",
+                    "params": [
+                      {
+                        "name": "alias",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "params": [
+                    "Connections per second"
+                  ],
+                  "text": "setAlias(Connections per second)"
+                }
+              ],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "/$node1|$node2/"
+              },
+              "item": {
+                "filter": "Connections per second"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "B",
+              "resultFormat": "time_series",
+              "table": {
+                "skipEmptyValues": false
+              },
+              "triggers": {
+                "acknowledged": 2,
+                "count": true,
+                "minSeverity": 3
+              }
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "数据库登录",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": [
+              "total"
+            ]
+          },
+          "yaxes": [
+            {
+              "format": "µs",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "ops",
+              "label": "",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        },
+        {
+          "datasource": "$datasource",
+          "forward": {
+            "format": "ops",
+            "label": "Latch gets",
+            "show": true,
+            "unit": "ops"
+          },
+          "hideTimeOverride": true,
+          "id": 25,
+          "links": [],
+          "opposite": {
+            "format": "µs",
+            "label": "Latch gets",
+            "show": true,
+            "unit": "us"
+          },
+          "span": 1,
+          "targets": [
+            {
+              "application": {
+                "filter": "SQL Parse"
+              },
+              "functions": [
+                {
+                  "def": {
+                    "category": "Aggregate",
+                    "defaultParams": [
+                      "1m"
+                    ],
+                    "name": "sum",
+                    "params": [
+                      {
+                        "name": "interval",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "params": [
+                    "1m"
+                  ],
+                  "text": "sum(1m)"
+                },
+                {
+                  "def": {
+                    "category": "Alias",
+                    "defaultParams": [],
+                    "name": "setAlias",
+                    "params": [
+                      {
+                        "name": "alias",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "params": [
+                    "Latch gets per second"
+                  ],
+                  "text": "setAlias(Latch gets per second)"
+                }
+              ],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "/$node1|$node2/"
+              },
+              "item": {
+                "filter": "Latch gets per second"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "A",
+              "resultFormat": "time_series",
+              "table": {
+                "skipEmptyValues": false
+              },
+              "triggers": {
+                "acknowledged": 2,
+                "count": true,
+                "minSeverity": 3
+              }
+            },
+            {
+              "application": {
+                "filter": "SQL Parse"
+              },
+              "functions": [
+                {
+                  "def": {
+                    "category": "Aggregate",
+                    "defaultParams": [
+                      "1m"
+                    ],
+                    "name": "average",
+                    "params": [
+                      {
+                        "name": "interval",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "params": [
+                    "1m"
+                  ],
+                  "text": "average(1m)"
+                },
+                {
+                  "def": {
+                    "category": "Alias",
+                    "defaultParams": [],
+                    "name": "setAlias",
+                    "params": [
+                      {
+                        "name": "alias",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "params": [
+                    "Latch gets time"
+                  ],
+                  "text": "setAlias(Latch gets time)"
+                }
+              ],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "/$node1|$node2/"
+              },
+              "item": {
+                "filter": "Latch gets time"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "B",
+              "resultFormat": "time_series",
+              "table": {
+                "skipEmptyValues": false
+              },
+              "triggers": {
+                "acknowledged": 2,
+                "count": true,
+                "minSeverity": 3
+              }
+            }
+          ],
+          "timeFrom": "5m",
+          "title": "",
+          "transparent": true,
+          "type": "grafana-flow-panel"
+        },
+        {
+          "barsArr": [
+            {
+              "format": "decbytes",
+              "label": "Library cache",
+              "unit": "B"
+            },
+            {
+              "format": "decbytes",
+              "label": "Row cache",
+              "unit": "B"
+            },
+            {
+              "format": "decbytes",
+              "label": "Free",
+              "unit": "B"
+            }
+          ],
+          "colorArr": [
+            "#5eb1e4",
+            "#4888e0",
+            "#2adf6e"
+          ],
+          "datasource": "$datasource",
+          "hideTimeOverride": true,
+          "id": 26,
+          "links": [],
+          "progressArr": [
+            {
+              "format": "percent",
+              "label": "Shared pool hits",
+              "type": "solid",
+              "unit": "%"
+            },
+            {
+              "format": "decbytes",
+              "label": "Shared pool size",
+              "type": "solid",
+              "unit": "B"
+            }
+          ],
+          "span": 2,
+          "targets": [
+            {
+              "application": {
+                "filter": "Shared Pool"
+              },
+              "functions": [
+                {
+                  "def": {
+                    "category": "Aggregate",
+                    "defaultParams": [
+                      "1m"
+                    ],
+                    "name": "average",
+                    "params": [
+                      {
+                        "name": "interval",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "params": [
+                    "1m"
+                  ],
+                  "text": "average(1m)"
+                },
+                {
+                  "def": {
+                    "category": "Alias",
+                    "defaultParams": [],
+                    "name": "setAlias",
+                    "params": [
+                      {
+                        "name": "alias",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "params": [
+                    "Shared pool hit ratio"
+                  ],
+                  "text": "setAlias(Shared pool hit ratio)"
+                }
+              ],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "/$node1|$node2/"
+              },
+              "item": {
+                "filter": "Shared pool hit ratio"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "A",
+              "resultFormat": "time_series",
+              "table": {
+                "skipEmptyValues": false
+              },
+              "triggers": {
+                "acknowledged": 2,
+                "count": true,
+                "minSeverity": 3
+              }
+            },
+            {
+              "application": {
+                "filter": "Shared Pool"
+              },
+              "functions": [
+                {
+                  "def": {
+                    "category": "Aggregate",
+                    "defaultParams": [
+                      "1m"
+                    ],
+                    "name": "average",
+                    "params": [
+                      {
+                        "name": "interval",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "params": [
+                    "1m"
+                  ],
+                  "text": "average(1m)"
+                },
+                {
+                  "def": {
+                    "category": "Alias",
+                    "defaultParams": [],
+                    "name": "setAlias",
+                    "params": [
+                      {
+                        "name": "alias",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "params": [
+                    "Shared pool size"
+                  ],
+                  "text": "setAlias(Shared pool size)"
+                }
+              ],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "/$node1|$node2/"
+              },
+              "item": {
+                "filter": "Shared pool size"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "B",
+              "resultFormat": "time_series",
+              "table": {
+                "skipEmptyValues": false
+              },
+              "triggers": {
+                "acknowledged": 2,
+                "count": true,
+                "minSeverity": 3
+              }
+            },
+            {
+              "application": {
+                "filter": "Shared Pool"
+              },
+              "functions": [
+                {
+                  "added": false,
+                  "def": {
+                    "category": "Aggregate",
+                    "defaultParams": [
+                      "1m"
+                    ],
+                    "name": "average",
+                    "params": [
+                      {
+                        "name": "interval",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "params": [
+                    "1m"
+                  ],
+                  "text": "average(1m)"
+                },
+                {
+                  "added": false,
+                  "def": {
+                    "category": "Alias",
+                    "defaultParams": [],
+                    "name": "setAlias",
+                    "params": [
+                      {
+                        "name": "alias",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "params": [
+                    "Library cache size"
+                  ],
+                  "text": "setAlias(Library cache size)"
+                }
+              ],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "/$node1|$node2/"
+              },
+              "item": {
+                "filter": "Library cache size"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "C",
+              "resultFormat": "time_series",
+              "table": {
+                "skipEmptyValues": false
+              },
+              "triggers": {
+                "acknowledged": 2,
+                "count": true,
+                "minSeverity": 3
+              }
+            },
+            {
+              "application": {
+                "filter": "Shared Pool"
+              },
+              "functions": [
+                {
+                  "added": false,
+                  "def": {
+                    "category": "Aggregate",
+                    "defaultParams": [
+                      "1m"
+                    ],
+                    "name": "average",
+                    "params": [
+                      {
+                        "name": "interval",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "params": [
+                    "1m"
+                  ],
+                  "text": "average(1m)"
+                },
+                {
+                  "added": false,
+                  "def": {
+                    "category": "Alias",
+                    "defaultParams": [],
+                    "name": "setAlias",
+                    "params": [
+                      {
+                        "name": "alias",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "params": [
+                    "Row cache size"
+                  ],
+                  "text": "setAlias(Row cache size)"
+                }
+              ],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "/$node1|$node2/"
+              },
+              "item": {
+                "filter": "Row cache size"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "D",
+              "resultFormat": "time_series",
+              "table": {
+                "skipEmptyValues": false
+              },
+              "triggers": {
+                "acknowledged": 2,
+                "count": true,
+                "minSeverity": 3
+              }
+            },
+            {
+              "application": {
+                "filter": "Shared Pool"
+              },
+              "functions": [
+                {
+                  "added": false,
+                  "def": {
+                    "category": "Aggregate",
+                    "defaultParams": [
+                      "1m"
+                    ],
+                    "name": "average",
+                    "params": [
+                      {
+                        "name": "interval",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "params": [
+                    "1m"
+                  ],
+                  "text": "average(1m)"
+                },
+                {
+                  "added": false,
+                  "def": {
+                    "category": "Alias",
+                    "defaultParams": [],
+                    "name": "setAlias",
+                    "params": [
+                      {
+                        "name": "alias",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "params": [
+                    "Shared pool free size"
+                  ],
+                  "text": "setAlias(Shared pool free size)"
+                }
+              ],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "/$node1|$node2/"
+              },
+              "item": {
+                "filter": "Shared pool free size"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "E",
+              "resultFormat": "time_series",
+              "table": {
+                "skipEmptyValues": false
+              },
+              "triggers": {
+                "acknowledged": 2,
+                "count": true,
+                "minSeverity": 3
+              }
+            }
+          ],
+          "timeFrom": "5m",
+          "title": "SQL 解析",
+          "type": "grafana-progress-panel"
+        },
+        {
+          "datasource": "$datasource",
+          "forward": {
+            "format": "ops",
+            "label": "Logical reads",
+            "show": true,
+            "unit": "ops"
+          },
+          "hideTimeOverride": true,
+          "id": 33,
+          "links": [],
+          "opposite": {
+            "format": "µs",
+            "label": "Logical reads",
+            "show": true,
+            "unit": "us"
+          },
+          "span": 1,
+          "targets": [
+            {
+              "application": {
+                "filter": "Performance"
+              },
+              "functions": [
+                {
+                  "def": {
+                    "category": "Aggregate",
+                    "defaultParams": [
+                      "1m"
+                    ],
+                    "name": "sum",
+                    "params": [
+                      {
+                        "name": "interval",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "params": [
+                    "1m"
+                  ],
+                  "text": "sum(1m)"
+                },
+                {
+                  "def": {
+                    "category": "Alias",
+                    "defaultParams": [],
+                    "name": "setAlias",
+                    "params": [
+                      {
+                        "name": "alias",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "params": [
+                    "Logical reads per second"
+                  ],
+                  "text": "setAlias(Logical reads per second)"
+                }
+              ],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "/$node1|$node2/"
+              },
+              "item": {
+                "filter": "Logical reads per second"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "A",
+              "resultFormat": "time_series",
+              "table": {
+                "skipEmptyValues": false
+              },
+              "triggers": {
+                "acknowledged": 2,
+                "count": true,
+                "minSeverity": 3
+              }
+            },
+            {
+              "application": {
+                "filter": "Performance"
+              },
+              "functions": [
+                {
+                  "def": {
+                    "category": "Aggregate",
+                    "defaultParams": [
+                      "1m"
+                    ],
+                    "name": "average",
+                    "params": [
+                      {
+                        "name": "interval",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "params": [
+                    "1m"
+                  ],
+                  "text": "average(1m)"
+                },
+                {
+                  "def": {
+                    "category": "Alias",
+                    "defaultParams": [],
+                    "name": "setAlias",
+                    "params": [
+                      {
+                        "name": "alias",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "params": [
+                    "Logical reads response  time"
+                  ],
+                  "text": "setAlias(Logical reads response  time)"
+                }
+              ],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "/$node1|$node2/"
+              },
+              "item": {
+                "filter": "Logical reads response  time"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "B",
+              "resultFormat": "time_series",
+              "table": {
+                "skipEmptyValues": false
+              },
+              "triggers": {
+                "acknowledged": 2,
+                "count": true,
+                "minSeverity": 3
+              }
+            }
+          ],
+          "timeFrom": "5m",
+          "title": "",
+          "transparent": true,
+          "type": "grafana-flow-panel"
+        },
+        {
+          "barsArr": [
+            {
+              "format": "decbytes",
+              "label": "Default pool",
+              "unit": "B"
+            },
+            {
+              "format": "decbytes",
+              "label": "Keep pool",
+              "unit": "B"
+            },
+            {
+              "format": "decbytes",
+              "label": "Recycle pool",
+              "unit": "B"
+            }
+          ],
+          "colorArr": [
+            "#5eb1e4",
+            "#4888e0",
+            "#2adf6e"
+          ],
+          "datasource": "$datasource",
+          "hideTimeOverride": true,
+          "id": 28,
+          "links": [],
+          "progressArr": [
+            {
+              "format": "percent",
+              "label": "Buffer cache hits",
+              "type": "solid",
+              "unit": "%"
+            },
+            {
+              "format": "decbytes",
+              "label": "Buffer cache size",
+              "type": "solid",
+              "unit": "B"
+            }
+          ],
+          "span": 2,
+          "targets": [
+            {
+              "application": {
+                "filter": "Buffer Cache"
+              },
+              "functions": [
+                {
+                  "def": {
+                    "category": "Aggregate",
+                    "defaultParams": [
+                      "1m"
+                    ],
+                    "name": "average",
+                    "params": [
+                      {
+                        "name": "interval",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "params": [
+                    "1m"
+                  ],
+                  "text": "average(1m)"
+                },
+                {
+                  "def": {
+                    "category": "Alias",
+                    "defaultParams": [],
+                    "name": "setAlias",
+                    "params": [
+                      {
+                        "name": "alias",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "params": [
+                    "Buffer cache hit ratio"
+                  ],
+                  "text": "setAlias(Buffer cache hit ratio)"
+                }
+              ],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "/$node1|$node2/"
+              },
+              "item": {
+                "filter": "Buffer cache hit ratio"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "A",
+              "resultFormat": "time_series",
+              "table": {
+                "skipEmptyValues": false
+              },
+              "triggers": {
+                "acknowledged": 2,
+                "count": true,
+                "minSeverity": 3
+              }
+            },
+            {
+              "application": {
+                "filter": "Buffer Cache"
+              },
+              "functions": [
+                {
+                  "def": {
+                    "category": "Aggregate",
+                    "defaultParams": [
+                      "1m"
+                    ],
+                    "name": "average",
+                    "params": [
+                      {
+                        "name": "interval",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "params": [
+                    "1m"
+                  ],
+                  "text": "average(1m)"
+                },
+                {
+                  "def": {
+                    "category": "Alias",
+                    "defaultParams": [],
+                    "name": "setAlias",
+                    "params": [
+                      {
+                        "name": "alias",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "params": [
+                    "Buffer cache size"
+                  ],
+                  "text": "setAlias(Buffer cache size)"
+                }
+              ],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "/$node1|$node2/"
+              },
+              "item": {
+                "filter": "Buffer cache size"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "B",
+              "resultFormat": "time_series",
+              "table": {
+                "skipEmptyValues": false
+              },
+              "triggers": {
+                "acknowledged": 2,
+                "count": true,
+                "minSeverity": 3
+              }
+            },
+            {
+              "application": {
+                "filter": "Buffer Cache"
+              },
+              "functions": [
+                {
+                  "added": false,
+                  "def": {
+                    "category": "Aggregate",
+                    "defaultParams": [
+                      "1m"
+                    ],
+                    "name": "average",
+                    "params": [
+                      {
+                        "name": "interval",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "params": [
+                    "1m"
+                  ],
+                  "text": "average(1m)"
+                },
+                {
+                  "added": false,
+                  "def": {
+                    "category": "Alias",
+                    "defaultParams": [],
+                    "name": "setAlias",
+                    "params": [
+                      {
+                        "name": "alias",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "params": [
+                    "Default pool size"
+                  ],
+                  "text": "setAlias(Default pool size)"
+                }
+              ],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "/$node1|$node2/"
+              },
+              "item": {
+                "filter": "Default pool size"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "C",
+              "resultFormat": "time_series",
+              "table": {
+                "skipEmptyValues": false
+              },
+              "triggers": {
+                "acknowledged": 2,
+                "count": true,
+                "minSeverity": 3
+              }
+            },
+            {
+              "application": {
+                "filter": "Buffer Cache"
+              },
+              "functions": [
+                {
+                  "added": false,
+                  "def": {
+                    "category": "Aggregate",
+                    "defaultParams": [
+                      "1m"
+                    ],
+                    "name": "average",
+                    "params": [
+                      {
+                        "name": "interval",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "params": [
+                    "1m"
+                  ],
+                  "text": "average(1m)"
+                },
+                {
+                  "added": false,
+                  "def": {
+                    "category": "Alias",
+                    "defaultParams": [],
+                    "name": "setAlias",
+                    "params": [
+                      {
+                        "name": "alias",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "params": [
+                    "Keep pool size"
+                  ],
+                  "text": "setAlias(Keep pool size)"
+                }
+              ],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "/$node1|$node2/"
+              },
+              "item": {
+                "filter": "Keep pool size"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "D",
+              "resultFormat": "time_series",
+              "table": {
+                "skipEmptyValues": false
+              },
+              "triggers": {
+                "acknowledged": 2,
+                "count": true,
+                "minSeverity": 3
+              }
+            },
+            {
+              "application": {
+                "filter": "Buffer Cache"
+              },
+              "functions": [
+                {
+                  "added": false,
+                  "def": {
+                    "category": "Aggregate",
+                    "defaultParams": [
+                      "1m"
+                    ],
+                    "name": "average",
+                    "params": [
+                      {
+                        "name": "interval",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "params": [
+                    "1m"
+                  ],
+                  "text": "average(1m)"
+                },
+                {
+                  "added": false,
+                  "def": {
+                    "category": "Alias",
+                    "defaultParams": [],
+                    "name": "setAlias",
+                    "params": [
+                      {
+                        "name": "alias",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "params": [
+                    "Recycle pool size"
+                  ],
+                  "text": "setAlias(Recycle pool size)"
+                }
+              ],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "/$node1|$node2/"
+              },
+              "item": {
+                "filter": "Recycle pool size"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "E",
+              "resultFormat": "time_series",
+              "table": {
+                "skipEmptyValues": false
+              },
+              "triggers": {
+                "acknowledged": 2,
+                "count": true,
+                "minSeverity": 3
+              }
+            }
+          ],
+          "timeFrom": "5m",
+          "title": "SQL 执行",
+          "type": "grafana-progress-panel"
+        },
+        {
+          "datasource": "$datasource",
+          "forward": {
+            "format": "Bps",
+            "label": "流量",
+            "show": true,
+            "unit": "Bps"
+          },
+          "hideTimeOverride": true,
+          "id": 29,
+          "links": [],
+          "opposite": {
+            "format": "Bps",
+            "label": "Redo",
+            "show": true,
+            "unit": "ops"
+          },
+          "span": 1,
+          "targets": [
+            {
+              "application": {
+                "filter": "SQL Commit"
+              },
+              "functions": [
+                {
+                  "def": {
+                    "category": "Aggregate",
+                    "defaultParams": [
+                      "1m"
+                    ],
+                    "name": "sum",
+                    "params": [
+                      {
+                        "name": "interval",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "params": [
+                    "1m"
+                  ],
+                  "text": "sum(1m)"
+                },
+                {
+                  "def": {
+                    "category": "Alias",
+                    "defaultParams": [],
+                    "name": "setAlias",
+                    "params": [
+                      {
+                        "name": "alias",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "params": [
+                    "SQL*Net throughput"
+                  ],
+                  "text": "setAlias(SQL*Net throughput)"
+                }
+              ],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "/$node1|$node2/"
+              },
+              "item": {
+                "filter": "SQL*Net throughput"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "A",
+              "resultFormat": "time_series",
+              "table": {
+                "skipEmptyValues": false
+              },
+              "triggers": {
+                "acknowledged": 2,
+                "count": true,
+                "minSeverity": 3
+              }
+            },
+            {
+              "application": {
+                "filter": "SQL Commit"
+              },
+              "functions": [
+                {
+                  "def": {
+                    "category": "Aggregate",
+                    "defaultParams": [
+                      "1m"
+                    ],
+                    "name": "sum",
+                    "params": [
+                      {
+                        "name": "interval",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "params": [
+                    "1m"
+                  ],
+                  "text": "sum(1m)"
+                },
+                {
+                  "def": {
+                    "category": "Alias",
+                    "defaultParams": [],
+                    "name": "setAlias",
+                    "params": [
+                      {
+                        "name": "alias",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "params": [
+                    "Redo size per second"
+                  ],
+                  "text": "setAlias(Redo size per second)"
+                }
+              ],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "/$node1|$node2/"
+              },
+              "item": {
+                "filter": "Redo size per second"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "B",
+              "resultFormat": "time_series",
+              "table": {
+                "skipEmptyValues": false
+              },
+              "triggers": {
+                "acknowledged": 2,
+                "count": true,
+                "minSeverity": 3
+              }
+            }
+          ],
+          "timeFrom": "5m",
+          "title": "",
+          "transparent": true,
+          "type": "grafana-flow-panel"
+        },
+        {
+          "barsArr": [],
+          "colorArr": [
+            "#5eb1e4",
+            "#4888e0",
+            "#2adf6e"
+          ],
+          "datasource": "$datasource",
+          "hideTimeOverride": true,
+          "id": 30,
+          "links": [],
+          "progressArr": [
+            {
+              "format": "decbytes",
+              "label": "Log buffer size",
+              "type": "solid",
+              "unit": "B"
+            },
+            {
+              "label": "Log buffer waits",
+              "type": "solid",
+              "unit": ""
+            }
+          ],
+          "span": 2,
+          "targets": [
+            {
+              "application": {
+                "filter": "SQL Commit"
+              },
+              "functions": [
+                {
+                  "def": {
+                    "category": "Aggregate",
+                    "defaultParams": [
+                      "1m"
+                    ],
+                    "name": "average",
+                    "params": [
+                      {
+                        "name": "interval",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "params": [
+                    "1m"
+                  ],
+                  "text": "average(1m)"
+                },
+                {
+                  "def": {
+                    "category": "Alias",
+                    "defaultParams": [],
+                    "name": "setAlias",
+                    "params": [
+                      {
+                        "name": "alias",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "params": [
+                    "Log buffer size"
+                  ],
+                  "text": "setAlias(Log buffer size)"
+                }
+              ],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "/$node1|$node2/"
+              },
+              "item": {
+                "filter": "Log buffer size"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "A",
+              "resultFormat": "time_series",
+              "table": {
+                "skipEmptyValues": false
+              },
+              "triggers": {
+                "acknowledged": 2,
+                "count": true,
+                "minSeverity": 3
+              }
+            },
+            {
+              "application": {
+                "filter": "SQL Commit"
+              },
+              "functions": [
+                {
+                  "def": {
+                    "category": "Aggregate",
+                    "defaultParams": [
+                      "1m"
+                    ],
+                    "name": "sum",
+                    "params": [
+                      {
+                        "name": "interval",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "params": [
+                    "1m"
+                  ],
+                  "text": "sum(1m)"
+                },
+                {
+                  "def": {
+                    "category": "Alias",
+                    "defaultParams": [],
+                    "name": "setAlias",
+                    "params": [
+                      {
+                        "name": "alias",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "params": [
+                    "Log buffer space waits"
+                  ],
+                  "text": "setAlias(Log buffer space waits)"
+                }
+              ],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "/$node1|$node2/"
+              },
+              "item": {
+                "filter": "Log buffer space waits"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "B",
+              "resultFormat": "time_series",
+              "table": {
+                "skipEmptyValues": false
+              },
+              "triggers": {
+                "acknowledged": 2,
+                "count": true,
+                "minSeverity": 3
+              }
+            }
+          ],
+          "timeFrom": "5m",
+          "title": "SQL 提交",
+          "type": "grafana-progress-panel"
+        }
+      ],
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": false,
+      "title": "Dashboard Row",
+      "titleSize": "h6"
+    },
+    {
+      "collapse": false,
+      "height": 152,
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "$datasource",
+          "decimals": 2,
+          "fill": 1,
+          "id": 6,
+          "legend": {
+            "alignAsTable": false,
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [
+            {
+              "alias": "Active session limit",
+              "color": "#BF1B00",
+              "fill": 0
+            }
+          ],
+          "spaceLength": 10,
+          "span": 3,
+          "stack": false,
+          "steppedLine": true,
+          "targets": [
+            {
+              "application": {
+                "filter": "Connection"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "/$node1|$node2/"
+              },
+              "item": {
+                "filter": "Total Session"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "A",
+              "resultFormat": "time_series",
+              "table": {
+                "skipEmptyValues": false
+              },
+              "triggers": {
+                "acknowledged": 2,
+                "count": true,
+                "minSeverity": 3
+              }
+            },
+            {
+              "application": {
+                "filter": "Connection"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "/$node1|$node2/"
+              },
+              "item": {
+                "filter": "Active session"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "B",
+              "resultFormat": "time_series",
+              "table": {
+                "skipEmptyValues": false
+              },
+              "triggers": {
+                "acknowledged": 2,
+                "count": true,
+                "minSeverity": 3
+              }
+            },
+            {
+              "application": {
+                "filter": "Connection"
+              },
+              "functions": [
+                {
+                  "def": {
+                    "category": "Aggregate",
+                    "defaultParams": [
+                      "1m"
+                    ],
+                    "name": "max",
+                    "params": [
+                      {
+                        "name": "interval",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "params": [
+                    "1m"
+                  ],
+                  "text": "max(1m)"
+                },
+                {
+                  "def": {
+                    "category": "Alias",
+                    "defaultParams": [],
+                    "name": "setAlias",
+                    "params": [
+                      {
+                        "name": "alias",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "params": [
+                    "Active session limit"
+                  ],
+                  "text": "setAlias(Active session limit)"
+                }
+              ],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "/$node1|$node2/"
+              },
+              "item": {
+                "filter": "Active session limit"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "C",
+              "resultFormat": "time_series",
+              "table": {
+                "skipEmptyValues": false
+              },
+              "triggers": {
+                "acknowledged": 2,
+                "count": true,
+                "minSeverity": 3
+              }
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "数据库会话",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": false
+            }
+          ]
+        },
+        {
+          "datasource": "$datasource",
+          "forward": {
+            "format": "ops",
+            "label": "Parses",
+            "show": true,
+            "unit": "ops"
+          },
+          "hideTimeOverride": true,
+          "id": 31,
+          "links": [],
+          "opposite": {
+            "format": "µs",
+            "label": "Parses",
+            "show": true,
+            "unit": "us"
+          },
+          "span": 1,
+          "targets": [
+            {
+              "application": {
+                "filter": "SQL Parse"
+              },
+              "functions": [
+                {
+                  "def": {
+                    "category": "Aggregate",
+                    "defaultParams": [
+                      "1m"
+                    ],
+                    "name": "sum",
+                    "params": [
+                      {
+                        "name": "interval",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "params": [
+                    "1m"
+                  ],
+                  "text": "sum(1m)"
+                },
+                {
+                  "def": {
+                    "category": "Alias",
+                    "defaultParams": [],
+                    "name": "setAlias",
+                    "params": [
+                      {
+                        "name": "alias",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "params": [
+                    "Total parse per second"
+                  ],
+                  "text": "setAlias(Total parse per second)"
+                }
+              ],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "/$node1|$node2/"
+              },
+              "item": {
+                "filter": "Total parse per second"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "A",
+              "resultFormat": "time_series",
+              "table": {
+                "skipEmptyValues": false
+              },
+              "triggers": {
+                "acknowledged": 2,
+                "count": true,
+                "minSeverity": 3
+              }
+            },
+            {
+              "application": {
+                "filter": "SQL Parse"
+              },
+              "functions": [
+                {
+                  "def": {
+                    "category": "Aggregate",
+                    "defaultParams": [
+                      "1m"
+                    ],
+                    "name": "average",
+                    "params": [
+                      {
+                        "name": "interval",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "params": [
+                    "1m"
+                  ],
+                  "text": "average(1m)"
+                },
+                {
+                  "def": {
+                    "category": "Alias",
+                    "defaultParams": [],
+                    "name": "setAlias",
+                    "params": [
+                      {
+                        "name": "alias",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "params": [
+                    "Average parse time"
+                  ],
+                  "text": "setAlias(Average parse time)"
+                }
+              ],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "/$node1|$node2/"
+              },
+              "item": {
+                "filter": "Average parse time"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "B",
+              "resultFormat": "time_series",
+              "table": {
+                "skipEmptyValues": false
+              },
+              "triggers": {
+                "acknowledged": 2,
+                "count": true,
+                "minSeverity": 3
+              }
+            }
+          ],
+          "timeFrom": "5m",
+          "title": "",
+          "transparent": true,
+          "type": "grafana-flow-panel"
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "$datasource",
+          "decimals": 2,
+          "fill": 1,
+          "hideTimeOverride": false,
+          "id": 32,
+          "legend": {
+            "alignAsTable": false,
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [
+            {
+              "alias": "Exp Moving Window",
+              "fill": 0,
+              "linewidth": 2
+            }
+          ],
+          "spaceLength": 10,
+          "span": 2,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "application": {
+                "filter": "SQL Parse"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "/$node1|$node2/"
+              },
+              "item": {
+                "filter": "Average parse time"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "A",
+              "resultFormat": "time_series",
+              "table": {
+                "skipEmptyValues": false
+              },
+              "triggers": {
+                "acknowledged": 2,
+                "count": true,
+                "minSeverity": 3
+              }
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "µs",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "ops",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": false
+            }
+          ]
+        },
+        {
+          "datasource": "$datasource",
+          "forward": {
+            "format": "ops",
+            "label": "Executions",
+            "show": true,
+            "unit": "ops"
+          },
+          "hideTimeOverride": true,
+          "id": 27,
+          "links": [],
+          "opposite": {
+            "format": "µs",
+            "label": "Executions",
+            "show": true,
+            "unit": "us"
+          },
+          "span": 1,
+          "targets": [
+            {
+              "application": {
+                "filter": "SQL Execution"
+              },
+              "functions": [
+                {
+                  "def": {
+                    "category": "Aggregate",
+                    "defaultParams": [
+                      "1m"
+                    ],
+                    "name": "sum",
+                    "params": [
+                      {
+                        "name": "interval",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "params": [
+                    "1m"
+                  ],
+                  "text": "sum(1m)"
+                },
+                {
+                  "def": {
+                    "category": "Alias",
+                    "defaultParams": [],
+                    "name": "setAlias",
+                    "params": [
+                      {
+                        "name": "alias",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "params": [
+                    "Executions per second"
+                  ],
+                  "text": "setAlias(Executions per second)"
+                }
+              ],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "/$node1|$node2/"
+              },
+              "item": {
+                "filter": "Executions per second"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "A",
+              "resultFormat": "time_series",
+              "table": {
+                "skipEmptyValues": false
+              },
+              "triggers": {
+                "acknowledged": 2,
+                "count": true,
+                "minSeverity": 3
+              }
+            },
+            {
+              "application": {
+                "filter": "SQL Execution"
+              },
+              "functions": [
+                {
+                  "def": {
+                    "category": "Aggregate",
+                    "defaultParams": [
+                      "1m"
+                    ],
+                    "name": "average",
+                    "params": [
+                      {
+                        "name": "interval",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "params": [
+                    "1m"
+                  ],
+                  "text": "average(1m)"
+                },
+                {
+                  "def": {
+                    "category": "Alias",
+                    "defaultParams": [],
+                    "name": "setAlias",
+                    "params": [
+                      {
+                        "name": "alias",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "params": [
+                    "Average execution time"
+                  ],
+                  "text": "setAlias(Average execution time)"
+                }
+              ],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "/$node1|$node2/"
+              },
+              "item": {
+                "filter": "Average execution time"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "B",
+              "resultFormat": "time_series",
+              "table": {
+                "skipEmptyValues": false
+              },
+              "triggers": {
+                "acknowledged": 2,
+                "count": true,
+                "minSeverity": 3
+              }
+            }
+          ],
+          "timeFrom": "5m",
+          "title": "",
+          "transparent": true,
+          "type": "grafana-flow-panel"
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "$datasource",
+          "decimals": 2,
+          "fill": 1,
+          "id": 34,
+          "legend": {
+            "alignAsTable": false,
+            "avg": false,
+            "current": false,
+            "hideZero": false,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [
+            {
+              "alias": "Exp Moving Window",
+              "fill": 0,
+              "linewidth": 2
+            }
+          ],
+          "spaceLength": 10,
+          "span": 2,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "application": {
+                "filter": "SQL Execution"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "/$node1|$node2/"
+              },
+              "item": {
+                "filter": "Average execution time"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "A",
+              "resultFormat": "time_series",
+              "table": {
+                "skipEmptyValues": false
+              },
+              "triggers": {
+                "acknowledged": 2,
+                "count": true,
+                "minSeverity": 3
+              }
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "µs",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "ops",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": false
+            }
+          ]
+        },
+        {
+          "datasource": "$datasource",
+          "forward": {
+            "format": "ops",
+            "label": "Commits",
+            "show": true,
+            "unit": "us"
+          },
+          "hideTimeOverride": true,
+          "id": 35,
+          "links": [],
+          "opposite": {
+            "format": "µs",
+            "label": "Commits",
+            "show": true,
+            "unit": "Bps"
+          },
+          "span": 1,
+          "targets": [
+            {
+              "application": {
+                "filter": "SQL Commit"
+              },
+              "functions": [
+                {
+                  "def": {
+                    "category": "Aggregate",
+                    "defaultParams": [
+                      "1m"
+                    ],
+                    "name": "sum",
+                    "params": [
+                      {
+                        "name": "interval",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "params": [
+                    "1m"
+                  ],
+                  "text": "sum(1m)"
+                },
+                {
+                  "def": {
+                    "category": "Alias",
+                    "defaultParams": [],
+                    "name": "setAlias",
+                    "params": [
+                      {
+                        "name": "alias",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "params": [
+                    "Commits per second"
+                  ],
+                  "text": "setAlias(Commits per second)"
+                }
+              ],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "/$node1|$node2/"
+              },
+              "item": {
+                "filter": "Commits per second"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "B",
+              "resultFormat": "time_series",
+              "table": {
+                "skipEmptyValues": false
+              },
+              "triggers": {
+                "acknowledged": 2,
+                "count": true,
+                "minSeverity": 3
+              }
+            },
+            {
+              "application": {
+                "filter": "SQL Commit"
+              },
+              "functions": [
+                {
+                  "def": {
+                    "category": "Aggregate",
+                    "defaultParams": [
+                      "1m"
+                    ],
+                    "name": "average",
+                    "params": [
+                      {
+                        "name": "interval",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "params": [
+                    "1m"
+                  ],
+                  "text": "average(1m)"
+                },
+                {
+                  "def": {
+                    "category": "Alias",
+                    "defaultParams": [],
+                    "name": "setAlias",
+                    "params": [
+                      {
+                        "name": "alias",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "params": [
+                    "Average commit time"
+                  ],
+                  "text": "setAlias(Average commit time)"
+                }
+              ],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "/$node1|$node2/"
+              },
+              "item": {
+                "filter": "Average commit time"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "A",
+              "resultFormat": "time_series",
+              "table": {
+                "skipEmptyValues": false
+              },
+              "triggers": {
+                "acknowledged": 2,
+                "count": true,
+                "minSeverity": 3
+              }
+            }
+          ],
+          "timeFrom": "5m",
+          "title": "",
+          "transparent": true,
+          "type": "grafana-flow-panel"
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "$datasource",
+          "decimals": 2,
+          "fill": 1,
+          "id": 36,
+          "legend": {
+            "alignAsTable": false,
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [
+            {
+              "alias": "Exp Moving Window",
+              "fill": 0,
+              "linewidth": 2
+            }
+          ],
+          "spaceLength": 10,
+          "span": 2,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "application": {
+                "filter": "SQL Commit"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "/$node1|$node2/"
+              },
+              "item": {
+                "filter": "Average commit time"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "A",
+              "resultFormat": "time_series",
+              "table": {
+                "skipEmptyValues": false
+              },
+              "triggers": {
+                "acknowledged": 2,
+                "count": true,
+                "minSeverity": 3
+              }
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "µs",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "ops",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": false
+            }
+          ]
+        }
+      ],
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": false,
+      "title": "Dashboard Row",
+      "titleSize": "h6"
+    },
+    {
+      "collapse": false,
+      "height": 174,
+      "panels": [
+        {
+          "columns": [
+            {
+              "text": "Current",
+              "value": "current"
+            }
+          ],
+          "datasource": "$datasource",
+          "fontSize": "100%",
+          "hideTimeOverride": true,
+          "id": 37,
+          "links": [],
+          "pageSize": null,
+          "scroll": true,
+          "showHeader": true,
+          "sort": {
+            "col": 1,
+            "desc": true
+          },
+          "span": 3,
+          "styles": [
+            {
+              "alias": "Time",
+              "dateFormat": "YYYY-MM-DD HH:mm:ss",
+              "pattern": "Time",
+              "type": "date"
+            },
+            {
+              "alias": "资源",
+              "colorMode": null,
+              "colors": [
+                "rgba(245, 54, 54, 0.9)",
+                "rgba(237, 129, 40, 0.89)",
+                "rgba(50, 172, 45, 0.97)"
+              ],
+              "dateFormat": "YYYY-MM-DD HH:mm:ss",
+              "decimals": 2,
+              "pattern": "Metric",
+              "thresholds": [],
+              "type": "number",
+              "unit": "short"
+            },
+            {
+              "alias": "使用率",
+              "colorMode": "value",
+              "colors": [
+                "rgba(50, 172, 45, 0.97)",
+                "rgba(237, 129, 40, 0.89)",
+                "rgba(245, 54, 54, 0.9)"
+              ],
+              "dateFormat": "YYYY-MM-DD HH:mm:ss",
+              "decimals": 0,
+              "pattern": "Current",
+              "thresholds": [
+                "85",
+                "90"
+              ],
+              "type": "number",
+              "unit": "percent"
+            },
+            {
+              "alias": "",
+              "colorMode": null,
+              "colors": [
+                "rgba(245, 54, 54, 0.9)",
+                "rgba(237, 129, 40, 0.89)",
+                "rgba(50, 172, 45, 0.97)"
+              ],
+              "decimals": 2,
+              "pattern": "/.*/",
+              "thresholds": [],
+              "type": "number",
+              "unit": "short"
+            }
+          ],
+          "targets": [
+            {
+              "application": {
+                "filter": "Resource"
+              },
+              "functions": [
+                {
+                  "def": {
+                    "category": "Alias",
+                    "defaultParams": [
+                      "/(.*)/",
+                      "$1"
+                    ],
+                    "name": "replaceAlias",
+                    "params": [
+                      {
+                        "name": "regexp",
+                        "type": "string"
+                      },
+                      {
+                        "name": "newAlias",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "params": [
+                    "/(.*) used in %/",
+                    "$1"
+                  ],
+                  "text": "replaceAlias(/(.*) used in %/, $1)"
+                }
+              ],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "/$node1|$node2/"
+              },
+              "item": {
+                "filter": "/(.*) %/"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "A",
+              "resultFormat": "time_series",
+              "table": {
+                "skipEmptyValues": false
+              },
+              "triggers": {
+                "acknowledged": 2,
+                "count": true,
+                "minSeverity": 3
+              }
+            }
+          ],
+          "timeFrom": "5m",
+          "title": "",
+          "transform": "timeseries_aggregations",
+          "type": "table"
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "$datasource",
+          "decimals": 2,
+          "fill": 1,
+          "id": 38,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "max": true,
+            "min": true,
+            "rightSide": false,
+            "show": false,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "maxDataPoints": "",
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [
+            {
+              "alias": "/.* time/",
+              "fill": 0,
+              "yaxis": 1
+            },
+            {
+              "alias": "/.* waits/",
+              "fill": 5,
+              "yaxis": 2
+            }
+          ],
+          "spaceLength": 10,
+          "span": 3,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "application": {
+                "filter": "Cluster"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "/$node1|$node2/"
+              },
+              "item": {
+                "filter": "GC buffer busy time"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "A",
+              "resultFormat": "time_series",
+              "table": {
+                "skipEmptyValues": false
+              },
+              "triggers": {
+                "acknowledged": 2,
+                "count": true,
+                "minSeverity": 3
+              }
+            },
+            {
+              "application": {
+                "filter": "Cluster"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "/$node1|$node2/"
+              },
+              "item": {
+                "filter": "GC buffer busy waits"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "B",
+              "resultFormat": "time_series",
+              "table": {
+                "skipEmptyValues": false
+              },
+              "triggers": {
+                "acknowledged": 2,
+                "count": true,
+                "minSeverity": 3
+              }
+            },
+            {
+              "application": {
+                "filter": "Cluster"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "/$node1|$node2/"
+              },
+              "item": {
+                "filter": "GC cr block 2-way time"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "C",
+              "resultFormat": "time_series",
+              "table": {
+                "skipEmptyValues": false
+              },
+              "triggers": {
+                "acknowledged": 2,
+                "count": true,
+                "minSeverity": 3
+              }
+            },
+            {
+              "application": {
+                "filter": "Cluster"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "/$node1|$node2/"
+              },
+              "item": {
+                "filter": "GC cr block 2-way waits"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "D",
+              "resultFormat": "time_series",
+              "table": {
+                "skipEmptyValues": false
+              },
+              "triggers": {
+                "acknowledged": 2,
+                "count": true,
+                "minSeverity": 3
+              }
+            },
+            {
+              "application": {
+                "filter": "Cluster"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "/$node1|$node2/"
+              },
+              "item": {
+                "filter": "GC cr block busy time"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "E",
+              "resultFormat": "time_series",
+              "table": {
+                "skipEmptyValues": false
+              },
+              "triggers": {
+                "acknowledged": 2,
+                "count": true,
+                "minSeverity": 3
+              }
+            },
+            {
+              "application": {
+                "filter": "Cluster"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "/$node1|$node2/"
+              },
+              "item": {
+                "filter": "GC cr block busy waits"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "F",
+              "resultFormat": "time_series",
+              "table": {
+                "skipEmptyValues": false
+              },
+              "triggers": {
+                "acknowledged": 2,
+                "count": true,
+                "minSeverity": 3
+              }
+            },
+            {
+              "application": {
+                "filter": "Cluster"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "/$node1|$node2/"
+              },
+              "item": {
+                "filter": "GC current block 2-way time"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "G",
+              "resultFormat": "time_series",
+              "table": {
+                "skipEmptyValues": false
+              },
+              "triggers": {
+                "acknowledged": 2,
+                "count": true,
+                "minSeverity": 3
+              }
+            },
+            {
+              "application": {
+                "filter": "Cluster"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "/$node1|$node2/"
+              },
+              "item": {
+                "filter": "GC current block 2-way waits"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "H",
+              "resultFormat": "time_series",
+              "table": {
+                "skipEmptyValues": false
+              },
+              "triggers": {
+                "acknowledged": 2,
+                "count": true,
+                "minSeverity": 3
+              }
+            },
+            {
+              "application": {
+                "filter": "Cluster"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "/$node1|$node2/"
+              },
+              "item": {
+                "filter": "GC current block busy time"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "I",
+              "resultFormat": "time_series",
+              "table": {
+                "skipEmptyValues": false
+              },
+              "triggers": {
+                "acknowledged": 2,
+                "count": true,
+                "minSeverity": 3
+              }
+            },
+            {
+              "application": {
+                "filter": "Cluster"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "/$node1|$node2/"
+              },
+              "item": {
+                "filter": "GC current block busy waits"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "J",
+              "resultFormat": "time_series",
+              "table": {
+                "skipEmptyValues": false
+              },
+              "triggers": {
+                "acknowledged": 2,
+                "count": true,
+                "minSeverity": 3
+              }
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Cluster",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "µs",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "$datasource",
+          "decimals": 2,
+          "fill": 1,
+          "id": 39,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "maxDataPoints": "",
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [
+            {
+              "alias": "/.* time/",
+              "fill": 0,
+              "yaxis": 1
+            },
+            {
+              "alias": "/.* waits/",
+              "fill": 5,
+              "yaxis": 2
+            }
+          ],
+          "spaceLength": 10,
+          "span": 3,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "application": {
+                "filter": "Latch"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "/$node1|$node2/"
+              },
+              "item": {
+                "filter": "Latch: shared pool time"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "A",
+              "resultFormat": "time_series",
+              "table": {
+                "skipEmptyValues": false
+              },
+              "triggers": {
+                "acknowledged": 2,
+                "count": true,
+                "minSeverity": 3
+              }
+            },
+            {
+              "application": {
+                "filter": "Latch"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "/$node1|$node2/"
+              },
+              "item": {
+                "filter": "Latch: shared pool waits"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "B",
+              "resultFormat": "time_series",
+              "table": {
+                "skipEmptyValues": false
+              },
+              "triggers": {
+                "acknowledged": 2,
+                "count": true,
+                "minSeverity": 3
+              }
+            },
+            {
+              "application": {
+                "filter": "Latch"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "/$node1|$node2/"
+              },
+              "item": {
+                "filter": "Latch: cache buffers chains time"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "C",
+              "resultFormat": "time_series",
+              "table": {
+                "skipEmptyValues": false
+              },
+              "triggers": {
+                "acknowledged": 2,
+                "count": true,
+                "minSeverity": 3
+              }
+            },
+            {
+              "application": {
+                "filter": "Latch"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "/$node1|$node2/"
+              },
+              "item": {
+                "filter": "Latch: cache buffers chains waits"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "D",
+              "resultFormat": "time_series",
+              "table": {
+                "skipEmptyValues": false
+              },
+              "triggers": {
+                "acknowledged": 2,
+                "count": true,
+                "minSeverity": 3
+              }
+            },
+            {
+              "application": {
+                "filter": "Latch"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "/$node1|$node2/"
+              },
+              "item": {
+                "filter": "Latch: row cache objects time"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "E",
+              "resultFormat": "time_series",
+              "table": {
+                "skipEmptyValues": false
+              },
+              "triggers": {
+                "acknowledged": 2,
+                "count": true,
+                "minSeverity": 3
+              }
+            },
+            {
+              "application": {
+                "filter": "Latch"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "/$node1|$node2/"
+              },
+              "item": {
+                "filter": "Latch: row cache objects waits"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "F",
+              "resultFormat": "time_series",
+              "table": {
+                "skipEmptyValues": false
+              },
+              "triggers": {
+                "acknowledged": 2,
+                "count": true,
+                "minSeverity": 3
+              }
+            },
+            {
+              "application": {
+                "filter": "Latch"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "/$node1|$node2/"
+              },
+              "item": {
+                "filter": "Cursor: mutex S time"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "G",
+              "resultFormat": "time_series",
+              "table": {
+                "skipEmptyValues": false
+              },
+              "triggers": {
+                "acknowledged": 2,
+                "count": true,
+                "minSeverity": 3
+              }
+            },
+            {
+              "application": {
+                "filter": "Latch"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "/$node1|$node2/"
+              },
+              "item": {
+                "filter": "Cursor: mutex S waits"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "H",
+              "resultFormat": "time_series",
+              "table": {
+                "skipEmptyValues": false
+              },
+              "triggers": {
+                "acknowledged": 2,
+                "count": true,
+                "minSeverity": 3
+              }
+            },
+            {
+              "application": {
+                "filter": "Latch"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "/$node1|$node2/"
+              },
+              "item": {
+                "filter": "Cursor: pin S wait on X time"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "I",
+              "resultFormat": "time_series",
+              "table": {
+                "skipEmptyValues": false
+              },
+              "triggers": {
+                "acknowledged": 2,
+                "count": true,
+                "minSeverity": 3
+              }
+            },
+            {
+              "application": {
+                "filter": "Latch"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "/$node1|$node2/"
+              },
+              "item": {
+                "filter": "Cursor: pin S wait on X waits"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "J",
+              "resultFormat": "time_series",
+              "table": {
+                "skipEmptyValues": false
+              },
+              "triggers": {
+                "acknowledged": 2,
+                "count": true,
+                "minSeverity": 3
+              }
+            },
+            {
+              "application": {
+                "filter": "Latch"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "/$node1|$node2/"
+              },
+              "item": {
+                "filter": "Library cache: mutex X time"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "K",
+              "resultFormat": "time_series",
+              "table": {
+                "skipEmptyValues": false
+              },
+              "triggers": {
+                "acknowledged": 2,
+                "count": true,
+                "minSeverity": 3
+              }
+            },
+            {
+              "application": {
+                "filter": "Latch"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "/$node1|$node2/"
+              },
+              "item": {
+                "filter": "Library cache: mutex X waits"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "L",
+              "resultFormat": "time_series",
+              "table": {
+                "skipEmptyValues": false
+              },
+              "triggers": {
+                "acknowledged": 2,
+                "count": true,
+                "minSeverity": 3
+              }
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Mutex / Latch",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "µs",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "$datasource",
+          "decimals": 2,
+          "fill": 1,
+          "id": 40,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "hideEmpty": false,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "maxDataPoints": "",
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [
+            {
+              "alias": "/.* time/",
+              "fill": 0,
+              "yaxis": 1
+            },
+            {
+              "alias": "/.* waits/",
+              "fill": 5,
+              "yaxis": 2
+            }
+          ],
+          "spaceLength": 10,
+          "span": 3,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "application": {
+                "filter": "Lock"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "/$node1|$node2/"
+              },
+              "item": {
+                "filter": "Enq: TM - contention time"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "A",
+              "resultFormat": "time_series",
+              "table": {
+                "skipEmptyValues": false
+              },
+              "triggers": {
+                "acknowledged": 2,
+                "count": true,
+                "minSeverity": 3
+              }
+            },
+            {
+              "application": {
+                "filter": "Lock"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "/$node1|$node2/"
+              },
+              "item": {
+                "filter": "Enq: TM - contention waits"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "B",
+              "resultFormat": "time_series",
+              "table": {
+                "skipEmptyValues": false
+              },
+              "triggers": {
+                "acknowledged": 2,
+                "count": true,
+                "minSeverity": 3
+              }
+            },
+            {
+              "application": {
+                "filter": "Lock"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "/$node1|$node2/"
+              },
+              "item": {
+                "filter": "Enq: TX - index contention time"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "C",
+              "resultFormat": "time_series",
+              "table": {
+                "skipEmptyValues": false
+              },
+              "triggers": {
+                "acknowledged": 2,
+                "count": true,
+                "minSeverity": 3
+              }
+            },
+            {
+              "application": {
+                "filter": "Lock"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "/$node1|$node2/"
+              },
+              "item": {
+                "filter": "Enq: TX - index contention waits"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "D",
+              "resultFormat": "time_series",
+              "table": {
+                "skipEmptyValues": false
+              },
+              "triggers": {
+                "acknowledged": 2,
+                "count": true,
+                "minSeverity": 3
+              }
+            },
+            {
+              "application": {
+                "filter": "Lock"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "/$node1|$node2/"
+              },
+              "item": {
+                "filter": "Enq: TX - row lock contention time"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "E",
+              "resultFormat": "time_series",
+              "table": {
+                "skipEmptyValues": false
+              },
+              "triggers": {
+                "acknowledged": 2,
+                "count": true,
+                "minSeverity": 3
+              }
+            },
+            {
+              "application": {
+                "filter": "Lock"
+              },
+              "functions": [],
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "/$node1|$node2/"
+              },
+              "item": {
+                "filter": "Enq: TX - row lock contention waits"
+              },
+              "mode": 0,
+              "options": {
+                "showDisabledItems": false
+              },
+              "refId": "F",
+              "resultFormat": "time_series",
+              "table": {
+                "skipEmptyValues": false
+              },
+              "triggers": {
+                "acknowledged": 2,
+                "count": true,
+                "minSeverity": 3
+              }
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Lock",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "µs",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        }
+      ],
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": false,
+      "title": "Dashboard Row",
+      "titleSize": "h6"
+    },
+    {
+      "collapse": false,
+      "height": 250,
+      "panels": [
+        {
+          "ackEventColor": "rgba(0, 0, 0, 0)",
+          "customLastChangeFormat": false,
+          "datasources": [
+            "$datasource"
+          ],
+          "descriptionAtNewLine": false,
+          "descriptionField": true,
+          "fontSize": "100%",
+          "highlightBackground": false,
+          "highlightNewEvents": false,
+          "highlightNewerThan": "1h",
+          "hostField": false,
+          "hostGroups": false,
+          "hostTechNameField": false,
+          "hostsInMaintenance": true,
+          "id": 19,
+          "lastChangeFormat": "",
+          "limit": 9999,
+          "links": [],
+          "okEventColor": "rgba(0, 245, 153, 0.45)",
+          "pageSize": 10,
+          "schemaVersion": 4,
+          "severityField": false,
+          "showEvents": {
+            "text": "Problems",
+            "value": "1"
+          },
+          "showTags": true,
+          "showTriggers": "all triggers",
+          "sortTriggersBy": {
+            "text": "last change",
+            "value": "lastchange"
+          },
+          "span": 12,
+          "statusField": false,
+          "targets": {
+            "$datasource": {
+              "application": {
+                "filter": ""
+              },
+              "group": {
+                "filter": "$group"
+              },
+              "host": {
+                "filter": "/$node1|$node2/"
+              },
+              "tags": {
+                "filter": ""
+              },
+              "trigger": {
+                "filter": ""
+              }
+            }
+          },
+          "title": "告警信息",
+          "triggerSeverity": [
+            {
+              "color": "#B7DBAB",
+              "priority": 0,
+              "severity": "Not classified",
+              "show": false
+            },
+            {
+              "color": "#82B5D8",
+              "priority": 1,
+              "severity": "Information",
+              "show": false
+            },
+            {
+              "color": "#E5AC0E",
+              "priority": 2,
+              "severity": "Warning",
+              "show": true
+            },
+            {
+              "color": "#C15C17",
+              "priority": 3,
+              "severity": "Average",
+              "show": true
+            },
+            {
+              "color": "#BF1B00",
+              "priority": 4,
+              "severity": "High",
+              "show": true
+            },
+            {
+              "color": "#890F02",
+              "priority": 5,
+              "severity": "Disaster",
+              "show": true
+            }
+          ],
+          "type": "hzmc-onekeeper-triggers-panel"
+        }
+      ],
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": false,
+      "title": "Dashboard Row",
+      "titleSize": "h6"
+    }
+  ],
+  "schemaVersion": 14,
+  "style": "dark",
+  "tags": [
+    "onekeeper",
+    "template"
+  ],
+  "templating": {
+    "list": [
+      {
+        "current": {},
+        "hide": 0,
+        "label": "数据源",
+        "name": "datasource",
+        "options": [],
+        "query": "hzmc-onekeeper-datasource",
+        "refresh": 1,
+        "regex": "",
+        "type": "datasource"
+      },
+      {
+        "allValue": null,
+        "current": {},
+        "datasource": "$datasource",
+        "hide": 0,
+        "includeAll": false,
+        "label": "组",
+        "multi": false,
+        "name": "group",
+        "options": [],
+        "query": "*",
+        "refresh": 1,
+        "regex": "",
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      },
+      {
+        "allValue": null,
+        "current": {},
+        "datasource": "$datasource",
+        "hide": 0,
+        "includeAll": false,
+        "label": "节点 1",
+        "multi": false,
+        "name": "node1",
+        "options": [],
+        "query": "$group.*",
+        "refresh": 1,
+        "regex": "",
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      },
+      {
+        "allValue": null,
+        "current": {},
+        "datasource": "$datasource",
+        "hide": 0,
+        "includeAll": false,
+        "label": "节点 2",
+        "multi": false,
+        "name": "node2",
+        "options": [],
+        "query": "$group.*",
+        "refresh": 1,
+        "regex": "",
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      }
+    ]
+  },
+  "time": {
+    "from": "now-1h",
+    "to": "now"
+  },
+  "timepicker": {
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ],
+    "time_options": [
+      "5m",
+      "15m",
+      "1h",
+      "6h",
+      "12h",
+      "24h",
+      "2d",
+      "7d",
+      "30d"
+    ]
+  },
+  "timezone": "",
+  "title": "Oracle RAC 性能视图",
+  "version": 1
+}

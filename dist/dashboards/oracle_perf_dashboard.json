@@ -326,13 +326,22 @@
                 "filter": "$host"
               },
               "item": {
-                "filter": "Stats of tablespace space used"
+                "filter": "Space stats of all tablespaces"
               },
               "mode": 0,
               "options": {
                 "showDisabledItems": false
               },
-              "refId": "A"
+              "refId": "A",
+              "resultFormat": "time_series",
+              "table": {
+                "skipEmptyValues": false
+              },
+              "triggers": {
+                "acknowledged": 2,
+                "count": true,
+                "minSeverity": 3
+              }
             }
           ],
           "thresholds": "0.66,1.33",
@@ -624,7 +633,16 @@
               "options": {
                 "showDisabledItems": false
               },
-              "refId": "A"
+              "refId": "A",
+              "resultFormat": "time_series",
+              "table": {
+                "skipEmptyValues": false
+              },
+              "triggers": {
+                "acknowledged": 2,
+                "count": true,
+                "minSeverity": 3
+              }
             }
           ],
           "thresholds": "",
@@ -716,7 +734,16 @@
               "options": {
                 "showDisabledItems": false
               },
-              "refId": "A"
+              "refId": "A",
+              "resultFormat": "time_series",
+              "table": {
+                "skipEmptyValues": false
+              },
+              "triggers": {
+                "acknowledged": 2,
+                "count": true,
+                "minSeverity": 3
+              }
             }
           ],
           "thresholds": "",
@@ -808,7 +835,16 @@
               "options": {
                 "showDisabledItems": false
               },
-              "refId": "A"
+              "refId": "A",
+              "resultFormat": "time_series",
+              "table": {
+                "skipEmptyValues": false
+              },
+              "triggers": {
+                "acknowledged": 2,
+                "count": true,
+                "minSeverity": 3
+              }
             }
           ],
           "thresholds": "",
@@ -900,7 +936,16 @@
               "options": {
                 "showDisabledItems": false
               },
-              "refId": "A"
+              "refId": "A",
+              "resultFormat": "time_series",
+              "table": {
+                "skipEmptyValues": false
+              },
+              "triggers": {
+                "acknowledged": 2,
+                "count": true,
+                "minSeverity": 3
+              }
             }
           ],
           "thresholds": "",
@@ -992,7 +1037,16 @@
               "options": {
                 "showDisabledItems": false
               },
-              "refId": "A"
+              "refId": "A",
+              "resultFormat": "time_series",
+              "table": {
+                "skipEmptyValues": false
+              },
+              "triggers": {
+                "acknowledged": 2,
+                "count": true,
+                "minSeverity": 3
+              }
             }
           ],
           "thresholds": "0.66,1.33",
@@ -1990,7 +2044,16 @@
               "options": {
                 "showDisabledItems": false
               },
-              "refId": "A"
+              "refId": "A",
+              "resultFormat": "time_series",
+              "table": {
+                "skipEmptyValues": false
+              },
+              "triggers": {
+                "acknowledged": 2,
+                "count": true,
+                "minSeverity": 3
+              }
             },
             {
               "application": {
@@ -2036,9 +2099,9 @@
                     ]
                   },
                   "params": [
-                    "Exp Moving Window"
+                    "EMA"
                   ],
-                  "text": "setAlias(Exp Moving Window)"
+                  "text": "setAlias(EMA)"
                 }
               ],
               "group": {
@@ -2054,7 +2117,16 @@
               "options": {
                 "showDisabledItems": false
               },
-              "refId": "B"
+              "refId": "B",
+              "resultFormat": "time_series",
+              "table": {
+                "skipEmptyValues": false
+              },
+              "triggers": {
+                "acknowledged": 2,
+                "count": true,
+                "minSeverity": 3
+              }
             }
           ],
           "thresholds": [],
@@ -2215,7 +2287,16 @@
               "options": {
                 "showDisabledItems": false
               },
-              "refId": "A"
+              "refId": "A",
+              "resultFormat": "time_series",
+              "table": {
+                "skipEmptyValues": false
+              },
+              "triggers": {
+                "acknowledged": 2,
+                "count": true,
+                "minSeverity": 3
+              }
             },
             {
               "application": {
@@ -2261,9 +2342,9 @@
                     ]
                   },
                   "params": [
-                    "Exp Moving Window"
+                    "EMA"
                   ],
-                  "text": "setAlias(Exp Moving Window)"
+                  "text": "setAlias(EMA)"
                 }
               ],
               "group": {
@@ -2279,7 +2360,16 @@
               "options": {
                 "showDisabledItems": false
               },
-              "refId": "B"
+              "refId": "B",
+              "resultFormat": "time_series",
+              "table": {
+                "skipEmptyValues": false
+              },
+              "triggers": {
+                "acknowledged": 2,
+                "count": true,
+                "minSeverity": 3
+              }
             }
           ],
           "thresholds": [],
@@ -2440,7 +2530,16 @@
               "options": {
                 "showDisabledItems": false
               },
-              "refId": "A"
+              "refId": "A",
+              "resultFormat": "time_series",
+              "table": {
+                "skipEmptyValues": false
+              },
+              "triggers": {
+                "acknowledged": 2,
+                "count": true,
+                "minSeverity": 3
+              }
             },
             {
               "application": {
@@ -2486,9 +2585,9 @@
                     ]
                   },
                   "params": [
-                    "Exp Moving Window"
+                    "EMA"
                   ],
-                  "text": "setAlias(Exp Moving Window)"
+                  "text": "setAlias(EMA)"
                 }
               ],
               "group": {
@@ -2504,7 +2603,16 @@
               "options": {
                 "showDisabledItems": false
               },
-              "refId": "B"
+              "refId": "B",
+              "resultFormat": "time_series",
+              "table": {
+                "skipEmptyValues": false
+              },
+              "triggers": {
+                "acknowledged": 2,
+                "count": true,
+                "minSeverity": 3
+              }
             }
           ],
           "thresholds": [],
@@ -3576,5 +3684,5 @@
   },
   "timezone": "",
   "title": "Oracle 数据库性能视图",
-  "version": 7
+  "version": 8
 }
