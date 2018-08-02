@@ -1958,7 +1958,7 @@
             }
           ],
           "thresholds": "",
-          "timeFrom": "10m",
+          "timeFrom": "15m",
           "title": "表空间",
           "type": "singlestat",
           "valueFontSize": "50%",
