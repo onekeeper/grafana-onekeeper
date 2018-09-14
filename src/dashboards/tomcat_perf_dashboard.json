@@ -393,7 +393,7 @@
       ],
       "datasource": "$datasource",
       "decimals": 2,
-      "format": "decbytes",
+      "format": "bytes",
       "gauge": {
         "maxValue": 100,
         "minValue": 0,
@@ -1466,5 +1466,5 @@
   },
   "timezone": "",
   "title": "Tomcat 应用性能视图",
-  "version": 4
+  "version": 5
 }

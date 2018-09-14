@@ -1279,17 +1279,17 @@
         {
           "barsArr": [
             {
-              "format": "decbytes",
+              "format": "bytes",
               "label": "Library cache",
               "unit": "B"
             },
             {
-              "format": "decbytes",
+              "format": "bytes",
               "label": "Row cache",
               "unit": "B"
             },
             {
-              "format": "decbytes",
+              "format": "bytes",
               "label": "Free",
               "unit": "B"
             }
@@ -1311,7 +1311,7 @@
               "unit": "%"
             },
             {
-              "format": "decbytes",
+              "format": "bytes",
               "label": "Shared pool size",
               "type": "solid",
               "unit": "B"
@@ -1492,17 +1492,17 @@
         {
           "barsArr": [
             {
-              "format": "decbytes",
+              "format": "bytes",
               "label": "Default pool",
               "unit": "B"
             },
             {
-              "format": "decbytes",
+              "format": "bytes",
               "label": "Keep pool",
               "unit": "B"
             },
             {
-              "format": "decbytes",
+              "format": "bytes",
               "label": "Recycle pool",
               "unit": "B"
             }
@@ -1524,7 +1524,7 @@
               "unit": "%"
             },
             {
-              "format": "decbytes",
+              "format": "bytes",
               "label": "Buffer cache size",
               "type": "solid",
               "unit": "B"
@@ -1715,7 +1715,7 @@
           "links": [],
           "progressArr": [
             {
-              "format": "decbytes",
+              "format": "bytes",
               "label": "Log buffer size",
               "type": "solid",
               "unit": "B"
@@ -3684,5 +3684,5 @@
   },
   "timezone": "",
   "title": "Oracle 数据库性能视图",
-  "version": 8
+  "version": 9
 }

@@ -1070,7 +1070,7 @@
               "show": true
             },
             {
-              "format": "decbytes",
+              "format": "bytes",
               "label": null,
               "logBase": 1,
               "max": null,
@@ -1616,5 +1616,5 @@
   },
   "timezone": "browser",
   "title": "Onekeeper 性能视图",
-  "version": 6
+  "version": 7
 }

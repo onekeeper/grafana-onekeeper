@@ -393,7 +393,7 @@
       ],
       "datasource": "$datasource",
       "decimals": 2,
-      "format": "decbytes",
+      "format": "bytes",
       "gauge": {
         "maxValue": 100,
         "minValue": 0,
@@ -2856,5 +2856,5 @@
   },
   "timezone": "",
   "title": "WebLogic 应用性能视图",
-  "version": 3
+  "version": 4
 }

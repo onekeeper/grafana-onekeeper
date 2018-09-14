@@ -1934,7 +1934,7 @@
       ],
       "datasource": "$datasource",
       "decimals": 2,
-      "format": "decbytes",
+      "format": "bytes",
       "gauge": {
         "maxValue": 100,
         "minValue": 0,
@@ -2436,34 +2436,34 @@
     {
       "barsArr": [
         {
-          "format": "decbytes",
+          "format": "bytes",
           "label": "Library cache",
           "unit": "B"
         },
         {
-          "format": "decbytes",
+          "format": "bytes",
           "label": "Row cache",
           "unit": "B"
         },
         {
-          "format": "decbytes",
+          "format": "bytes",
           "label": "Free",
           "unit": "B"
         }
       ],
       "barsArr2": [
         {
-          "format": "decbytes",
+          "format": "bytes",
           "label": "Library cache",
           "unit": ""
         },
         {
-          "format": "decbytes",
+          "format": "bytes",
           "label": "Row cache",
           "unit": ""
         },
         {
-          "format": "decbytes",
+          "format": "bytes",
           "label": "Free",
           "unit": ""
         }
@@ -2492,7 +2492,7 @@
           "unit": "%"
         },
         {
-          "format": "decbytes",
+          "format": "bytes",
           "label": "Shared pool size",
           "type": "solid",
           "unit": "B"
@@ -2975,34 +2975,34 @@
     {
       "barsArr": [
         {
-          "format": "decbytes",
+          "format": "bytes",
           "label": "Default pool",
           "unit": "B"
         },
         {
-          "format": "decbytes",
+          "format": "bytes",
           "label": "Keep pool",
           "unit": "B"
         },
         {
-          "format": "decbytes",
+          "format": "bytes",
           "label": "Recycle pool",
           "unit": "B"
         }
       ],
       "barsArr2": [
         {
-          "format": "decbytes",
+          "format": "bytes",
           "label": "Default pool",
           "unit": ""
         },
         {
-          "format": "decbytes",
+          "format": "bytes",
           "label": "Keep pool",
           "unit": ""
         },
         {
-          "format": "decbytes",
+          "format": "bytes",
           "label": "Recycle pool",
           "unit": ""
         }
@@ -3031,7 +3031,7 @@
           "unit": "%"
         },
         {
-          "format": "decbytes",
+          "format": "bytes",
           "label": "Buffer cache size",
           "type": "solid",
           "unit": "B"
@@ -6219,5 +6219,5 @@
   },
   "timezone": "",
   "title": "Oracle RAC 性能视图",
-  "version": 2
+  "version": 3
 }
